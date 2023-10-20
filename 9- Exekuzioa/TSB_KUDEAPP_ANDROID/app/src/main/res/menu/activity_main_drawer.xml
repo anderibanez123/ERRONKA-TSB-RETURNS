@@ -16,5 +16,15 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />
+        <item
+            android:id="@+id/nav_des2"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="DESHABILITADO"
+            tools:ignore="HardcodedText" />
+        <item
+            android:id="@+id/nav_des1"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="DESHABILITADO"
+            tools:ignore="HardcodedText" />
     </group>
 </menu>
