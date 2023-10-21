@@ -1,6 +1,5 @@
 package com.example.tsb_kudeapp;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,57 +9,62 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.tsb_kudeapp.databinding.ActivityMainBinding;
-import com.google.android.material.snackbar.Snackbar;
-
 public class loginActivity extends AppCompatActivity {
 
-    // Login leihoaren parametroak
     private Button bt_sesioaHasi;
     private EditText erabiltzailea_Text;
+    private EditText pasahitza_Text;
 
+    private long backPressedTime;
 
-
-    // PROGRAMA HASI
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.nav_login);
 
         bt_sesioaHasi = findViewById(R.id.bt_sesioaHasi);
         erabiltzailea_Text = findViewById(R.id.erabiltzailea_ET);
+        pasahitza_Text = findViewById(R.id.password_ET);
 
-        // KLIK sesioa hasi botoiari
         bt_sesioaHasi.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
-
-
                 if (erabiltzailea_Text.length() > 1) {
 
                     String erabiltzailea = erabiltzailea_Text.getText().toString().toUpperCase();
+                    String pasahitza = pasahitza_Text.getText().toString().toUpperCase();
 
-                    if (erabiltzailea.equals("KOM")){
-
-                        Intent resultIntent = new Intent();
+                    if (erabiltzailea.equals("USER") & pasahitza.equals("KOMERTZIALA")) {
+                        // Mezuak irakutsi
+                        Toast.makeText(loginActivity.this, "ONGI ETORRI / BIENVENIDO.", Toast.LENGTH_SHORT).show();
                         finish();
-
-                    }else {
-                        Toast.makeText(getApplicationContext(), "Sartutako erabiltzailea ez da egokia.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(loginActivity.this, "Erabiltzaile edo pasahitz ez zuzena.", Toast.LENGTH_SHORT).show();
                     }
-
-                }else {
-                    Toast.makeText(getApplicationContext(), "Ez da erabiltzailerik sartu.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(loginActivity.this, "Erabiltzailea utzik dago.", Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
-
     }
 
+    @Override
+    public void onBackPressed() {
+        // Denbora lortu
+        long currentTime = System.currentTimeMillis();
 
+        // Denbora + 2000 barruan atzera sakatzen badiozu, app-a itxiko da.
+        if (backPressedTime + 2000 > currentTime) {
+            finishAffinity();
+            super.onBackPressed();
 
+        } else {
+            // Lehenengo pasadan mezua irakutsi
+            Toast.makeText(this, "Berriro sakatu irteteko", Toast.LENGTH_SHORT).show();
+        }
 
-
+        // Denbora aktualizatu
+        backPressedTime = currentTime;
+    }
 }

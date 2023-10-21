@@ -3,6 +3,10 @@ ESLOGAN: Innovation for a better future
 ---------------------------------
 PARA CUALQUIER COSA, ESTOS COLORES Y BLANCO O GRIS COMO EXTRA.
 
-Azul: #00778B
+Azul Principal: #00778B
+Azul mediano: #5BA4B6
+Azul claro: #89BCCC
+
+
 Negro: #0b1116
 Blanco: #FFFFFF
