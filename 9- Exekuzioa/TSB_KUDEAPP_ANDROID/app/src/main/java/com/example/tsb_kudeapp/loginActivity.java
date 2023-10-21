@@ -13,6 +13,8 @@ import android.os.CancellationSignal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.snackbar.Snackbar;
+
 public class loginActivity extends AppCompatActivity {
 
     private Button bt_sesioaHasi;
@@ -36,17 +38,18 @@ public class loginActivity extends AppCompatActivity {
         pasahitza_Text = findViewById(R.id.password_ET);
         huella_BT = findViewById(R.id.huella_BT);
 
-        // Verifica si el dispositivo es compatible con la autenticación de huella
+
         fingerprintManager = (FingerprintManager) getSystemService(FINGERPRINT_SERVICE);
         if (!fingerprintManager.isHardwareDetected()) {
-            // El dispositivo no admite la autenticación de huella dactilar.
+            // Mugikorrak ez du hatz marka baimentzen
             huella_BT.setEnabled(false);
         }
 
         huella_BT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Iniciar autenticación de huella
+
+                Snackbar.make(view, "SARTU ZURE HATZ MARKA", Snackbar.LENGTH_LONG).show();
                 startFingerprintAuthentication();
             }
         });
@@ -61,7 +64,7 @@ public class loginActivity extends AppCompatActivity {
 
                     if (erabiltzailea.equals("USER") & pasahitza.equals("KOMERTZIALA")) {
                         // Mezuak irakutsi
-                        Toast.makeText(loginActivity.this, "ONGI ETORRI / BIENVENIDO.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(loginActivity.this, "ONGI ETORRI / BIENVENIDO", Toast.LENGTH_SHORT).show();
                         finish();
                     } else {
                         Toast.makeText(loginActivity.this, "Erabiltzaile edo pasahitz ez zuzena.", Toast.LENGTH_SHORT).show();
@@ -94,7 +97,7 @@ public class loginActivity extends AppCompatActivity {
         backPressedTime = currentTime;
     }
 
-    // Método para iniciar la autenticación de huella
+
     private void startFingerprintAuthentication() {
         if (cancellationSignal == null) {
             cancellationSignal = new CancellationSignal();
@@ -108,7 +111,7 @@ public class loginActivity extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(loginActivity.this, "ONGI ETORRI / BIENVENIDO.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(loginActivity.this, "ONGI ETORRI / BIENVENIDO", Toast.LENGTH_SHORT).show();
                             finish();
                         }
                     });
