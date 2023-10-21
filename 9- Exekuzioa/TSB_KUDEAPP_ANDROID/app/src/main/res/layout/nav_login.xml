@@ -9,11 +9,11 @@
 
     <Button
         android:id="@+id/bt_sesioaHasi"
-        android:layout_width="189dp"
-        android:layout_height="42dp"
-        android:text="Button"
+        android:layout_width="193dp"
+        android:layout_height="51dp"
+        android:backgroundTint="@color/tsb_color"
+        android:text="SARTU"
         android:visibility="visible"
-        app:iconTint="#00778B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,30 +27,36 @@
         android:layout_height="48dp"
         android:layout_marginTop="72dp"
         android:text="SESIOA HASI"
-        android:textSize="30dp"
         android:textAlignment="center"
+        android:textSize="30sp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.245"
-        tools:ignore="HardcodedText,MissingConstraints" />
+        tools:ignore="HardcodedText,MissingConstraints,TextSizeCheck"
+        tools:text="SESIOA HASI"
+        android:textColor="#111"/>
 
     <EditText
         android:id="@+id/erabiltzailea_ET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="84dp"
+        android:backgroundTint="@color/tsb_color"
         android:ems="10"
         android:inputType="text"
         android:minHeight="48dp"
         android:text=""
+        android:textColor="@color/black"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/izenburua_TV"
-        tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints" />
+        tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/izena_TV"
@@ -58,18 +64,21 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:text="Erabiltzaile Izena"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/erabiltzailea_ET"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.326"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/izenburua_TV"
         app:layout_constraintVertical_bias="0.931"
-        tools:ignore="HardcodedText,MissingConstraints" />
+        tools:ignore="HardcodedText,MissingConstraints"
+        android:textColor="#111"/>
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="259dp"
-        android:layout_height="96dp"
+        android:layout_width="296dp"
+        android:layout_height="106dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
