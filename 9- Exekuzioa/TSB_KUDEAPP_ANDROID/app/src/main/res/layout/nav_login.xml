@@ -24,26 +24,6 @@
         android:textColor="@color/white"/>
 
     <EditText
-        android:id="@+id/password_ET"
-        android:layout_width="249dp"
-        android:layout_height="39dp"
-        android:backgroundTint="@color/tsb_color"
-        android:ems="10"
-        android:hint=""
-        android:inputType="text"
-        android:minHeight="48dp"
-        android:text=""
-        android:textColor="@color/black"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.635"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.514"
-        tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,SpeakableTextPresentCheck,TextFields,TouchTargetSizeCheck" />
-
-    <EditText
         android:id="@+id/erabiltzailea_ET"
         android:layout_width="249dp"
         android:layout_height="39dp"
@@ -57,11 +37,58 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.635"
+        app:layout_constraintHorizontal_bias="0.623"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.408"
         tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageView
+        android:id="@+id/passwordIcon"
+        android:layout_width="33dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/password_ET"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userIcon"
+        app:layout_constraintVertical_bias="0.005"
+        app:srcCompat="@drawable/pwicon"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/userIcon"
+        android:layout_width="32dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/erabiltzailea_ET"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.403"
+        app:srcCompat="@drawable/usericon"
+        tools:ignore="ContentDescription" />
+
+    <EditText
+        android:id="@+id/password_ET"
+        android:layout_width="249dp"
+        android:layout_height="39dp"
+        android:backgroundTint="@color/tsb_color"
+        android:ems="10"
+        android:hint=""
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:text=""
+        android:textColor="@color/black"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.623"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.514"
+        tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,SpeakableTextPresentCheck,TextFields,TouchTargetSizeCheck" />
 
     <ImageView
         android:id="@+id/logo"
@@ -93,31 +120,15 @@
         app:layout_constraintVertical_bias="0.168"
         tools:ignore="HardcodedText,SpUsage,TextContrastCheck" />
 
-    <ImageView
-        android:id="@+id/passwordIcon"
-        android:layout_width="33dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/password_ET"
-        app:layout_constraintHorizontal_bias="1.0"
+    <ImageButton
+        android:id="@+id/huella_BT"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
+        android:background="@drawable/huellaicon"
+        app:layout_constraintBottom_toTopOf="@+id/bt_sesioaHasi"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userIcon"
-        app:layout_constraintVertical_bias="0.008"
-        app:srcCompat="@drawable/pwicon"
-        tools:ignore="ContentDescription" />
-
-    <ImageView
-        android:id="@+id/userIcon"
-        android:layout_width="32dp"
-        android:layout_height="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/erabiltzailea_ET"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.403"
-        app:srcCompat="@drawable/usericon"
-        tools:ignore="ContentDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/password_ET"
+        app:layout_constraintVertical_bias="0.517" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

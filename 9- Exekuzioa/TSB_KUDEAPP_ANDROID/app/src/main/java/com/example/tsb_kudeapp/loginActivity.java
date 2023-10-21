@@ -5,7 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
+import android.hardware.fingerprint.FingerprintManager;
+import android.os.CancellationSignal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,8 +18,12 @@ public class loginActivity extends AppCompatActivity {
     private Button bt_sesioaHasi;
     private EditText erabiltzailea_Text;
     private EditText pasahitza_Text;
+    private ImageButton huella_BT;
 
     private long backPressedTime;
+
+    private FingerprintManager fingerprintManager;
+    private CancellationSignal cancellationSignal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +34,22 @@ public class loginActivity extends AppCompatActivity {
         bt_sesioaHasi = findViewById(R.id.bt_sesioaHasi);
         erabiltzailea_Text = findViewById(R.id.erabiltzailea_ET);
         pasahitza_Text = findViewById(R.id.password_ET);
+        huella_BT = findViewById(R.id.huella_BT);
+
+        // Verifica si el dispositivo es compatible con la autenticación de huella
+        fingerprintManager = (FingerprintManager) getSystemService(FINGERPRINT_SERVICE);
+        if (!fingerprintManager.isHardwareDetected()) {
+            // El dispositivo no admite la autenticación de huella dactilar.
+            huella_BT.setEnabled(false);
+        }
+
+        huella_BT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Iniciar autenticación de huella
+                startFingerprintAuthentication();
+            }
+        });
 
         bt_sesioaHasi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +73,8 @@ public class loginActivity extends AppCompatActivity {
         });
     }
 
+
+
     @Override
     public void onBackPressed() {
         // Denbora lortu
@@ -67,4 +93,40 @@ public class loginActivity extends AppCompatActivity {
         // Denbora aktualizatu
         backPressedTime = currentTime;
     }
+
+    // Método para iniciar la autenticación de huella
+    private void startFingerprintAuthentication() {
+        if (cancellationSignal == null) {
+            cancellationSignal = new CancellationSignal();
+
+            fingerprintManager.authenticate(null, cancellationSignal, 0, new FingerprintManager.AuthenticationCallback() {
+                @Override
+                public void onAuthenticationSucceeded(FingerprintManager.AuthenticationResult result) {
+                    super.onAuthenticationSucceeded(result);
+
+                    // Bihetza ondo hartuta
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(loginActivity.this, "ONGI ETORRI / BIENVENIDO.", Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
+                    });
+                }
+
+                @Override
+                public void onAuthenticationError(int errorCode, CharSequence errString) {
+                    super.onAuthenticationError(errorCode, errString);
+                    Toast.makeText(loginActivity.this, "Ezin izan dugu sesioa hasi.", Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onAuthenticationFailed() {
+                    super.onAuthenticationFailed();
+                    Toast.makeText(loginActivity.this, "Ezin izan dugu sesioa hasi.", Toast.LENGTH_SHORT).show();
+                }
+            }, null);
+        }
+    }
+
 }
