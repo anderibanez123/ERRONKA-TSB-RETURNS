@@ -39,13 +39,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         setSupportActionBar(binding.appBarMain.toolbar);
 
-        // KLIK AZPIKO BOTOIARI
-        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
+        // KLIK DATU BASE BOTOIARI
+        binding.appBarMain.dbAktualizatuBT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Snackbar.make(view, "DATU BASE DATUAK BERRITZEN", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
+
+
+
             }
 
         });
