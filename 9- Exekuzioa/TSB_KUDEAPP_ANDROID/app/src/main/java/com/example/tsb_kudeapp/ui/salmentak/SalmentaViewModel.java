@@ -1,16 +1,16 @@
-package com.example.tsb_kudeapp.ui.home;
+package com.example.tsb_kudeapp.ui.salmentak;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class SalmentaViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public SalmentaViewModel() {
         mText = new MutableLiveData<>();
-        //mText.setValue("This is home fragment");
+        mText.setValue("SALMENTA");
     }
 
     public LiveData<String> getText() {

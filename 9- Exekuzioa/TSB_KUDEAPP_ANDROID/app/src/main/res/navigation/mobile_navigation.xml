@@ -3,23 +3,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_salmenta">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.tsb_kudeapp.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_salmenta"
+        android:name="com.example.tsb_kudeapp.ui.salmentak.SalmentaFragment"
+        android:label="@string/menu_salmenta"
+        tools:layout="@layout/fragment_salmenta" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.tsb_kudeapp.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_stock"
+        android:name="com.example.tsb_kudeapp.ui.stock.StockFragment"
+        android:label="@string/menu_stock"
+        tools:layout="@layout/fragment_stock" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.tsb_kudeapp.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_crm"
+        android:name="com.example.tsb_kudeapp.ui.CRM.CRMFragment"
+        android:label="@string/menu_crm"
+        tools:layout="@layout/fragment_crm" />
+
+    <fragment
+        android:id="@+id/nav_grafika"
+        android:name="com.example.tsb_kudeapp.ui.grafikak.GrafikaFragment"
+        android:label="@string/menu_grafikoa"
+        tools:layout="@layout/fragment_grafikoa"/>
+
+    <fragment
+        android:id="@+id/nav_mezua"
+        android:name="com.example.tsb_kudeapp.ui.mezuak.MezuaFragment"
+        android:label="@string/menu_mezua"
+        tools:layout="@layout/fragment_mezua"/>
+
 </navigation>

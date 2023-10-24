@@ -1,0 +1,5 @@
+Ventas: Busca tablas que almacenan información sobre pedidos, facturas, productos, clientes, etc. Ejemplos de tablas relevantes podrían ser sale_order, sale_order_line, product_template, res_partner, etc.
+
+CRM: Para gestionar el CRM, busca tablas relacionadas con leads, oportunidades y actividades. Ejemplos de tablas podrían ser crm_lead, crm_opportunity, mail_activity, entre otras.
+
+Conversaciones: Las conversaciones suelen estar relacionadas con la mensajería interna o los mensajes de clientes. Busca tablas como mail_message, mail_message_subtype, mail_channel, etc.

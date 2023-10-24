@@ -7,16 +7,10 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/Theme.TSB_KUDEAPP.AppBarOverlay">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#00778b"
-            app:popupTheme="@style/Theme.TSB_KUDEAPP.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -32,7 +26,16 @@
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="16dp"
         app:backgroundTint="#89BCCC"
-        app:srcCompat="@drawable/dbicon"
-        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+        app:srcCompat="@drawable/aktuicon"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck,ImageContrastCheck" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#00778b"
+        app:layout_anchor="@+id/appBarLayout"
+        app:layout_anchorGravity="center"
+        app:popupTheme="@style/Theme.TSB_KUDEAPP.PopupOverlay" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

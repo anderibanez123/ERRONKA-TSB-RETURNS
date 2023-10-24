@@ -1,16 +1,16 @@
-package com.example.tsb_kudeapp.ui.slideshow;
+package com.example.tsb_kudeapp.ui.CRM;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SlideshowViewModel extends ViewModel {
+public class CRMViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public SlideshowViewModel() {
+    public CRMViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+        mText.setValue("CRM");
     }
 
     public LiveData<String> getText() {

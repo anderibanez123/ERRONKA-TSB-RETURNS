@@ -1,27 +1,26 @@
-package com.example.tsb_kudeapp.ui.home;
+package com.example.tsb_kudeapp.ui.mezuak;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.tsb_kudeapp.databinding.FragmentHomeBinding;
+import com.example.tsb_kudeapp.databinding.FragmentMezuaBinding;
 
-public class HomeFragment extends Fragment {
+public class MezuaFragment extends Fragment {
 
-    private FragmentHomeBinding binding;
+    private FragmentMezuaBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        MezuaViewModel homeViewModel =
+                new ViewModelProvider(this).get(MezuaViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentMezuaBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
 

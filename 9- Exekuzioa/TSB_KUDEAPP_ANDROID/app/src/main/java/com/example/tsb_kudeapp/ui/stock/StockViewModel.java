@@ -1,16 +1,16 @@
-package com.example.tsb_kudeapp.ui.gallery;
+package com.example.tsb_kudeapp.ui.stock;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class GalleryViewModel extends ViewModel {
+public class StockViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public GalleryViewModel() {
+    public StockViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
+        mText.setValue("STOCK");
     }
 
     public LiveData<String> getText() {
