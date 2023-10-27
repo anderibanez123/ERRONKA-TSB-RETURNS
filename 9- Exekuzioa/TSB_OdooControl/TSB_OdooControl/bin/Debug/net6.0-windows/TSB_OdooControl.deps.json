@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "TSB_OdooControl/1.0.0": {
+        "runtime": {
+          "TSB_OdooControl.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TSB_OdooControl/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
