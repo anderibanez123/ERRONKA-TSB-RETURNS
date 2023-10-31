@@ -28,16 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hasiera));
             SuspendLayout();
             // 
             // Hasiera
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Mesa_de_trabajo_10;
+            BackgroundImage = Properties.Resources.FondoVisualApp2;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1007, 566);
             DoubleBuffered = true;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Hasiera";
             Text = "HASIERA | OdooControl";
             ResumeLayout(false);

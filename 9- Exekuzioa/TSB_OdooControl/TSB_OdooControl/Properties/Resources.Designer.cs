@@ -113,6 +113,36 @@ namespace TSB_OdooControl.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FondoVisualApp {
+            get {
+                object obj = ResourceManager.GetObject("FondoVisualApp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FondoVisualApp2 {
+            get {
+                object obj = ResourceManager.GetObject("FondoVisualApp2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FondoVisualApp3 {
+            get {
+                object obj = ResourceManager.GetObject("FondoVisualApp3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap huellaIcon {
             get {
                 object obj = ResourceManager.GetObject("huellaIcon", resourceCulture);
