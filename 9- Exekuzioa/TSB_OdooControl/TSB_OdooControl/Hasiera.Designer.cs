@@ -34,9 +34,9 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.FondoConClaro;
-            BackgroundImageLayout = ImageLayout.Zoom;
-            ClientSize = new Size(1007, 573);
+            BackgroundImage = Properties.Resources.Mesa_de_trabajo_10;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(1007, 566);
             DoubleBuffered = true;
             Name = "Hasiera";
             Text = "HASIERA | OdooControl";

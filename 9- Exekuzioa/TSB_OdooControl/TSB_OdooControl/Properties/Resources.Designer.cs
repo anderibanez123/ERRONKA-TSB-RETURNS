@@ -113,46 +113,6 @@ namespace TSB_OdooControl.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FondoConClaro {
-            get {
-                object obj = ResourceManager.GetObject("FondoConClaro", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap FondoConClaro1 {
-            get {
-                object obj = ResourceManager.GetObject("FondoConClaro1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap FondoConOscuro {
-            get {
-                object obj = ResourceManager.GetObject("FondoConOscuro", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap FondoConOscuro1 {
-            get {
-                object obj = ResourceManager.GetObject("FondoConOscuro1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap huellaIcon {
             get {
                 object obj = ResourceManager.GetObject("huellaIcon", resourceCulture);
@@ -193,6 +153,16 @@ namespace TSB_OdooControl.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Mesa_de_trabajo_10 {
+            get {
+                object obj = ResourceManager.GetObject("Mesa_de_trabajo_10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pwIcon {
             get {
                 object obj = ResourceManager.GetObject("pwIcon", resourceCulture);
@@ -206,6 +176,16 @@ namespace TSB_OdooControl.Properties {
         internal static byte[] TSB {
             get {
                 object obj = ResourceManager.GetObject("TSB", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Byte[].
+        /// </summary>
+        internal static byte[] TSB_03 {
+            get {
+                object obj = ResourceManager.GetObject("TSB_03", resourceCulture);
                 return ((byte[])(obj));
             }
         }
