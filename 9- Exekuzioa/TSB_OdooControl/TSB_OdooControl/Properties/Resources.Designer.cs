@@ -113,9 +113,9 @@ namespace TSB_OdooControl.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FondoVisualApp {
+        internal static System.Drawing.Bitmap FondoVisualApp4 {
             get {
-                object obj = ResourceManager.GetObject("FondoVisualApp", resourceCulture);
+                object obj = ResourceManager.GetObject("FondoVisualApp4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace TSB_OdooControl.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FondoVisualApp2 {
+        internal static System.Drawing.Bitmap FondoVisualGUIA {
             get {
-                object obj = ResourceManager.GetObject("FondoVisualApp2", resourceCulture);
+                object obj = ResourceManager.GetObject("FondoVisualGUIA", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace TSB_OdooControl.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FondoVisualApp3 {
+        internal static System.Drawing.Bitmap FondoVisualGUIA4 {
             get {
-                object obj = ResourceManager.GetObject("FondoVisualApp3", resourceCulture);
+                object obj = ResourceManager.GetObject("FondoVisualGUIA4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +183,9 @@ namespace TSB_OdooControl.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Mesa_de_trabajo_10 {
+        internal static System.Drawing.Bitmap pwIcon {
             get {
-                object obj = ResourceManager.GetObject("Mesa_de_trabajo_10", resourceCulture);
+                object obj = ResourceManager.GetObject("pwIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,10 +193,20 @@ namespace TSB_OdooControl.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pwIcon {
+        internal static System.Drawing.Bitmap Raya {
             get {
-                object obj = ResourceManager.GetObject("pwIcon", resourceCulture);
+                object obj = ResourceManager.GetObject("Raya", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Byte[].
+        /// </summary>
+        internal static byte[] Sin_título {
+            get {
+                object obj = ResourceManager.GetObject("Sin_título", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         

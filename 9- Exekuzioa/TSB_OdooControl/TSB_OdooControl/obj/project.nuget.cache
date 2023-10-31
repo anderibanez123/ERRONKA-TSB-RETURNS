@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "7e7DlO5t3qHzktb6C/Ap1xxSFbEvX3LTiUk7Cipvuvrbd8+npp6CF6bU3MwMTVxb8SZ8nv+fReQPW6/eLOUQDA==",
+  "dgSpecHash": "HQ8nWblP9adJioITqBh1BwM+3/AQldG+8McQovB1Pn1zlPkr7UFnYuRgzUAe9c1lfvm0TvHyqZdjyKgwzQYwqA==",
   "success": true,
   "projectFilePath": "C:\\Users\\ikaltamirapaag2\\Desktop\\ERRONKA TSB RETURNS\\9- Exekuzioa\\TSB_OdooControl\\TSB_OdooControl\\TSB_OdooControl.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ikaltamirapaag2\\.nuget\\packages\\vlc.dotnet.core\\3.1.0\\vlc.dotnet.core.3.1.0.nupkg.sha512",
+    "C:\\Users\\ikaltamirapaag2\\.nuget\\packages\\vlc.dotnet.core.interops\\3.1.0\\vlc.dotnet.core.interops.3.1.0.nupkg.sha512",
+    "C:\\Users\\ikaltamirapaag2\\.nuget\\packages\\vlc.dotnet.forms\\3.1.0\\vlc.dotnet.forms.3.1.0.nupkg.sha512"
+  ],
   "logs": []
 }
