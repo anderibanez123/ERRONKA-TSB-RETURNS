@@ -74,6 +74,7 @@
             Sartu_BT.TabIndex = 1;
             Sartu_BT.Text = "SARTU";
             Sartu_BT.UseVisualStyleBackColor = false;
+            Sartu_BT.Click += Sartu_BT_Click;
             // 
             // label1
             // 

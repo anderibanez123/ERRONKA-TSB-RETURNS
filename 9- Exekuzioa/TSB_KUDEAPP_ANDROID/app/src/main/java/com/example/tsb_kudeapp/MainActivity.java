@@ -1,10 +1,17 @@
 package com.example.tsb_kudeapp;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Toast;
 
+import com.example.tsb_kudeapp.db.PostgreSQLConnection;
+import com.example.tsb_kudeapp.db.PostgreSQLData;
+import com.example.tsb_kudeapp.db.Registro;
+import com.example.tsb_kudeapp.db.dbHelper;
+import com.example.tsb_kudeapp.db.dbUsers;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -17,7 +24,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tsb_kudeapp.databinding.ActivityMainBinding;
 
+import java.sql.Connection;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
+
+    public PostgreSQLConnection konexioa = new PostgreSQLConnection();
 
     // APPeko MENUAren aukerak
     private AppBarConfiguration mAppBarConfiguration;
@@ -45,7 +57,28 @@ public class MainActivity extends AppCompatActivity {
                 Snackbar.make(view, "Datuak berritzen...", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
 
-                // DATU BASEA AKTUALIZATU BOTOIA
+                // Obtener una conexión a PostgreSQL
+                Connection connection = konexioa.konexioaIreki();
+
+                if (connection != null) {
+                    // PostgreSQL-ko datuak lortu
+                    List<Registro> erabiltzaileak = konexioa.erabiltzeDatuakLortu();
+
+                    // dbUser sortu
+                    dbUsers usersDB = new dbUsers(MainActivity.this);
+
+                    // Datuak datu base barruan sartu
+                    for (Registro registro : erabiltzaileak) {
+                        usersDB.erabiltzaileakSartu(registro.getErabiltzailea(), registro.getEmail(), registro.getEnpresa());
+                    }
+
+                    // Konexioa itxi
+                    konexioa.konexioaItxi();
+
+                } else {
+                    // Datuak ezin baditugu berritu
+                    Toast.makeText(MainActivity.this, "Ezin izan ditugu datuak eguneratu", Toast.LENGTH_LONG).show();
+                }
 
             }
 

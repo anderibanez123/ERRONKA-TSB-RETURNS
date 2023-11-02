@@ -62,7 +62,7 @@ public class loginActivity extends AppCompatActivity {
                     String erabiltzailea = erabiltzailea_Text.getText().toString().toUpperCase();
                     String pasahitza = pasahitza_Text.getText().toString().toUpperCase();
 
-                    if (erabiltzailea.equals("USER") & pasahitza.equals("KOMERTZIALA")) {
+                    if (erabiltzailea.equals("USER") & pasahitza.equals("KOM")) {
                         // Mezuak irakutsi
                         Toast.makeText(loginActivity.this, "ONGI ETORRI / BIENVENIDO", Toast.LENGTH_SHORT).show();
                         finish();

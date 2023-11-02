@@ -3,3 +3,22 @@ Ventas: Busca tablas que almacenan información sobre pedidos, facturas, product
 CRM: Para gestionar el CRM, busca tablas relacionadas con leads, oportunidades y actividades. Ejemplos de tablas podrían ser crm_lead, crm_opportunity, mail_activity, entre otras.
 
 Conversaciones: Las conversaciones suelen estar relacionadas con la mensajería interna o los mensajes de clientes. Busca tablas como mail_message, mail_message_subtype, mail_channel, etc.
+
+---------------------------------------------------------------------------
+
+VENTAS: sale_order, sale_order_line, product_template, res_partner ETC...
+CRM: crm_lead, crm_opportunity, mail_activity ETC...
+CONVERSACIONES: mail_message, mail_message_subtype, mail_channel ETC...
+
+-------------------------------------------------------------------------
+Usuarios:
+
+SELECT DISTINCT nombre.name AS Erabiltzailea, usuario.login AS Email, com.name AS Enpresa
+FROM public.res_company AS com
+JOIN public.res_users AS usuario ON com.id = usuario.company_id
+JOIN public.res_partner AS nombre ON usuario.partner_id = nombre.id
+WHERE nombre.name NOT IN ('OdooBot', 'Default User Template', 'Portal User Template', 'Public user');
+
+wdawdaw:
+
+

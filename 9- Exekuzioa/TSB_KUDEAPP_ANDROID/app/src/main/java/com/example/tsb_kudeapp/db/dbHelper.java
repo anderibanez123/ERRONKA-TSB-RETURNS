@@ -4,32 +4,34 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.Nullable;
-
 public class dbHelper extends SQLiteOpenHelper {
 
+    // datu basearen bertsioa
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_IZENA = "tsbKOM.db";
 
-    // Lan egiteko behar dugun taula
-    public static final String TABLE_KOMERTZIALA = "t_komertzialak";
+    // datu basearen izena
+    private static final String DATABASE_NAME = "tsbKOM.db";
 
+    // taularen izena
+    public static final String TABLE_KOMERTZIALA = "tbl_komertzialak";
 
-    public dbHelper(@Nullable Context context) {
-        super(context, DATABASE_IZENA, null, DATABASE_VERSION);
+    public dbHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-
-        // SQLite barrun taulak sortzeko
-        sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_KOMERTZIALA + "(" + "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "izena TEXT NOT NULL," + ")");
-
+        // taula sortu
+        sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_KOMERTZIALA + "(" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "erabiltzailea TEXT NOT NULL, " +
+                "email TEXT NOT NULL, " +
+                "Enpresa TEXT" +
+                ")");
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
 }
