@@ -1,4 +1,7 @@
+using Org.BouncyCastle.Tls;
 using System.Drawing.Drawing2D;
+using Vlc.DotNet.Core;
+using Vlc.DotNet.Forms;
 
 namespace TSB_OdooControl
 {
@@ -23,13 +26,48 @@ namespace TSB_OdooControl
                 // Konexioa ireki
                 konexioa.konexioaIreki();
 
-                MessageBox.Show("kaixo");
+                // Datu basea kargatu bitarteko bideoa
+                bideoKarga();
+
+                // Erabiltzailea konprobatu
+                erabiltzaileaKonprobatu();
+
             }
             catch (Exception)
             {
+                // Konexioarekin arazoa izaten ba dugu
                 MessageBox.Show("Konexioarekin arazoa izan dugu.");
                 throw;
             }
         }
+
+        // Erabiltzailea konprobatzeko funtzioa
+        private Boolean erabiltzaileaKonprobatu()
+        {
+            // Erabiltzailea eta pasahitza lortu
+            String erabiltzailea = user_TB.Text.ToUpper().ToString();
+            String pasahitza = pw_TB.Text.ToUpper().ToString();
+
+            // String erabiltzaile taula lortzeko
+
+
+
+            return false;
+        }
+
+        // Kargarako pantaila
+        private void bideoKarga()
+        {
+
+            // Configura el control VlcControl para reproducir el video
+            VlcControl vlcPlayer = new VlcControl();
+            vlcPlayer.Dock = DockStyle.Fill;
+            this.Controls.Add(vlcPlayer);
+
+            vlcPlayer.SetMedia(new FileInfo("\\...\\...\\...\\Resources\\Sin Título.mp4\""));
+            vlcPlayer.Play();
+
+        }
+
     }
 }

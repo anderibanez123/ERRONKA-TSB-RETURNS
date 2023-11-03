@@ -38,11 +38,13 @@
             pass_PB = new PictureBox();
             barra1 = new PictureBox();
             barra2 = new PictureBox();
+            vlcControl1 = new Vlc.DotNet.Forms.VlcControl();
             ((System.ComponentModel.ISupportInitialize)logoPB).BeginInit();
             ((System.ComponentModel.ISupportInitialize)user_PB).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pass_PB).BeginInit();
             ((System.ComponentModel.ISupportInitialize)barra1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)barra2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)vlcControl1).BeginInit();
             SuspendLayout();
             // 
             // logoPB
@@ -160,6 +162,18 @@
             barra2.TabIndex = 8;
             barra2.TabStop = false;
             // 
+            // vlcControl1
+            // 
+            vlcControl1.BackColor = Color.Black;
+            vlcControl1.Location = new Point(317, 140);
+            vlcControl1.Name = "vlcControl1";
+            vlcControl1.Size = new Size(381, 216);
+            vlcControl1.Spu = -1;
+            vlcControl1.TabIndex = 9;
+            vlcControl1.Text = "vlcControl1";
+            vlcControl1.VlcLibDirectory = null;
+            vlcControl1.VlcMediaplayerOptions = null;
+            // 
             // Hasiera
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -167,6 +181,7 @@
             BackgroundImage = Properties.Resources.FondoVisualApp4;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1007, 566);
+            Controls.Add(vlcControl1);
             Controls.Add(barra2);
             Controls.Add(barra1);
             Controls.Add(pass_PB);
@@ -187,6 +202,7 @@
             ((System.ComponentModel.ISupportInitialize)pass_PB).EndInit();
             ((System.ComponentModel.ISupportInitialize)barra1).EndInit();
             ((System.ComponentModel.ISupportInitialize)barra2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)vlcControl1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -202,5 +218,6 @@
         private PictureBox pass_PB;
         private PictureBox barra1;
         private PictureBox barra2;
+        private Vlc.DotNet.Forms.VlcControl vlcControl1;
     }
 }
