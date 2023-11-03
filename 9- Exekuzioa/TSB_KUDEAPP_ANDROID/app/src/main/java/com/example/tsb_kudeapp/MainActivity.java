@@ -1,16 +1,13 @@
 package com.example.tsb_kudeapp;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Toast;
 
 import com.example.tsb_kudeapp.db.PostgreSQLConnection;
-import com.example.tsb_kudeapp.db.PostgreSQLData;
 import com.example.tsb_kudeapp.db.Registro;
-import com.example.tsb_kudeapp.db.dbHelper;
 import com.example.tsb_kudeapp.db.dbUsers;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -26,10 +23,12 @@ import com.example.tsb_kudeapp.databinding.ActivityMainBinding;
 
 import java.sql.Connection;
 import java.util.List;
+import com.example.tsb_kudeapp.db.DatabaseCallback;
+
 
 public class MainActivity extends AppCompatActivity {
 
-    public PostgreSQLConnection konexioa = new PostgreSQLConnection();
+    private PostgreSQLConnection konexioa = new PostgreSQLConnection();
 
     // APPeko MENUAren aukerak
     private AppBarConfiguration mAppBarConfiguration;
@@ -41,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         // SESIOAREN LEIHOA IREKI
-        // En lugar de startActivityForResult
         Intent intent = new Intent(this, loginActivity.class);
         startActivity(intent);
 
@@ -53,41 +51,65 @@ public class MainActivity extends AppCompatActivity {
         binding.appBarMain.dbAktualizatuBT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Snackbar.make(view, "Datuak berritzen...", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
 
-                // Obtener una conexión a PostgreSQL
-                Connection connection = konexioa.konexioaIreki();
+                // PostgreSQL-ekin konexioa ezarri
+                konexioa.konexioaIrekiAsync(new DatabaseCallback() {
+                    @Override
+                    public void onConnectionEstablished(Connection connection) {
+                        if (connection != null) {
+                            // PostgreSQL-ko datuak lortu
+                            List<Registro> erabiltzaileak = konexioa.erabiltzeDatuakLortu();
 
-                if (connection != null) {
-                    // PostgreSQL-ko datuak lortu
-                    List<Registro> erabiltzaileak = konexioa.erabiltzeDatuakLortu();
+                            // dbUser sortu
+                            dbUsers usersDB = new dbUsers(MainActivity.this);
 
-                    // dbUser sortu
-                    dbUsers usersDB = new dbUsers(MainActivity.this);
+                            // Datuak datu base barruan sartu
+                            for (Registro registro : erabiltzaileak) {
+                                usersDB.erabiltzaileakSartu(registro.getErabiltzailea(), registro.getEmail(), registro.getEnpresa());
+                            }
 
-                    // Datuak datu base barruan sartu
-                    for (Registro registro : erabiltzaileak) {
-                        usersDB.erabiltzaileakSartu(registro.getErabiltzailea(), registro.getEmail(), registro.getEnpresa());
+                            // Konexioa itxi
+                            konexioa.konexioaItxi();
+
+                            // Notificar la finalización de la consulta
+                            onQueryCompleted(erabiltzaileak);
+                        } else {
+                            // Datuak ezin baditugu berritu
+                            runOnUiThread(() -> {
+                                Toast.makeText(MainActivity.this, "Ezin izan ditugu datuak eguneratu", Toast.LENGTH_LONG).show();
+                            });
+                        }
                     }
 
-                    // Konexioa itxi
-                    konexioa.konexioaItxi();
+                    @Override
+                    public void onConnectionFailed(Exception e) {
+                        // Manejar la falla en la conexión
+                        e.printStackTrace();
+                    }
 
-                } else {
-                    // Datuak ezin baditugu berritu
-                    Toast.makeText(MainActivity.this, "Ezin izan ditugu datuak eguneratu", Toast.LENGTH_LONG).show();
-                }
+                    @Override
+                    public void onQueryCompleted(List<Registro> registros) {
+                        // Manejar la finalización de la consulta aquí
+                        Toast.makeText(MainActivity.this, "Ondo", Toast.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void onQueryFailed(Exception e) {
+                        // Manejar la falla en la consulta aquí
+                        Toast.makeText(MainActivity.this, "Ezin izan ditugu datuak eguneratu", Toast.LENGTH_LONG).show();
+                    }
+                });
 
             }
-
         });
+
 
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
+        // Aplikazioaren menuaren konfigurazioa
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_salmenta, R.id.nav_stock, R.id.nav_crm, R.id.nav_mezua, R.id.nav_grafika)
                 .setOpenableLayout(drawer)

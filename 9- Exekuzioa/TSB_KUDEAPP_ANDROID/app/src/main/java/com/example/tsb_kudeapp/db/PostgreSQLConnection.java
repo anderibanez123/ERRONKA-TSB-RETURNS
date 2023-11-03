@@ -16,19 +16,41 @@ public class PostgreSQLConnection {
     private Connection connection;
 
     public PostgreSQLConnection() {
-        // Constructor: inicializa la conexión como nula
+        // Konexioa null bezala hasi
         connection = null;
     }
 
-    public Connection konexioaIreki() {
-        try {
-            if (connection == null || connection.isClosed()) {
-                
-                Class.forName("org.postgresql.Driver");
-                connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+    // Konexioa irekitzeko funtzioa
+    public Connection konexioaIreki()
+    {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run()
+            {
+                try
+                {
+                    Class.forName("org.postgresql.Driver");
+                    connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+
+
+                }
+                catch (Exception e)
+                {
+
+                    System.out.print(e.getMessage());
+                    e.printStackTrace();
+                }
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        });
+        thread.start();
+        try
+        {
+            thread.join();
+        }
+        catch (Exception e)
+        {
             e.printStackTrace();
+
         }
         return connection;
     }
@@ -36,7 +58,7 @@ public class PostgreSQLConnection {
     public void konexioaItxi() {
         try {
             if (connection != null && !connection.isClosed()) {
-                // Si la conexión existe y no está cerrada, se cierra
+
                 connection.close();
             }
         } catch (SQLException e) {
@@ -76,6 +98,23 @@ public class PostgreSQLConnection {
 
         return registros;
     }
+
+    public void konexioaIrekiAsync(DatabaseCallback callback) {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Class.forName("org.postgresql.Driver");
+                    connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+                    callback.onConnectionEstablished(connection);
+                } catch (Exception e) {
+                    callback.onConnectionFailed(e);
+                }
+            }
+        });
+        thread.start();
+    }
+
 
 
 
