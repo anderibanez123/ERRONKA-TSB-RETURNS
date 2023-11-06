@@ -59,13 +59,7 @@ namespace TSB_OdooControl
         private void bideoKarga()
         {
 
-            // Configura el control VlcControl para reproducir el video
-            VlcControl vlcPlayer = new VlcControl();
-            vlcPlayer.Dock = DockStyle.Fill;
-            this.Controls.Add(vlcPlayer);
 
-            vlcPlayer.SetMedia(new FileInfo("\\...\\...\\...\\Resources\\Sin Título.mp4\""));
-            vlcPlayer.Play();
 
         }
 
