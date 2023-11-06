@@ -57,10 +57,16 @@ namespace TSB_OdooControl_
             // String erabiltzaile taula lortzeko
             if (erabiltzailea.Equals("TSB") && pasahitza.Equals("TSB"))
             {
+                // Karga bideua hasi
                 carga.Visible = true;
+
+                // Kargatu beharrezko datuak kargatu
                 DatuBaseDatuakKARGATU();
+
+                // Karga bideua bukatu
                 carga.Visible = false;
 
+                // Ondo irten dela bueltatu
                 return true;
             }
             else
@@ -74,7 +80,7 @@ namespace TSB_OdooControl_
         // Kargarako pantaila
         private void DatuBaseDatuakKARGATU()
         {
-            MessageBox.Show("aiojdioaw");
+
         }
 
         private void vlcControl1_Click(object sender, EventArgs e)

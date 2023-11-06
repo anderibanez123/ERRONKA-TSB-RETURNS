@@ -19,6 +19,15 @@ JOIN public.res_users AS usuario ON com.id = usuario.company_id
 JOIN public.res_partner AS nombre ON usuario.partner_id = nombre.id
 WHERE nombre.name NOT IN ('OdooBot', 'Default User Template', 'Portal User Template', 'Public user');
 
+
+KONTABILITATEA - PROVEEDORES:
+
+SELECT r.name AS Izena, c.code AS Herria, r.type AS Mota, r.email AS Korreoa, r.phone AS Mugikorra, r.comment AS Komentarioak, r.commercial_company_name
+FROM public.res_partner AS r
+JOIN public.res_country AS c ON r.country_id = c.id
+WHERE r.commercial_company_name IS NOT NULL AND r.commercial_company_name = 'TSB Enpresa';
+
+
 wdawdaw:
 
 
