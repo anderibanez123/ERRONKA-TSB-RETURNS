@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace TSB_OdooControl_
 {
-    public partial class Form1 : Form
+    public partial class Programa : Form
     {
-        public Form1()
+        public Programa()
         {
             InitializeComponent();
+        }
+
+        private void Programa_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

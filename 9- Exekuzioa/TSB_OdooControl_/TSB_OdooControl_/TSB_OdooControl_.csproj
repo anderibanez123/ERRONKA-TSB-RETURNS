@@ -147,6 +147,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Programa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programa.Designer.cs">
+      <DependentUpon>Programa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Hasiera.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Hasiera.resx">
       <DependentUpon>Hasiera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programa.resx">
+      <DependentUpon>Programa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

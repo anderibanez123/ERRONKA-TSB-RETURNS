@@ -1,6 +1,6 @@
 ﻿namespace TSB_OdooControl_
 {
-    partial class Form1
+    partial class Programa
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Programa));
+            this.SuspendLayout();
+            // 
+            // Programa
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Programa";
+            this.Text = "ODOO KONTROLAK | TSB Enpresa";
+            this.Load += new System.EventHandler(this.Programa_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
