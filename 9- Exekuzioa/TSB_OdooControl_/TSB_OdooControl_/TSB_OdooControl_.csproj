@@ -147,6 +147,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MySQLConnection.cs" />
     <Compile Include="Programa.cs">
       <SubType>Form</SubType>
     </Compile>

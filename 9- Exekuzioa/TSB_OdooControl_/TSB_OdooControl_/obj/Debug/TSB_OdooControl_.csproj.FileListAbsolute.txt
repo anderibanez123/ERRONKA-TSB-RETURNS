@@ -66,3 +66,4 @@ C:\Users\ikaltamirapaag2\Desktop\ERRONKA TSB RETURNS\9- Exekuzioa\TSB_OdooContro
 C:\Users\ikaltamirapaag2\Desktop\ERRONKA TSB RETURNS\9- Exekuzioa\TSB_OdooControl_\TSB_OdooControl_\bin\Debug\Vlc.DotNet.Core.dll
 C:\Users\ikaltamirapaag2\Desktop\ERRONKA TSB RETURNS\9- Exekuzioa\TSB_OdooControl_\TSB_OdooControl_\bin\Debug\Vlc.DotNet.Core.Interops.dll
 C:\Users\ikaltamirapaag2\Desktop\ERRONKA TSB RETURNS\9- Exekuzioa\TSB_OdooControl_\TSB_OdooControl_\bin\Debug\Vlc.DotNet.Forms.dll
+C:\Users\ikaltamirapaag2\Desktop\ERRONKA TSB RETURNS\9- Exekuzioa\TSB_OdooControl_\TSB_OdooControl_\obj\Debug\TSB_OdooControl_.Programa.resources

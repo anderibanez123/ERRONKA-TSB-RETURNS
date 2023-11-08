@@ -45,10 +45,8 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     implementation ("com.google.android.material:material:1.3.0-alpha03")
+
     implementation ("org.postgresql:postgresql:42.2.5")
     implementation ("androidx.sqlite:sqlite:2.2.0")
-    //implementation(files("libs/postgresql-42.2.27.jre7.jar"))
-
-
 
 }

@@ -16,7 +16,8 @@ namespace TSB_OdooControl_
     public partial class Hasiera : Form
     {
 
-        private PostgreSQLConnection konexioa = new PostgreSQLConnection();
+        private PostgreSQLConnection konexioaPostgreSQL = new PostgreSQLConnection();
+        private MySQLConnection konexioaMySQL = new MySQLConnection();
 
         public Hasiera()
         {
@@ -28,7 +29,7 @@ namespace TSB_OdooControl_
             try
             {
                 // Konexioa ireki
-                konexioa.konexioaIreki();
+                konexioaPostgreSQL.konexioaIreki();
 
                 // Erabiltzailea konprobatu
                 bool ondo = erabiltzaileaKonprobatu();
