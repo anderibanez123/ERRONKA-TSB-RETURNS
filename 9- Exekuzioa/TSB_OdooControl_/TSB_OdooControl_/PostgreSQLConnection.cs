@@ -38,9 +38,11 @@ namespace TSB_OdooControl
             }
         }
 
-        public NpgsqlConnection konexioaLortu()
+        public NpgsqlConnection getKonexioa()
         {
-            return connection;
+            return this.connection;
         }
+
+
     }
 }

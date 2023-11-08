@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 public class MySQLConnection
 {
@@ -29,6 +30,11 @@ public class MySQLConnection
         {
             connection.Close();
         }
+    }
+
+    public MySqlConnection getKonexioa()
+    {
+        return this.connection;
     }
 
     

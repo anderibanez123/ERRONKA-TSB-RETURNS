@@ -38,14 +38,12 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.vlcControl1 = new Vlc.DotNet.Forms.VlcControl();
             this.carga = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vlcControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carga)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,7 +113,7 @@
             this.ongiEtorri_Label.ForeColor = System.Drawing.Color.White;
             this.ongiEtorri_Label.Location = new System.Drawing.Point(389, 30);
             this.ongiEtorri_Label.Name = "ongiEtorri_Label";
-            this.ongiEtorri_Label.Size = new System.Drawing.Size(253, 60);
+            this.ongiEtorri_Label.Size = new System.Drawing.Size(249, 58);
             this.ongiEtorri_Label.TabIndex = 5;
             this.ongiEtorri_Label.Text = "ONGI ETORRI!";
             // 
@@ -150,20 +148,6 @@
             this.pictureBox5.TabIndex = 8;
             this.pictureBox5.TabStop = false;
             // 
-            // vlcControl1
-            // 
-            this.vlcControl1.BackColor = System.Drawing.Color.Black;
-            this.vlcControl1.Location = new System.Drawing.Point(40, 12);
-            this.vlcControl1.Name = "vlcControl1";
-            this.vlcControl1.Size = new System.Drawing.Size(558, 246);
-            this.vlcControl1.Spu = -1;
-            this.vlcControl1.TabIndex = 9;
-            this.vlcControl1.Text = "vlcControl1";
-            this.vlcControl1.Visible = false;
-            this.vlcControl1.VlcLibDirectory = ((System.IO.DirectoryInfo)(resources.GetObject("vlcControl1.VlcLibDirectory")));
-            this.vlcControl1.VlcMediaplayerOptions = null;
-            this.vlcControl1.Click += new System.EventHandler(this.vlcControl1_Click);
-            // 
             // carga
             // 
             this.carga.Image = global::TSB_OdooControl_.Properties.Resources.TSBKarga;
@@ -184,7 +168,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1006, 567);
             this.Controls.Add(this.carga);
-            this.Controls.Add(this.vlcControl1);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
@@ -207,7 +190,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vlcControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carga)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -225,7 +207,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private Vlc.DotNet.Forms.VlcControl vlcControl1;
         private System.Windows.Forms.PictureBox carga;
     }
 }
