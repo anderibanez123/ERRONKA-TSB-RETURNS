@@ -17,10 +17,11 @@ namespace TSB_OdooControl_
 {
     public partial class Hasiera : Form
     {
-        // datu baseko konstruktorie hots egin
+        // Datu baseko konstruktoreari hots egin
         private PostgreSQLConnection konexioaPostgreSQL = new PostgreSQLConnection();
         private MySQLConnection konexioaMySQL = new MySQLConnection();
 
+        // Aplikazioaren hasiera funtzioa
         public Hasiera()
         {
             InitializeComponent();
@@ -48,7 +49,19 @@ namespace TSB_OdooControl_
                     carga.Visible = false;
 
                     // Hurrengo leihoa ireki
+                    using (Programa programaLeihoa = new Programa())
+                    {
+                        // Hasiera leihoa eskutatu
+                        this.Hide();
 
+                        // Programa leihoa irakutsi
+                        programaLeihoa.ShowDialog();
+
+                        // Hasiera leihoa itxi, programa leihoa
+                        this.Close();
+
+
+                    }
                 }
 
             }
@@ -91,7 +104,7 @@ namespace TSB_OdooControl_
         }
 
 
-        // DATU BASEKO DATUAK AKTUALIZATU
+        // Datu baseko datuak aktualizatu
         private void DatuBaseDatuakKARGATU()
         {
 

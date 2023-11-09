@@ -63,6 +63,16 @@ namespace TSB_OdooControl_.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _8979038 {
+            get {
+                object obj = ResourceManager.GetObject("_8979038", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AktuIcon {
             get {
                 object obj = ResourceManager.GetObject("AktuIcon", resourceCulture);
@@ -86,6 +96,36 @@ namespace TSB_OdooControl_.Properties {
         internal static System.Drawing.Bitmap engranajeIcon {
             get {
                 object obj = ResourceManager.GetObject("engranajeIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FondoMenu {
+            get {
+                object obj = ResourceManager.GetObject("FondoMenu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FondoMenuVertical {
+            get {
+                object obj = ResourceManager.GetObject("FondoMenuVertical", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FondoMenuVertical2 {
+            get {
+                object obj = ResourceManager.GetObject("FondoMenuVertical2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +166,36 @@ namespace TSB_OdooControl_.Properties {
         internal static System.Drawing.Bitmap ICONO_SIN_FONDO {
             get {
                 object obj = ResourceManager.GetObject("ICONO_SIN_FONDO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap itxi_icon {
+            get {
+                object obj = ResourceManager.GetObject("itxi_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap itxi_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("itxi_icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap itxi_icon2 {
+            get {
+                object obj = ResourceManager.GetObject("itxi_icon2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

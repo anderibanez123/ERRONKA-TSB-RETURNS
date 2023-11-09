@@ -88,6 +88,7 @@
     <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
     </Reference>
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Net" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -221,9 +222,6 @@
     <None Include="Resources\LOGO_DIFERENTE_SIN_FONDO.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Mesa de trabajo 10.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\pwIcon.png" />
   </ItemGroup>
   <ItemGroup>
@@ -234,6 +232,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\TSBKarga.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mesa de trabajo 10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8979038.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FondoMenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FondoMenuVertical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FondoMenuVertical2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\itxi_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\itxi_icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\itxi_icon2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

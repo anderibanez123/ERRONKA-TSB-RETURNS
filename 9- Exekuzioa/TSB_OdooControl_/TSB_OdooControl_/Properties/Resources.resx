@@ -118,23 +118,32 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="userIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\userIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Mesa de trabajo 10" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Mesa de trabajo 10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="huellaIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\huellaIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FondoMenuVertical2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FondoMenuVertical2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="userIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\userIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_8979038" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8979038.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FondoVisualApp4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FondoVisualApp4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="FondoMenuVertical" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FondoMenuVertical.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="itxi_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\itxi_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LOGO_DIFERENTE_BLANCO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LOGO_DIFERENTE_BLANCO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pwIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pwIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="engranajeIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\engranajeIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AktuIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AktuIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,19 +154,31 @@
   <data name="Raya" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Raya.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="FondoMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FondoMenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LOGO_DIFERENTE_SIN_FONDO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGO_DIFERENTE_SIN_FONDO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ICONO_SIN_FONDO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ICONO_SIN_FONDO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LOGO_DIFERENTE_BLANCO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LOGO_DIFERENTE_BLANCO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="itxi_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\itxi_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TSBKarga" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TSBKarga.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="engranajeIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\engranajeIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dbIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dbIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TSBKarga" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TSBKarga.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="huellaIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\huellaIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="itxi_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\itxi_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
