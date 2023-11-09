@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.snackbar.Snackbar;
 
-/** @noinspection ALL*/
+
 public class loginActivity extends AppCompatActivity {
 
     private Button bt_sesioaHasi;

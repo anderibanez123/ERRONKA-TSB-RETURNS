@@ -3,6 +3,8 @@ package com.example.tsb_kudeapp.db;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import com.example.tsb_kudeapp.db.dbHelper;
+
 
 public class dbHelper extends SQLiteOpenHelper {
 
@@ -26,6 +28,7 @@ public class dbHelper extends SQLiteOpenHelper {
     public dbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
+
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
