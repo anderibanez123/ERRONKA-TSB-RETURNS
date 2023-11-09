@@ -1,6 +1,7 @@
 package com.example.tsb_kudeapp;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -9,9 +10,19 @@ import android.widget.Toast;
 import com.example.tsb_kudeapp.db.PostgreSQLConnection;
 import com.example.tsb_kudeapp.db.Registro;
 import com.example.tsb_kudeapp.db.dbUsers;
+import com.github.mikephil.charting.animation.Easing;
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.PercentFormatter;
+import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -22,6 +33,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.tsb_kudeapp.databinding.ActivityMainBinding;
 
 import java.sql.Connection;
+import java.util.ArrayList;
 import java.util.List;
 import com.example.tsb_kudeapp.db.DatabaseCallback;
 
@@ -34,10 +46,14 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
 
+
+
     // PROGRAMA HASI
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
 
         // SESIOAREN LEIHOA IREKI
         Intent intent = new Intent(this, loginActivity.class);
@@ -62,12 +78,14 @@ public class MainActivity extends AppCompatActivity {
                             // PostgreSQL-ko datuak lortu
                             List<Registro> erabiltzaileak = konexioa.erabiltzeDatuakLortu();
 
+
                             // dbUser sortu
                             dbUsers usersDB = new dbUsers(MainActivity.this);
 
                             // Datuak datu base barruan sartu
                             for (Registro registro : erabiltzaileak) {
                                 usersDB.erabiltzaileakSartu(registro.getErabiltzailea(), registro.getEmail(), registro.getEnpresa());
+                                
                             }
 
                             // Konexioa itxi
@@ -132,6 +150,7 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
 
 
 

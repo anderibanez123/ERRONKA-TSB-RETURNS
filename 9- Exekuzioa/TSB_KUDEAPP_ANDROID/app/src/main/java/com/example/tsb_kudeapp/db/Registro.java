@@ -11,6 +11,8 @@ public class Registro {
         this.enpresa = enpresa;
     }
 
+
+
     public String getErabiltzailea() {
         return this.erabiltzailea;
     }
