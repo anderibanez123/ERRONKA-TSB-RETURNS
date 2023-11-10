@@ -12,6 +12,10 @@ public class dbUsers {
     public dbUsers(Context context) {
         this.context = context;
         SQLite = new SQLite(context);
+
+        // Datu berriak sartu aurretik, lehengoko datuak ezabatzen ditugu
+        SQLiteDatabase db = SQLite.getWritableDatabase();
+        db.delete(SQLite.TABLE_KOMERTZIALA, null, null);
     }
 
     public long erabiltzaileakSartu(String erabiltzailea, String email, String enpresa) {

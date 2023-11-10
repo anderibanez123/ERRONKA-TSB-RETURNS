@@ -12,6 +12,10 @@ public class dbCRM {
     public dbCRM(Context context) {
         this.context = context;
         SQLite = new SQLite(context);
+
+        // Datu berriak sartu aurretik, lehengoko datuak ezabatzen ditugu
+        SQLiteDatabase db = SQLite.getWritableDatabase();
+        db.delete(SQLite.TABLE_CRM, null, null);
     }
 
     public long CRMSartu(String izena, String mota, String klientea, String enpresa, String etapa, String kanpaina, String iturria, String komunikabidea, String estatua,
