@@ -1,6 +1,7 @@
 package com.example.tsb_kudeapp;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -12,6 +13,7 @@ import com.example.tsb_kudeapp.db.RegistroHornitzaileak;
 import com.example.tsb_kudeapp.db.RegistroProduktua;
 import com.example.tsb_kudeapp.db.RegistroSalmenta;
 import com.example.tsb_kudeapp.db.RegistroUser;
+import com.example.tsb_kudeapp.db.SQLite;
 import com.example.tsb_kudeapp.db.dbCRM;
 import com.example.tsb_kudeapp.db.dbHornitzaileak;
 import com.example.tsb_kudeapp.db.dbProduktua;
@@ -137,8 +139,6 @@ public class MainActivity extends AppCompatActivity {
                             List<RegistroProduktua> produktuak = konexioa.ProduktuaDatuakLortu();
 
                             dbProduktua produktuakDB = new dbProduktua(MainActivity.this);
-
-                            //izena, kategoria, mota, prezioa, pisua, saldu_ok, erosi_ok, faktura_politika, deskribapena
 
                             for (RegistroProduktua registro : produktuak){
                                 produktuakDB.ProduktuakSartu(registro.getIzena(), registro.getKategoria(), registro.getMota(), registro.getPrezioa(), registro.getPisua(),

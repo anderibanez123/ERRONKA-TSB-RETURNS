@@ -12,6 +12,10 @@ public class dbProduktua {
     public dbProduktua(Context context) {
         this.context = context;
         SQLite = new SQLite(context);
+
+        // Datu berriak sartu aurretik, lehengoko datuak ezabatzen ditugu
+        SQLiteDatabase db = SQLite.getWritableDatabase();
+        db.delete(SQLite.TABLE_PRODUKTUA, null, null);
     }
 
     public long ProduktuakSartu(String izena, String kategoria, String mota, String prezioa, String pisua, String saldu_ok, String erosi_ok, String faktura_politika,

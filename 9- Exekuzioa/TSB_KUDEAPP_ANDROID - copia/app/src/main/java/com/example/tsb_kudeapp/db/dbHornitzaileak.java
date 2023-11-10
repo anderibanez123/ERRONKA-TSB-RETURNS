@@ -12,6 +12,10 @@ public class dbHornitzaileak {
     public dbHornitzaileak(Context context) {
         this.context = context;
         SQLite = new SQLite(context);
+
+        // Datu berriak sartu aurretik, lehengoko datuak ezabatzen ditugu
+        SQLiteDatabase db = SQLite.getWritableDatabase();
+        db.delete(SQLite.TABLE_HORNITZAILEAK, null, null);
     }
 
     public long HornitzaileakSartu(String izena, String herria, String mota, String korreoa, String mugikorra, String komentarioak) {

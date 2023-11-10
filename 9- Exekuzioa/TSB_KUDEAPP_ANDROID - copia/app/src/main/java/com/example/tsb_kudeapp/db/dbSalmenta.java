@@ -12,6 +12,10 @@ public class dbSalmenta {
     public dbSalmenta(Context context) {
         this.context = context;
         SQLite = new SQLite(context);
+
+        // Datu berriak sartu aurretik, lehengoko datuak ezabatzen ditugu
+        SQLiteDatabase db = SQLite.getWritableDatabase();
+        db.delete(SQLite.TABLE_SALMENTA, null, null);
     }
 
     public long salmentakSartu(String izena, String faktura, String estatua, String klientea, String enpresa, String iraungitzea, String prezio_base, String bez,
