@@ -1,11 +1,11 @@
 package com.example.tsb_kudeapp.db;
 
-public class Registro {
+public class RegistroUser {
     private String erabiltzailea;
     private String email;
     private String enpresa;
 
-    public Registro(String erabiltzailea, String email, String enpresa) {
+    public RegistroUser(String erabiltzailea, String email, String enpresa) {
         this.erabiltzailea = erabiltzailea;
         this.email = email;
         this.enpresa = enpresa;
@@ -25,5 +25,5 @@ public class Registro {
         return this.enpresa;
     }
 
-    // Agrega getters y setters si es necesario
+
 }

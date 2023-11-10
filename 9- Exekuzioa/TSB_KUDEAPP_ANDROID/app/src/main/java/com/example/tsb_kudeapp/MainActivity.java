@@ -1,28 +1,25 @@
 package com.example.tsb_kudeapp;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Toast;
 
-import com.example.tsb_kudeapp.db.PostgreSQLConnection;
-import com.example.tsb_kudeapp.db.Registro;
+import com.example.tsb_kudeapp.db.PostgreSQL;
+import com.example.tsb_kudeapp.db.RegistroCRM;
+import com.example.tsb_kudeapp.db.RegistroHornitzaileak;
+import com.example.tsb_kudeapp.db.RegistroProduktua;
+import com.example.tsb_kudeapp.db.RegistroSalmenta;
+import com.example.tsb_kudeapp.db.RegistroUser;
+import com.example.tsb_kudeapp.db.dbCRM;
+import com.example.tsb_kudeapp.db.dbHornitzaileak;
+import com.example.tsb_kudeapp.db.dbProduktua;
+import com.example.tsb_kudeapp.db.dbSalmenta;
 import com.example.tsb_kudeapp.db.dbUsers;
-import com.github.mikephil.charting.animation.Easing;
-import com.github.mikephil.charting.charts.PieChart;
-import com.github.mikephil.charting.components.Description;
-import com.github.mikephil.charting.components.Legend;
-import com.github.mikephil.charting.data.PieData;
-import com.github.mikephil.charting.data.PieDataSet;
-import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.formatter.PercentFormatter;
-import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -33,14 +30,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.tsb_kudeapp.databinding.ActivityMainBinding;
 
 import java.sql.Connection;
-import java.util.ArrayList;
 import java.util.List;
-import com.example.tsb_kudeapp.db.DatabaseCallback;
+import com.example.tsb_kudeapp.db.DBCallback;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    private PostgreSQLConnection konexioa = new PostgreSQLConnection();
+    private PostgreSQL konexioa = new PostgreSQL();
 
     // APPeko MENUAren aukerak
     private AppBarConfiguration mAppBarConfiguration;
@@ -63,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         setSupportActionBar(binding.appBarMain.toolbar);
 
-        // KLIK DATU BASE BOTOIARI
+        // DATU BASE BOTOIA
         binding.appBarMain.dbAktualizatuBT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,28 +67,90 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
 
                 // PostgreSQL-ekin konexioa ezarri
-                konexioa.konexioaIrekiAsync(new DatabaseCallback() {
+                konexioa.konexioaIrekiAsync(new DBCallback() {
                     @Override
                     public void onConnectionEstablished(Connection connection) {
                         if (connection != null) {
-                            // PostgreSQL-ko datuak lortu
-                            List<Registro> erabiltzaileak = konexioa.erabiltzeDatuakLortu();
+
+                            // ERABILTZAILEAK HASIERA -->
+
+                            // PostgreSQL-ko datuak lortu - Erabiltzaileak
+                            List<RegistroUser> erabiltzaileak = konexioa.erabiltzeDatuakLortu();
 
 
-                            // dbUser sortu
+                            // dbUsers objetua sortu
                             dbUsers usersDB = new dbUsers(MainActivity.this);
 
                             // Datuak datu base barruan sartu
-                            for (Registro registro : erabiltzaileak) {
+                            for (RegistroUser registro : erabiltzaileak) {
                                 usersDB.erabiltzaileakSartu(registro.getErabiltzailea(), registro.getEmail(), registro.getEnpresa());
                                 
                             }
 
+                            // <-- ERABILTZAILEAK BUKAERA
+
+                            // SALMENTAK HASIERA -->
+
+                            List<RegistroSalmenta> salmentak = konexioa.salmentaDatuakLortu();
+
+                            dbSalmenta salmentaDB = new dbSalmenta(MainActivity.this);
+
+                            for (RegistroSalmenta registro : salmentak){
+                                salmentaDB.salmentakSartu(registro.getIzena(), registro.getFaktura(), registro.getEstatua(), registro.getKlientea(), registro.getEnpresa(),
+                                        registro.getIraungitzea(), registro.getPrezio_base(), registro.getBez(), registro.getPrezio_finala(), registro.getSortu_data(), registro.getEskaera_data());
+                            }
+
+                            // <-- SALMENTAK BUKAERA
+
+                            // CRM HASIERA -->
+
+                            List<RegistroCRM> CRM = konexioa.CRMDatuakLortu();
+
+                            dbCRM crmDB = new dbCRM(MainActivity.this);
+
+                            for (RegistroCRM registro : CRM){
+                                crmDB.CRMSartu(registro.getIzena(), registro.getMota(), registro.getKlientea(), registro.getEnpresa(), registro.getEtapa(), registro.getKanpaina(),
+                                        registro.getIturria(), registro.getKomunikabidea(), registro.getEstatua(), registro.getHerri_kodea(), registro.getTelf_zenbakia(),
+                                        registro.getEmail(), registro.getKontaktu_izena(), registro.getEpemuga(), registro.getEspero_dirua(), registro.getSarrera_proportzionala(),
+                                        registro.getProbabilitatea(), registro.getItxi_data(), registro.getIreki_data());
+                            }
+
+
+                            // <-- CRM BUKAERA
+
+                            // HORNITZAILEAK HASIERA -->
+
+
+                            List<RegistroHornitzaileak> hornitzaileak = konexioa.HornitzaileakDatuakLortu();
+
+                            dbHornitzaileak hornitzaileakDB = new dbHornitzaileak(MainActivity.this);
+
+                            for (RegistroHornitzaileak registro : hornitzaileak){
+                                hornitzaileakDB.HornitzaileakSartu(registro.getIzena(), registro.getHerria(), registro.getMota(), registro.getKorreoa(), registro.getMugikorra(),
+                                        registro.getKomentarioak());
+                            }
+
+                            // <-- HORNITZAILEAK BUKAERA
+
+                            // PRODUKTUA HASIERA -->
+
+                            List<RegistroProduktua> produktuak = konexioa.ProduktuaDatuakLortu();
+
+                            dbProduktua produktuakDB = new dbProduktua(MainActivity.this);
+
+                            //izena, kategoria, mota, prezioa, pisua, saldu_ok, erosi_ok, faktura_politika, deskribapena
+
+                            for (RegistroProduktua registro : produktuak){
+                                produktuakDB.ProduktuakSartu(registro.getIzena(), registro.getKategoria(), registro.getMota(), registro.getPrezioa(), registro.getPisua(),
+                                        registro.getSaldu_ok(), registro.getErosi_ok(), registro.getFaktura_politika(), registro.getDeskribapena());
+                            }
+
+                            // <-- PRODUKTUA BUKAERA
+
+
                             // Konexioa itxi
                             konexioa.konexioaItxi();
 
-                            // Notificar la finalización de la consulta
-                            onQueryCompleted(erabiltzaileak);
                         } else {
                             // Datuak ezin baditugu berritu
                             runOnUiThread(() -> {
@@ -108,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onQueryCompleted(List<Registro> registros) {
+                    public void onQueryCompleted(List<RegistroUser> registros) {
                         // Manejar la finalización de la consulta aquí
                         Toast.makeText(MainActivity.this, "Ondo", Toast.LENGTH_LONG).show();
                     }

@@ -3,10 +3,10 @@ package com.example.tsb_kudeapp.db;
 import java.sql.Connection;
 import java.util.List;
 
-public interface DatabaseCallback {
+public interface DBCallback {
     void onConnectionEstablished(Connection connection);
     void onConnectionFailed(Exception e);
-    void onQueryCompleted(List<Registro> registros);
+    void onQueryCompleted(List<RegistroUser> registros);
     void onQueryFailed(Exception e);
 }
 
