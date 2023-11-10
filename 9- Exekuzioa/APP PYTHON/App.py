@@ -14,14 +14,18 @@ def dockerIreki():
     except subprocess.CalledProcessError as e:
         print(f"Errore bat gertatu da Docker irekitzerakoan: {e}")
 
-def klienteaSortu():
-    client = docker.from_env()
+def daeemonKonektatu():
+    
+    host = '127.0.0.1'
+    portua = '2375'  # Docker API-ko portu nagusia
+
+    client = docker.DockerClient(base_url=f'tcp://{host}:{portua}')
     return client
 
 def kontainerrakAteraEtaHasi():
     try:
-        # Kliente sortu funtzioa deitu
-        client = klienteaSortu()
+        # Daemon konektatu remotoki
+        client = daeemonKonektatu()
         
         # Dockerreko kontainerren izena eta ID-a azaltzen du
         containers = client.containers.list()
