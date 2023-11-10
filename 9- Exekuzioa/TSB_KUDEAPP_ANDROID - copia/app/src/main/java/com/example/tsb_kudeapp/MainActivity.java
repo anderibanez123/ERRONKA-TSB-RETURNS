@@ -7,7 +7,15 @@ import android.view.Menu;
 import android.widget.Toast;
 
 import com.example.tsb_kudeapp.db.PostgreSQL;
+import com.example.tsb_kudeapp.db.RegistroCRM;
+import com.example.tsb_kudeapp.db.RegistroHornitzaileak;
+import com.example.tsb_kudeapp.db.RegistroProduktua;
+import com.example.tsb_kudeapp.db.RegistroSalmenta;
 import com.example.tsb_kudeapp.db.RegistroUser;
+import com.example.tsb_kudeapp.db.dbCRM;
+import com.example.tsb_kudeapp.db.dbHornitzaileak;
+import com.example.tsb_kudeapp.db.dbProduktua;
+import com.example.tsb_kudeapp.db.dbSalmenta;
 import com.example.tsb_kudeapp.db.dbUsers;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -63,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onConnectionEstablished(Connection connection) {
                         if (connection != null) {
+
                             // ERABILTZAILEAK HASIERA -->
 
                             // PostgreSQL-ko datuak lortu - Erabiltzaileak
@@ -79,6 +88,65 @@ public class MainActivity extends AppCompatActivity {
                             }
 
                             // <-- ERABILTZAILEAK BUKAERA
+
+                            // SALMENTAK HASIERA -->
+
+                            List<RegistroSalmenta> salmentak = konexioa.salmentaDatuakLortu();
+
+                            dbSalmenta salmentaDB = new dbSalmenta(MainActivity.this);
+
+                            for (RegistroSalmenta registro : salmentak){
+                                salmentaDB.salmentakSartu(registro.getIzena(), registro.getFaktura(), registro.getEstatua(), registro.getKlientea(), registro.getEnpresa(),
+                                        registro.getIraungitzea(), registro.getPrezio_base(), registro.getBez(), registro.getPrezio_finala(), registro.getSortu_data(), registro.getEskaera_data());
+                            }
+
+                            // <-- SALMENTAK BUKAERA
+
+                            // CRM HASIERA -->
+
+                            List<RegistroCRM> CRM = konexioa.CRMDatuakLortu();
+
+                            dbCRM crmDB = new dbCRM(MainActivity.this);
+
+                            for (RegistroCRM registro : CRM){
+                                crmDB.CRMSartu(registro.getIzena(), registro.getMota(), registro.getKlientea(), registro.getEnpresa(), registro.getEtapa(), registro.getKanpaina(),
+                                        registro.getIturria(), registro.getKomunikabidea(), registro.getEstatua(), registro.getHerri_kodea(), registro.getTelf_zenbakia(),
+                                        registro.getEmail(), registro.getKontaktu_izena(), registro.getEpemuga(), registro.getEspero_dirua(), registro.getSarrera_proportzionala(),
+                                        registro.getProbabilitatea(), registro.getItxi_data(), registro.getIreki_data());
+                            }
+
+
+                            // <-- CRM BUKAERA
+
+                            // HORNITZAILEAK HASIERA -->
+
+
+                            List<RegistroHornitzaileak> hornitzaileak = konexioa.HornitzaileakDatuakLortu();
+
+                            dbHornitzaileak hornitzaileakDB = new dbHornitzaileak(MainActivity.this);
+
+                            for (RegistroHornitzaileak registro : hornitzaileak){
+                                hornitzaileakDB.HornitzaileakSartu(registro.getIzena(), registro.getHerria(), registro.getMota(), registro.getKorreoa(), registro.getMugikorra(),
+                                        registro.getKomentarioak());
+                            }
+
+                            // <-- HORNITZAILEAK BUKAERA
+
+                            // PRODUKTUA HASIERA -->
+
+                            List<RegistroProduktua> produktuak = konexioa.ProduktuaDatuakLortu();
+
+                            dbProduktua produktuakDB = new dbProduktua(MainActivity.this);
+
+                            //izena, kategoria, mota, prezioa, pisua, saldu_ok, erosi_ok, faktura_politika, deskribapena
+
+                            for (RegistroProduktua registro : produktuak){
+                                produktuakDB.ProduktuakSartu(registro.getIzena(), registro.getKategoria(), registro.getMota(), registro.getPrezioa(), registro.getPisua(),
+                                        registro.getSaldu_ok(), registro.getErosi_ok(), registro.getFaktura_politika(), registro.getDeskribapena());
+                            }
+
+                            // <-- PRODUKTUA BUKAERA
+
 
                             // Konexioa itxi
                             konexioa.konexioaItxi();
