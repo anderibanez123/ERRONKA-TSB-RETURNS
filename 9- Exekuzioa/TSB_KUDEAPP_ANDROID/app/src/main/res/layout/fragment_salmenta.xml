@@ -1,10 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.salmentak.SalmentaFragment">
+    android:orientation="vertical">
 
+    <!-- Página de Resumen de Ventas -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Resumen de Ventas" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Lista de Pedidos -->
+    <ListView
+        android:id="@+id/listViewOrders"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Detalles del Pedido -->
+    <FrameLayout
+        android:id="@+id/frameOrderDetails"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>
