@@ -10,7 +10,8 @@ public class MySQLConnection
     public MySQLConnection()
     {
         // MySQL konexiorako behar ditugun datuak
-        connectionString = "Server=10.23.28.188;Database=tsb_db;User ID=tsb;Password=tsb";
+        //connectionString = "Server=10.23.28.188;Database=tsb_db;User ID=tsb;Password=tsb";
+        connectionString = "Server=localhost;Database=tsb_db;User ID=tsb;Password=tsb";
         connection = new MySqlConnection(connectionString);
     }
 

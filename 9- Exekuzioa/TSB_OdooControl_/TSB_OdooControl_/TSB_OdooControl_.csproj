@@ -149,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MySQLConnection.cs" />
+    <Compile Include="ProduktuDatuak.cs" />
     <Compile Include="Programa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,13 +250,16 @@
     <None Include="Resources\FondoMenuVertical2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\itxi_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\itxi_icon1.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\itxi_icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\itxi_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\itxi_icon3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
