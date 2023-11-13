@@ -29,10 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Programa));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelPrintzipala = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panelGrafiko = new System.Windows.Forms.TableLayoutPanel();
             this.DGVtaulak = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelBilaketa = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.bilatzailea_TB = new System.Windows.Forms.TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -56,10 +66,17 @@
             this.BTNhasiera = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Chart_Irabaziak = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.Chart_hornitzaileak = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Chart_3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label_3 = new System.Windows.Forms.Label();
             this.panelPrintzipala.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panelGrafiko.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVtaulak)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.panelBilaketa.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -71,26 +88,54 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Chart_Irabaziak)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Chart_hornitzaileak)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Chart_3)).BeginInit();
             this.SuspendLayout();
             // 
             // panelPrintzipala
             // 
             this.panelPrintzipala.Controls.Add(this.panel4);
-            this.panelPrintzipala.Controls.Add(this.panel3);
+            this.panelPrintzipala.Controls.Add(this.panelBilaketa);
             this.panelPrintzipala.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelPrintzipala.Location = new System.Drawing.Point(215, 0);
+            this.panelPrintzipala.Location = new System.Drawing.Point(224, 0);
             this.panelPrintzipala.Name = "panelPrintzipala";
-            this.panelPrintzipala.Size = new System.Drawing.Size(1032, 663);
+            this.panelPrintzipala.Size = new System.Drawing.Size(1256, 814);
             this.panelPrintzipala.TabIndex = 2;
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel4.Controls.Add(this.panelGrafiko);
             this.panel4.Controls.Add(this.DGVtaulak);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 123);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1032, 540);
+            this.panel4.Size = new System.Drawing.Size(1256, 691);
             this.panel4.TabIndex = 1;
+            // 
+            // panelGrafiko
+            // 
+            this.panelGrafiko.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panelGrafiko.ColumnCount = 2;
+            this.panelGrafiko.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.84076F));
+            this.panelGrafiko.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.15924F));
+            this.panelGrafiko.Controls.Add(this.Chart_Irabaziak, 0, 2);
+            this.panelGrafiko.Controls.Add(this.Chart_hornitzaileak, 1, 2);
+            this.panelGrafiko.Controls.Add(this.label3, 0, 3);
+            this.panelGrafiko.Controls.Add(this.label4, 1, 3);
+            this.panelGrafiko.Controls.Add(this.Chart_3, 1, 1);
+            this.panelGrafiko.Controls.Add(this.label_3, 1, 0);
+            this.panelGrafiko.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelGrafiko.Location = new System.Drawing.Point(0, 0);
+            this.panelGrafiko.Name = "panelGrafiko";
+            this.panelGrafiko.RowCount = 4;
+            this.panelGrafiko.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.065123F));
+            this.panelGrafiko.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.33719F));
+            this.panelGrafiko.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.95369F));
+            this.panelGrafiko.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.499277F));
+            this.panelGrafiko.Size = new System.Drawing.Size(1256, 691);
+            this.panelGrafiko.TabIndex = 1;
             // 
             // DGVtaulak
             // 
@@ -101,20 +146,21 @@
             this.DGVtaulak.ReadOnly = true;
             this.DGVtaulak.RowHeadersWidth = 51;
             this.DGVtaulak.RowTemplate.Height = 24;
-            this.DGVtaulak.Size = new System.Drawing.Size(1032, 540);
+            this.DGVtaulak.Size = new System.Drawing.Size(1256, 691);
             this.DGVtaulak.TabIndex = 0;
             // 
-            // panel3
+            // panelBilaketa
             // 
-            this.panel3.Controls.Add(this.panel7);
-            this.panel3.Controls.Add(this.panel6);
-            this.panel3.Controls.Add(this.panel5);
-            this.panel3.Controls.Add(this.Label_Titulua);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1032, 123);
-            this.panel3.TabIndex = 0;
+            this.panelBilaketa.Controls.Add(this.panel7);
+            this.panelBilaketa.Controls.Add(this.panel6);
+            this.panelBilaketa.Controls.Add(this.panel5);
+            this.panelBilaketa.Controls.Add(this.Label_Titulua);
+            this.panelBilaketa.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelBilaketa.Location = new System.Drawing.Point(0, 0);
+            this.panelBilaketa.Name = "panelBilaketa";
+            this.panelBilaketa.Size = new System.Drawing.Size(1256, 123);
+            this.panelBilaketa.TabIndex = 0;
+            this.panelBilaketa.Visible = false;
             // 
             // panel7
             // 
@@ -124,7 +170,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(55, 52);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(927, 71);
+            this.panel7.Size = new System.Drawing.Size(1151, 71);
             this.panel7.TabIndex = 4;
             // 
             // bilatzailea_TB
@@ -133,7 +179,7 @@
             this.bilatzailea_TB.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bilatzailea_TB.Location = new System.Drawing.Point(0, 33);
             this.bilatzailea_TB.Name = "bilatzailea_TB";
-            this.bilatzailea_TB.Size = new System.Drawing.Size(927, 27);
+            this.bilatzailea_TB.Size = new System.Drawing.Size(1151, 27);
             this.bilatzailea_TB.TabIndex = 2;
             this.bilatzailea_TB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bilatzailea_TB_KeyPress);
             // 
@@ -142,7 +188,7 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel9.Location = new System.Drawing.Point(0, 58);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(927, 13);
+            this.panel9.Size = new System.Drawing.Size(1151, 13);
             this.panel9.TabIndex = 1;
             // 
             // panel8
@@ -151,7 +197,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(927, 33);
+            this.panel8.Size = new System.Drawing.Size(1151, 33);
             this.panel8.TabIndex = 0;
             // 
             // label_bilatu
@@ -169,7 +215,7 @@
             // panel6
             // 
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(982, 52);
+            this.panel6.Location = new System.Drawing.Point(1206, 52);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(50, 71);
             this.panel6.TabIndex = 3;
@@ -221,7 +267,7 @@
             this.Label_Titulua.Location = new System.Drawing.Point(0, 0);
             this.Label_Titulua.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.Label_Titulua.Name = "Label_Titulua";
-            this.Label_Titulua.Size = new System.Drawing.Size(1032, 52);
+            this.Label_Titulua.Size = new System.Drawing.Size(1256, 52);
             this.Label_Titulua.TabIndex = 0;
             this.Label_Titulua.Text = "HASIERA";
             this.Label_Titulua.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -243,7 +289,7 @@
             this.panelMenua.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenua.Location = new System.Drawing.Point(0, 0);
             this.panelMenua.Name = "panelMenua";
-            this.panelMenua.Size = new System.Drawing.Size(215, 663);
+            this.panelMenua.Size = new System.Drawing.Size(224, 814);
             this.panelMenua.TabIndex = 1;
             // 
             // BTNerabiltzaileak
@@ -259,7 +305,7 @@
             this.BTNerabiltzaileak.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(119)))), ((int)(((byte)(139)))));
             this.BTNerabiltzaileak.Location = new System.Drawing.Point(0, 416);
             this.BTNerabiltzaileak.Name = "BTNerabiltzaileak";
-            this.BTNerabiltzaileak.Size = new System.Drawing.Size(215, 58);
+            this.BTNerabiltzaileak.Size = new System.Drawing.Size(224, 58);
             this.BTNerabiltzaileak.TabIndex = 7;
             this.BTNerabiltzaileak.Text = "ERABILTZAILEAK";
             this.BTNerabiltzaileak.UseVisualStyleBackColor = true;
@@ -269,16 +315,16 @@
             // 
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 607);
+            this.panel1.Location = new System.Drawing.Point(0, 758);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(215, 56);
+            this.panel1.Size = new System.Drawing.Size(224, 56);
             this.panel1.TabIndex = 6;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(140, 0);
+            this.panel2.Location = new System.Drawing.Point(149, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(75, 56);
             this.panel2.TabIndex = 0;
@@ -308,7 +354,7 @@
             this.BTNhornitzaileak.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(119)))), ((int)(((byte)(139)))));
             this.BTNhornitzaileak.Location = new System.Drawing.Point(0, 358);
             this.BTNhornitzaileak.Name = "BTNhornitzaileak";
-            this.BTNhornitzaileak.Size = new System.Drawing.Size(215, 58);
+            this.BTNhornitzaileak.Size = new System.Drawing.Size(224, 58);
             this.BTNhornitzaileak.TabIndex = 5;
             this.BTNhornitzaileak.Text = "HORNITZAILEAK";
             this.BTNhornitzaileak.UseVisualStyleBackColor = true;
@@ -327,7 +373,7 @@
             this.BTNgastuak.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(119)))), ((int)(((byte)(139)))));
             this.BTNgastuak.Location = new System.Drawing.Point(0, 300);
             this.BTNgastuak.Name = "BTNgastuak";
-            this.BTNgastuak.Size = new System.Drawing.Size(215, 58);
+            this.BTNgastuak.Size = new System.Drawing.Size(224, 58);
             this.BTNgastuak.TabIndex = 4;
             this.BTNgastuak.Text = "GASTUAK";
             this.BTNgastuak.UseVisualStyleBackColor = true;
@@ -346,7 +392,7 @@
             this.BTNsalmentak.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(119)))), ((int)(((byte)(139)))));
             this.BTNsalmentak.Location = new System.Drawing.Point(0, 242);
             this.BTNsalmentak.Name = "BTNsalmentak";
-            this.BTNsalmentak.Size = new System.Drawing.Size(215, 58);
+            this.BTNsalmentak.Size = new System.Drawing.Size(224, 58);
             this.BTNsalmentak.TabIndex = 3;
             this.BTNsalmentak.Text = "SALMENTAK";
             this.BTNsalmentak.UseVisualStyleBackColor = true;
@@ -365,7 +411,7 @@
             this.BTNproduktuak.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(119)))), ((int)(((byte)(139)))));
             this.BTNproduktuak.Location = new System.Drawing.Point(0, 184);
             this.BTNproduktuak.Name = "BTNproduktuak";
-            this.BTNproduktuak.Size = new System.Drawing.Size(215, 58);
+            this.BTNproduktuak.Size = new System.Drawing.Size(224, 58);
             this.BTNproduktuak.TabIndex = 2;
             this.BTNproduktuak.Text = "PRODUKTUAK";
             this.BTNproduktuak.UseVisualStyleBackColor = true;
@@ -384,7 +430,7 @@
             this.BTNhasiera.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(119)))), ((int)(((byte)(139)))));
             this.BTNhasiera.Location = new System.Drawing.Point(0, 126);
             this.BTNhasiera.Name = "BTNhasiera";
-            this.BTNhasiera.Size = new System.Drawing.Size(215, 58);
+            this.BTNhasiera.Size = new System.Drawing.Size(224, 58);
             this.BTNhasiera.TabIndex = 1;
             this.BTNhasiera.Text = "HASIERA";
             this.BTNhasiera.UseVisualStyleBackColor = true;
@@ -396,7 +442,7 @@
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(215, 126);
+            this.panelLogo.Size = new System.Drawing.Size(224, 126);
             this.panelLogo.TabIndex = 0;
             // 
             // pictureBox1
@@ -406,11 +452,115 @@
             this.pictureBox1.Image = global::TSB_OdooControl_.Properties.Resources.LOGO_DIFERENTE_SIN_FONDO;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(215, 126);
+            this.pictureBox1.Size = new System.Drawing.Size(224, 126);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // Chart_Irabaziak
+            // 
+            this.Chart_Irabaziak.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            this.Chart_Irabaziak.ChartAreas.Add(chartArea1);
+            this.Chart_Irabaziak.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.Name = "Legend1";
+            this.Chart_Irabaziak.Legends.Add(legend1);
+            this.Chart_Irabaziak.Location = new System.Drawing.Point(3, 296);
+            this.Chart_Irabaziak.Name = "Chart_Irabaziak";
+            this.Chart_Irabaziak.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            this.Chart_Irabaziak.PaletteCustomColors = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(119)))), ((int)(((byte)(139))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(164)))), ((int)(((byte)(182))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(188)))), ((int)(((byte)(204)))))};
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.Chart_Irabaziak.Series.Add(series1);
+            this.Chart_Irabaziak.Size = new System.Drawing.Size(620, 353);
+            this.Chart_Irabaziak.TabIndex = 5;
+            this.Chart_Irabaziak.Text = "chart1";
+            // 
+            // Chart_hornitzaileak
+            // 
+            this.Chart_hornitzaileak.BackColor = System.Drawing.Color.Transparent;
+            this.Chart_hornitzaileak.BorderlineColor = System.Drawing.Color.Transparent;
+            chartArea2.Name = "ChartArea1";
+            this.Chart_hornitzaileak.ChartAreas.Add(chartArea2);
+            this.Chart_hornitzaileak.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend2.Name = "Legend1";
+            this.Chart_hornitzaileak.Legends.Add(legend2);
+            this.Chart_hornitzaileak.Location = new System.Drawing.Point(629, 296);
+            this.Chart_hornitzaileak.Name = "Chart_hornitzaileak";
+            this.Chart_hornitzaileak.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            this.Chart_hornitzaileak.PaletteCustomColors = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(119)))), ((int)(((byte)(139))))),
+        System.Drawing.Color.White,
+        System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(164)))), ((int)(((byte)(182))))),
+        System.Drawing.Color.Silver,
+        System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(188)))), ((int)(((byte)(204)))))};
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.Chart_hornitzaileak.Series.Add(series2);
+            this.Chart_hornitzaileak.Size = new System.Drawing.Size(624, 353);
+            this.Chart_hornitzaileak.TabIndex = 6;
+            this.Chart_hornitzaileak.Text = "chart2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 652);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(620, 39);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "⬆ IRABAZIAK AZKENENGO 20 EGUNETAN ⬆";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(629, 652);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(624, 39);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "⬆ IRABAZIAK AZKENENGO 30 EGUNETAN ⬆";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Chart_3
+            // 
+            this.Chart_3.BackColor = System.Drawing.Color.Transparent;
+            this.Chart_3.BorderlineColor = System.Drawing.Color.Transparent;
+            chartArea3.Name = "ChartArea1";
+            this.Chart_3.ChartAreas.Add(chartArea3);
+            this.Chart_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend3.Name = "Legend1";
+            this.Chart_3.Legends.Add(legend3);
+            this.Chart_3.Location = new System.Drawing.Point(629, 38);
+            this.Chart_3.Name = "Chart_3";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.Chart_3.Series.Add(series3);
+            this.Chart_3.Size = new System.Drawing.Size(624, 252);
+            this.Chart_3.TabIndex = 11;
+            this.Chart_3.Text = "chart1";
+            // 
+            // label_3
+            // 
+            this.label_3.AutoSize = true;
+            this.label_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_3.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_3.Location = new System.Drawing.Point(629, 0);
+            this.label_3.Name = "label_3";
+            this.label_3.Size = new System.Drawing.Size(624, 35);
+            this.label_3.TabIndex = 12;
+            this.label_3.Text = "⬇ IRABAZIAK AZKENENGO 25 EGUNETAN ⬇";
+            this.label_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Programa
             // 
@@ -418,7 +568,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(119)))), ((int)(((byte)(139)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1247, 663);
+            this.ClientSize = new System.Drawing.Size(1480, 814);
             this.Controls.Add(this.panelPrintzipala);
             this.Controls.Add(this.panelMenua);
             this.DoubleBuffered = true;
@@ -430,8 +580,10 @@
             this.Load += new System.EventHandler(this.Programa_Load);
             this.panelPrintzipala.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panelGrafiko.ResumeLayout(false);
+            this.panelGrafiko.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVtaulak)).EndInit();
-            this.panel3.ResumeLayout(false);
+            this.panelBilaketa.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -445,6 +597,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Chart_Irabaziak)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Chart_hornitzaileak)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Chart_3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -463,9 +618,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panelPrintzipala;
         private System.Windows.Forms.Button BTNerabiltzaileak;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView DGVtaulak;
+        private System.Windows.Forms.Panel panelBilaketa;
         private System.Windows.Forms.Label Label_Titulua;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox bilatzailea_TB;
@@ -477,5 +630,14 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.PictureBox resetTaulak;
         private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridView DGVtaulak;
+        private System.Windows.Forms.TableLayoutPanel panelGrafiko;
+        private System.Windows.Forms.DataVisualization.Charting.Chart Chart_Irabaziak;
+        private System.Windows.Forms.DataVisualization.Charting.Chart Chart_hornitzaileak;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataVisualization.Charting.Chart Chart_3;
+        private System.Windows.Forms.Label label_3;
     }
 }
