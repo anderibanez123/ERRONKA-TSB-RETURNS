@@ -30,6 +30,8 @@ public class RegistroProduktua {
     }
 
 
+
+
     public String getIzena() {
         return izena;
     }

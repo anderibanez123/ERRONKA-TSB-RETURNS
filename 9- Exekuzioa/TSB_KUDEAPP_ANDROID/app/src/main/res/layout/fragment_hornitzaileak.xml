@@ -5,16 +5,16 @@
 
 
 
-    <!-- Produktu lista -->
+    <!-- Hornitzaile lista -->
     <ListView
-        android:id="@+id/listViewProducts"
+        android:id="@+id/listViewHornitzaileak"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:layout_marginTop="55dp"/>
 
     <FrameLayout
-        android:id="@+id/frameStockOrders"
+        android:id="@+id/frameHornitzaile"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
@@ -29,10 +29,10 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textViewKategoria"
+                    android:id="@+id/textViewHerria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Kategoria: " />
+                    android:text="Herria: " />
 
                 <TextView
                     android:id="@+id/textViewMota"
@@ -41,40 +41,24 @@
                     android:text="Mota: " />
 
                 <TextView
-                    android:id="@+id/textViewPrezioa"
+                    android:id="@+id/textViewKorreoa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Prezioa: " />
+                    android:text="Korreoa: " />
 
                 <TextView
-                    android:id="@+id/textViewPisua"
+                    android:id="@+id/textViewMugikorra"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pisua: " />
+                    android:text="Mugikorra: " />
 
                 <TextView
-                    android:id="@+id/textViewSalduOk"
+                    android:id="@+id/textViewKomentarioak"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Saldu Ok: " />
+                    android:text="Komentarioak: " />
 
-                <TextView
-                    android:id="@+id/textViewErosiOk"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Erosi Ok: " />
 
-                <TextView
-                    android:id="@+id/textViewFP"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Faktura Politika:"/>
-
-                <TextView
-                    android:id="@+id/textViewDeskribapena"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Deskribapena: " />
 
             </LinearLayout>
         </ScrollView>

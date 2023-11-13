@@ -45,6 +45,7 @@ public class dbProduktua {
         return id;
     }
 
+
     public void close() {
     }
 }
