@@ -84,7 +84,6 @@ namespace TSB_OdooControl_
             else
             {
                 // Hasiera irekita badago, ez dugu ezer egingo
-                MessageBox.Show("Leihoa irekita duzu");
             }
 
 
