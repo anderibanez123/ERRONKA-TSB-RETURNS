@@ -1,6 +1,6 @@
 import docker
 import subprocess
-import time
+
 
 def dockerIreki():
     # Docker irekitzeko komandoa
@@ -13,41 +13,45 @@ def dockerIreki():
     except subprocess.CalledProcessError as e:
         print(f"Errore bat gertatu da Docker irekitzerakoan: {e}")
 
-def daeemonKonektatu():
-    try:
-        # Esperar unos segundos antes de intentar konektatu daemon
-        time.sleep(5)
+def kontenedoreGuztiakPiztu():
+    # Docker kliente bat sortu egiten du
+    client = docker.from_env()
 
-        # Daemon konektatu remotoki
-        client = docker.from_env()
-        print("Docker daemon-era konektatuta.")
-        return client
+    # Kontainer lista bat lortzen du
+    all_containers = client.containers.list(all=True)
 
-    except docker.errors.APIError as e:
-        print(f"Errore bat gertatu da Docker daemon-era konektatzerakoan: {e}")
-        return None
+    if not all_containers:
+        print("Ez daude kontenedoreak.")
+        return
 
-def kontainerrakAteraEtaHasi():
-    try:
-        # Daemon konektatu remotoki
-        client = daeemonKonektatu()
+    # Kontenedore bakoitza pizten du
+    for container in all_containers:
+        # Bere estatua konprobatzen du
+        if container.status == 'exited':
+            # Kontenedorea binkulatuta badago ikusten du
+            links = container.attrs.get('HostConfig', {}).get('Links', [])
 
-        if client:
-            # Dockerreko kontainerren izena eta ID-a azaltzen du
-            containers = client.containers.list()
-            for container in containers:
-                print(f"ID: {container.id}, Izena: {container.name}")
-                # Kontainerraren status-a "Running" ez badago, martxan jartzen du, bestela ez
-                if container.status != 'running':
-                    container.start()
-                    print(f"'{container.name}' Kontainerra martxan jarri da")
-                else:
-                    print(f"'{container.name}' Kontainerra martxan dago")
+            # Berifikatu egiten du
+            if links and any('/db' in link for link in links):
+                # /db kontenedorea lehenengo pizten du, erroreak ez edukitzeko
+                db_container = client.containers.get('db')
+                if db_container.status == 'exited':
+                    print("/db kontenedorea pizten arazoak ez edukitzeko besteekin.")
+                    db_container.start()
 
-    except Exception as e:
-        print(f"Errore bat gertatu da kontainerrak martxan jartzerakoan: {e}")
+            # Kontenedore aktuala pizten du
+            print(f"Kontenedorea pizten: {container.name}")
+            container.start()
+        else:
+            print(f" {container.name} kontenedorea piztuta dago.")
 
-# Docker irekitzeko funtzioa deitu
-dockerIreki()
-# Kontainerrak ikusteko funtzioari deitu
-kontainerrakAteraEtaHasi()
+if __name__ == "__main__":
+    dockerIreki()
+    kontenedoreGuztiakPiztu()
+
+
+
+
+
+
+
