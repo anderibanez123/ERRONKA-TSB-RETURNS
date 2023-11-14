@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Windows.Forms.VisualStyles;
 using TSB_OdooControl;
 
 namespace TSB_OdooControl_
@@ -363,7 +364,7 @@ namespace TSB_OdooControl_
                 MySqlCommand cmdIrabazi = new MySqlCommand(irabaziKontsulta, konexioaMySQL.getKonexioa());
 
                 // Galderen kontsulta
-                string galderaKontsulta = "SELECT ordaindu_data AS eskaera_data, -ordaindu_prezioa AS prezio_totala FROM gastos";
+                string galderaKontsulta = "SELECT sortze_data AS eskaera_data, -ordaindu_prezioa AS prezio_totala FROM gastos";
                 MySqlCommand cmdGaldera = new MySqlCommand(galderaKontsulta, konexioaMySQL.getKonexioa());
 
                 // Irabazi datuak jaso
@@ -446,13 +447,23 @@ namespace TSB_OdooControl_
         // Beheko aldeak azaltzen diren laukien datuak kargatzeko
         private void enpresaDatuakKargatu()
         {
-
+            // Salmenta totalak kargatzeko
             salmentaTotalakKargatu();
 
+            // Hornitzaile kantitatea Kargatzeko
             hornitzaileaKantitateaKargatu();
 
+            // Produktuen kantitatea Kargatzeko
             produktuKantitateaKargatu();
-            
+
+            // Irabazitako diruaren kalkulua egin eta kargatzeko
+            irabaziaKantitateaKargatu();
+
+            // Langileak irakusteko
+            langileakKantitatea();
+
+            // Gastuak kalkulatzeko
+            gastuakKantitatea();
 
         }
         private void salmentaTotalakKargatu()
@@ -473,12 +484,12 @@ namespace TSB_OdooControl_
                 if (emaitza != null)
                 {
                     // Etiketan zenbakia erakutsi
-                    label_Salmentak.Text = "Nº: " + emaitza.ToString();
+                    label_Irabaziak.Text = "Nº: " + emaitza.ToString() + "€";
                 }
                 else
                 {
                     // Emaitza null bada, mezua erakutsi edo behar bada kudeatu
-                    label_Salmentak.Text = "null";
+                    label_Irabaziak.Text = "null";
                 }
             }
             catch (Exception)
@@ -551,6 +562,126 @@ namespace TSB_OdooControl_
                 MessageBox.Show("Ezin izan dugu konexioa ondo ireki.");
                 throw;
             }
+
+        }
+        private void irabaziaKantitateaKargatu()
+        {
+            // SQL kontsultak zehaztu
+            string irabaziakSQL = "SELECT SUM(prezio_totala) FROM tsb_db.compras;";
+            string gastuakSQL = "SELECT SUM(ordaindu_prezioa) FROM tsb_db.gastos WHERE estatua = 'done';";
+
+            try
+            {
+                // Konexioa ireki
+                konexioaMySQL.KonexioaIreki();
+
+                // Komandoa exekutatzeko
+                MySqlCommand cmdIrabaziak = new MySqlCommand(irabaziakSQL, konexioaMySQL.getKonexioa());
+                MySqlCommand cmdGastuak = new MySqlCommand(gastuakSQL, konexioaMySQL.getKonexioa());
+
+                // Irabaziak exekutatu
+                object irabaziakEmaitza = cmdIrabaziak.ExecuteScalar();
+                string irabaziakTotala = irabaziakEmaitza != null ? irabaziakEmaitza.ToString() : "0";
+
+                // Gastuak exekutatu
+                object gastuakEmaitza = cmdGastuak.ExecuteScalar();
+                string gastuakTotala = gastuakEmaitza != null ? gastuakEmaitza.ToString() : "0";
+
+                // Konexioa itxi
+                konexioaMySQL.KonexioaItxi();
+
+                // Emaitzak erakutsi
+                int zbk_Kalkulua;
+
+                // Kalkulua: Irabaziak - Gastuak
+                try
+                {
+                    // IrabaziakTotala eta GastuakTotala String-etik Integer-era bihurtu
+                    int irabaziak = Convert.ToInt32(irabaziakTotala);
+                    int gastuak = Convert.ToInt32(gastuakTotala);
+
+                    // Kalkulua egin
+                    zbk_Kalkulua = irabaziak - gastuak;
+
+                    // Kalkuluaren emaitza erakutsi
+                    label_Salmentak.Text = "Nº: " + zbk_Kalkulua.ToString() + "€";
+                }
+                catch (FormatException ex)
+                {
+                    // Konbertsioan errorea
+                    MessageBox.Show($"Errorea konbertsioan: {ex.Message}", "Errorea");
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Konexioarekin arazoak izan ditugu.", "Datubaseko konexioa");
+                throw;
+            }
+
+        }
+        private void langileakKantitatea()
+        {
+
+            // Langileak lortzeko kontsulta
+            String langileakSQL = "SELECT COUNT(*) FROM tsb_db.usuarios;";
+
+            try
+            {
+                // Konexioa ireki
+                konexioaMySQL.KonexioaIreki();
+
+                // Komandoa exekutatzeko
+                MySqlCommand cmd = new MySqlCommand(langileakSQL, konexioaMySQL.getKonexioa());
+
+                // Langileak exekutatu
+                object langileakEmaitza = cmd.ExecuteScalar();
+                string langileakTotala = langileakEmaitza != null ? langileakEmaitza.ToString() : "0";
+
+                // Konexioa itxi
+                konexioaMySQL.KonexioaItxi();
+
+                // Emaitzak erakutsi
+                label_Langileak.Text = "Nº: " + langileakTotala.ToString();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Konexioarekin arazoak izan ditugu.", "Datubaseko konexioa");
+                throw;
+            }
+        }
+        private void gastuakKantitatea()
+        {
+            // Komprak
+            string gastuakSQL = "SELECT SUM(ordaindu_prezioa) FROM tsb_db.gastos WHERE estatua = 'done';";
+
+            try
+            {
+                // Konexioa ireki
+                konexioaMySQL.KonexioaIreki();
+
+                // Komandoa exekutatzeko
+                MySqlCommand cmd = new MySqlCommand(gastuakSQL, konexioaMySQL.getKonexioa());
+
+                // Langileak exekutatu
+                object gastuakEmaitza = cmd.ExecuteScalar();
+                string gastuakTotala = gastuakEmaitza != null ? gastuakEmaitza.ToString() : "0";
+
+                // Konexioa itxi
+                konexioaMySQL.KonexioaItxi();
+
+                // Emaitzak erakutsi
+                label_Gastuak.Text = "Nº: " + gastuakTotala.ToString() + "€";
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Konexioarekin arazoak izan ditugu.", "Datubaseko konexioa");
+                throw;
+            }
+
+
 
         }
 

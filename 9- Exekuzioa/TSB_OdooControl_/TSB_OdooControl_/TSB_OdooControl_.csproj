@@ -271,5 +271,17 @@
   <ItemGroup>
     <None Include="Resources\SalmentakGuztira.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userIcon_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\irabaziak_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userIcon_grafikoak.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gastuak_icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
