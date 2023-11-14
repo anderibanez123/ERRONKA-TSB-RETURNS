@@ -1,9 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
-
+    android:orientation="vertical">
 
 
     <!-- Hornitzaile lista -->
@@ -11,8 +9,8 @@
         android:id="@+id/listViewHornitzaileak"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="55dp"/>
+        android:layout_marginTop="55dp"
+        android:layout_weight="1" />
 
     <FrameLayout
         android:id="@+id/frameHornitzaile"
@@ -27,44 +25,45 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="30dp">
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="5dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textViewHerria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Herria: "
-                    android:fontFamily="@font/poppins_bold"/>
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Herria: " />
 
                 <TextView
                     android:id="@+id/textViewMota"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Mota: "
-                    android:fontFamily="@font/poppins_bold"/>
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Mota: " />
 
                 <TextView
                     android:id="@+id/textViewKorreoa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Korreoa: "
-                    android:fontFamily="@font/poppins_bold"/>
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Korreoa: " />
 
                 <TextView
                     android:id="@+id/textViewMugikorra"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Mugikorra: "
-                    android:fontFamily="@font/poppins_bold"/>
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Mugikorra: " />
 
                 <TextView
                     android:id="@+id/textViewKomentarioak"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Komentarioak: "
-                    android:fontFamily="@font/poppins_bold"/>
-
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Komentarioak: " />
 
 
             </LinearLayout>

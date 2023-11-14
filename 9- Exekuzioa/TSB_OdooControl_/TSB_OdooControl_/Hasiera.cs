@@ -105,7 +105,7 @@ namespace TSB_OdooControl_
 
                 MessageBox.Show("Sartutako erabiltzaile/pasahitza ez da zuzena.", "ERABILTZAILEA EDO PASAHITZ EZ ZUZENAK");
 
-       
+
             }
 
             return false;

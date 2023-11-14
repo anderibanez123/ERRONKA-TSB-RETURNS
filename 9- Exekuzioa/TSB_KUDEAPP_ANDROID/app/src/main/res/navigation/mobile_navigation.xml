@@ -31,7 +31,7 @@
 
     <fragment
         android:id="@+id/nav_mezua"
-        android:name="com.example.tsb_kudeapp.ui.mezuak.HornitzaileakFragment"
+        android:name="com.example.tsb_kudeapp.ui.hornitzaileak.HornitzaileakFragment"
         android:label="@string/menu_mezua"
         tools:layout="@layout/fragment_hornitzaileak"/>
 

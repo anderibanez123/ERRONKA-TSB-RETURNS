@@ -7,9 +7,11 @@ namespace TSB_OdooControl
 {
     internal class PostgreSQLConnection
     {
+        // Parametroak
         private string connectionString;
         private NpgsqlConnection connection;
 
+        // Konexioa zehazteko datuak
         private string host = "10.23.28.188:8068";
         private string database = "tsb";
         private string username = "tsb";
@@ -22,6 +24,7 @@ namespace TSB_OdooControl
             connection = new NpgsqlConnection(connectionString);
         }
 
+        // PostgreSQLko Konexioa ireki ahal izateko
         public void konexioaIreki()
         {
             if (connection.State == ConnectionState.Closed)
@@ -30,6 +33,7 @@ namespace TSB_OdooControl
             }
         }
 
+        // PostgreSQLko Konexioa itxi ahal izateko
         public void konexioaItxi()
         {
             if (connection.State == ConnectionState.Open)
@@ -38,6 +42,7 @@ namespace TSB_OdooControl
             }
         }
 
+        // PostgreSQLko Konexioa lortu ahal izateko
         public NpgsqlConnection getKonexioa()
         {
             return this.connection;

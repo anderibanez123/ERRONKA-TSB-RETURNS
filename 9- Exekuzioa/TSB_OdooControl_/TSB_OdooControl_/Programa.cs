@@ -57,6 +57,7 @@ namespace TSB_OdooControl_
             this.Close();
         }
 
+        // Menuko hasiera botoia
         private void BTNhasiera_Click(object sender, EventArgs e)
         {
             // Datu taula visible ba dago, kendu
@@ -89,6 +90,7 @@ namespace TSB_OdooControl_
 
         }
 
+        // Menuko produktuak botoia
         private void BTNproduktuak_Click(object sender, EventArgs e)
         {
             
@@ -102,6 +104,7 @@ namespace TSB_OdooControl_
 
         }
 
+        // Menuko salmentak botoia
         private void BTNsalmentak_Click(object sender, EventArgs e)
         {
 
@@ -115,6 +118,7 @@ namespace TSB_OdooControl_
 
         }
 
+        // Menuko gastuak botoia
         private void BTNgastuak_Click(object sender, EventArgs e)
         {
 
@@ -128,6 +132,7 @@ namespace TSB_OdooControl_
 
         }
 
+        // Menuko hornitzaileak botoia
         private void BTNhornitzaileak_Click(object sender, EventArgs e)
         {
             String selectSQL = "SELECT * FROM Proveedores";
@@ -140,6 +145,7 @@ namespace TSB_OdooControl_
 
         }
 
+        // Menuko erabiltzaileak botoia
         private void BTNerabiltzaileak_Click(object sender, EventArgs e)
         {
             String selectSQL = "SELECT * FROM Usuarios";
@@ -152,6 +158,7 @@ namespace TSB_OdooControl_
 
         }
 
+        // MySQL datubaseko datuak lortu eta datagridview barruan irakusteko funtzioa (Select barruan etorriko da, zein taula kargatu behar duen)
         private void datubasekoDatuakLortu(String selectSQL)
         {
             // Irekita al dagoen edo ez konprobatzkeo
@@ -206,6 +213,7 @@ namespace TSB_OdooControl_
             }
         }
 
+        // Tauletan daturen bat bilatzeko aukera ematen digun funtzioa, horren kontrola eramateko
         private void bilatzailea_TB_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
@@ -252,6 +260,7 @@ namespace TSB_OdooControl_
             }
         }
 
+        // Taulako datuak reseteatzeko, bilatzailea erabili ondoren
         private void resetTaulak_Click(object sender, EventArgs e)
         {
             // Lehenengo taula kargatu
@@ -261,6 +270,7 @@ namespace TSB_OdooControl_
             bilatzailea_TB.Clear();
         }
 
+        // Chart bakoizaren diseinuaren funtzioari hots egiteko funtzioa
         private void KonfiguratuCharts()
         {
             // Grafikak konfiguratu
@@ -268,6 +278,7 @@ namespace TSB_OdooControl_
             KonfiguratuChart(Chart_hornitzaileak, "Hornitzaileak", SeriesChartType.Kagi);
         }
 
+        // Chart-en diseinu konfigurazioa
         private void KonfiguratuChart(Chart chart, string serieIzena, SeriesChartType mota)
         {
             if (serieIzena.Equals("Irabaziak"))
@@ -306,6 +317,7 @@ namespace TSB_OdooControl_
 
         }
 
+        // Chart barruan datuak kargatzeko chart-a
         private void datuakKargatuCHART()
         {
             // Salmenta datuak kargatu grafikoaren barruan
@@ -321,6 +333,7 @@ namespace TSB_OdooControl_
             enpresaDatuakKargatu();
         }
 
+        // Chart barroko hornitzailea datuak kontrolatzeko
         private void hornitzaileGrafikoaKargatu()
         {
             try
@@ -351,6 +364,7 @@ namespace TSB_OdooControl_
             }
         }
 
+        // Chart barroko salmenta datuak kontrolatzeko
         private void salmentakGrafikoaKargatu()
         {
             try
@@ -393,6 +407,7 @@ namespace TSB_OdooControl_
 
         }
 
+        // Chart barroko produktu datuak kontrolatzeko
         private void produktuGrafikoa()
         {
             try
