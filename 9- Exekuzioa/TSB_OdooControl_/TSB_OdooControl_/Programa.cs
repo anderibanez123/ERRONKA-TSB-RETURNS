@@ -29,7 +29,7 @@ namespace TSB_OdooControl_
 
             KonfiguratuCharts();
 
-            datuakKargatuCHART_Irabaziak();
+            datuakKargatuCHART();
         }
         
         // Programa kargatzerakoan zer egin behar duen
@@ -206,7 +206,6 @@ namespace TSB_OdooControl_
             }
         }
 
-
         private void bilatzailea_TB_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
@@ -276,23 +275,30 @@ namespace TSB_OdooControl_
                 // Irabaziak grafikoko datuak mugitu
                 chart.Series.Add(serieIzena);
                 Chart_Irabaziak.Series.Remove(Chart_Irabaziak.Series["Series1"]);
-                chart.Series[serieIzena].ChartType = mota;
+                chart.Series[serieIzena].ChartType = SeriesChartType.Line;
+                chart.Series[serieIzena].BorderWidth = 7;
                 chart.Series[serieIzena].XValueType = ChartValueType.Date;
                 chart.ChartAreas["ChartArea1"].AxisX.LabelStyle.Format = "MM-dd";
 
-            }else if (serieIzena.Equals("Hornitzaileak"))
+                // Puntuak konfiguratu tokatzen den tokian
+                Chart_Irabaziak.Series["Irabaziak"].MarkerStyle = MarkerStyle.Circle;
+                Chart_Irabaziak.Series["Irabaziak"].MarkerSize = 10;
+                Chart_Irabaziak.Series["Irabaziak"].MarkerColor = Color.Black;
+
+            }
+            else if (serieIzena.Equals("Hornitzaileak"))
             {
                 // Hornitzaileak grafikoko datuak mugitu
                 Chart_hornitzaileak.Series.Clear();
                 Chart_hornitzaileak.ChartAreas.Clear();
 
-                Chart_hornitzaileak.BackColor = Color.Transparent; // Establecer el fondo del gráfico como transparente
+                Chart_hornitzaileak.BackColor = Color.Transparent;
 
                 ChartArea chartArea = Chart_hornitzaileak.ChartAreas.Add("ChartArea1");
                 chartArea.BackColor = Color.Transparent;
 
                 Chart_hornitzaileak.Series.Add("Hornitzaileak");
-                Chart_hornitzaileak.Series["Hornitzaileak"].ChartType = SeriesChartType.Doughnut;
+                Chart_hornitzaileak.Series["Hornitzaileak"].ChartType = SeriesChartType.Pie;
                 Chart_hornitzaileak.Series["Hornitzaileak"].XValueType = ChartValueType.String;
                 Chart_hornitzaileak.Series["Hornitzaileak"].YValueType = ChartValueType.Double;
                 Chart_hornitzaileak.ChartAreas["ChartArea1"].AxisX.LabelStyle.Enabled = false;
@@ -300,13 +306,19 @@ namespace TSB_OdooControl_
 
         }
 
-        private void datuakKargatuCHART_Irabaziak()
+        private void datuakKargatuCHART()
         {
             // Salmenta datuak kargatu grafikoaren barruan
             salmentakGrafikoaKargatu();
 
             // Gehien erosi duen hornitzailearen datuak kargatu
             hornitzaileGrafikoaKargatu();
+
+            // Gehien saldutako produktuak
+            produktuGrafikoa();
+
+            // Azpiko datu txikiak kargatu
+            enpresaDatuakKargatu();
         }
 
         private void hornitzaileGrafikoaKargatu()
@@ -346,33 +358,82 @@ namespace TSB_OdooControl_
                 // Konexioa ireki
                 konexioaMySQL.KonexioaIreki();
 
-                // Kontsulta
-                string consulta = "SELECT eskaera_data, prezio_totala FROM compras";
+                // Irabazien kontsulta
+                string irabaziKontsulta = "SELECT eskaera_data, prezio_totala FROM compras WHERE prezio_totala > 0";
+                MySqlCommand cmdIrabazi = new MySqlCommand(irabaziKontsulta, konexioaMySQL.getKonexioa());
+
+                // Galderen kontsulta
+                string galderaKontsulta = "SELECT ordaindu_data AS eskaera_data, -ordaindu_prezioa AS prezio_totala FROM gastos";
+                MySqlCommand cmdGaldera = new MySqlCommand(galderaKontsulta, konexioaMySQL.getKonexioa());
+
+                // Irabazi datuak jaso
+                List<Datuak> irabaziak = DatuakLortu(cmdIrabazi);
+
+                // Galdera datuak jaso
+                List<Datuak> galderak = DatuakLortu(cmdGaldera);
+
+                // Irabazi eta galderen datuak elkartu
+                List<Datuak> guztiak = irabaziak.Concat(galderak).ToList();
+
+                // Dena ordenatu dataren arabera
+                guztiak.Sort((a, b) => DateTime.Compare(a.Fecha, b.Fecha));
+
+                // Irabaziak chartean sartu
+                foreach (var datua in guztiak)
+                {
+                    Chart_Irabaziak.Series["Irabaziak"].Points.AddXY(datua.Fecha, datua.GananciaTotal);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ezin izan dugu konexioa ondo ireki.");
+                throw;
+            }
+
+
+        }
+
+        private void produktuGrafikoa()
+        {
+            try
+            {
+                // Konexioa ireki
+                konexioaMySQL.KonexioaIreki();
+
+                // Datuak lortu ahal izateko kontsulta
+                string consulta = "SELECT izena, COUNT(izena) as kopurua FROM compras GROUP BY izena ORDER BY kopurua DESC LIMIT 5";
                 MySqlCommand cmd = new MySqlCommand(consulta, konexioaMySQL.getKonexioa());
+
+                // Grafikoak gehitu aurretik garbitu
+                panelGrafikoak.Controls.Clear();
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
-                    // Datuak gorde
-                    List<Datos> datos = new List<Datos>();
+                    int fila = 0;
 
-                    // Datuak prestatu
-                    while (reader.Read())
+                    while (reader.Read() && fila < 5)
                     {
-                        DateTime fecha = reader.GetDateTime("eskaera_data");
-                        decimal gananciaTotal = reader.GetDecimal("prezio_totala");
+                        string produktuIzena = reader.GetString("izena");
+                        int kantitatea = reader.GetInt32("kopurua");
 
-                        datos.Add(new Datos { Fecha = fecha, GananciaTotal = gananciaTotal });
+                        // Grafikoak sortu
+                        Chart Chart_Produktuak = new Chart();
+                        Chart_Produktuak.Size = new Size(200, 300);
+                        Chart_Produktuak.ChartAreas.Add("ChartArea");
+                        Chart_Produktuak.Series.Add("Salmentak");
+                        Chart_Produktuak.Series["Salmentak"].ChartType = SeriesChartType.Bar;
+                        Chart_Produktuak.Dock = DockStyle.Fill;
+                        Chart_Produktuak.BackColor = Color.Transparent;
+                        Chart_Produktuak.ForeColor = Color.Black;
+
+                        // Grafikoko datuak kargatu
+                        Chart_Produktuak.Series["Salmentak"].Points.AddXY(produktuIzena, kantitatea);
+
+                        // Grafiko bistaratu pantailan irakutsi
+                        panelGrafikoak.Controls.Add(Chart_Produktuak, 0, fila);
+
+                        fila++;
                     }
-
-                    // Datuak dataren arabera txukundu
-                    datos.Sort((a, b) => DateTime.Compare(a.Fecha, b.Fecha));
-
-                    // Puntuak chart barruan sartu
-                    foreach (var dato in datos)
-                    {
-                        Chart_Irabaziak.Series["Irabaziak"].Points.AddXY(dato.Fecha, dato.GananciaTotal);
-                    }
-
                 }
             }
             catch (Exception)
@@ -382,13 +443,143 @@ namespace TSB_OdooControl_
             }
         }
 
+        // Beheko aldeak azaltzen diren laukien datuak kargatzeko
+        private void enpresaDatuakKargatu()
+        {
+
+            salmentaTotalakKargatu();
+
+            hornitzaileaKantitateaKargatu();
+
+            produktuKantitateaKargatu();
+            
+
+        }
+        private void salmentaTotalakKargatu()
+        {
+            try
+            {
+                // Konexioa ireki
+                konexioaMySQL.KonexioaIreki();
+
+                // prezio_totala kolumnaren zenbakia lortzeko kontsulta
+                string kontsultaSQL = "SELECT SUM(prezio_totala) FROM tsb_db.compras";
+                MySqlCommand cmd = new MySqlCommand(kontsultaSQL, konexioaMySQL.getKonexioa());
+
+                // Kontsulta exekutatu eta emaitza lortu
+                object emaitza = cmd.ExecuteScalar();
+
+                // Emaitza ez bada null, labelSuma etiketan erakutsi
+                if (emaitza != null)
+                {
+                    // Etiketan zenbakia erakutsi
+                    label_Salmentak.Text = "Nº: " + emaitza.ToString();
+                }
+                else
+                {
+                    // Emaitza null bada, mezua erakutsi edo behar bada kudeatu
+                    label_Salmentak.Text = "null";
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ezin izan dugu konexioa ondo ireki.");
+                throw;
+            }
+
+        }
+        private void hornitzaileaKantitateaKargatu()
+        {
+            try
+            {
+                // Konexioa ireki
+                konexioaMySQL.KonexioaIreki();
+
+                // hornitzaile kantitate totala jakitzeko
+                string kontsultaSQL = "SELECT count(*) FROM tsb_db.proveedores;";
+                MySqlCommand cmd = new MySqlCommand(kontsultaSQL, konexioaMySQL.getKonexioa());
+
+                // Kontsulta exekutatu eta emaitza lortu
+                object emaitza = cmd.ExecuteScalar();
+
+                // Emaitza ez bada null, labelSuma etiketan erakutsi
+                if (emaitza != null)
+                {
+                    // Etiketan zenbakia erakutsi
+                    label_Hornitzaileak.Text = "Nº: " + emaitza.ToString();
+                }
+                else
+                {
+                    // Emaitza null bada, mezua erakutsi edo behar bada kudeatu
+                    label_Hornitzaileak.Text = "null";
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ezin izan dugu konexioa ondo ireki.");
+                throw;
+            }
+        }
+        private void produktuKantitateaKargatu()
+        {
+            try
+            {
+                // Konexioa ireki
+                konexioaMySQL.KonexioaIreki();
+
+                // hornitzaile kantitate totala jakitzeko
+                string kontsultaSQL = "SELECT count(*) FROM tsb_db.productos;";
+                MySqlCommand cmd = new MySqlCommand(kontsultaSQL, konexioaMySQL.getKonexioa());
+
+                // Kontsulta exekutatu eta emaitza lortu
+                object emaitza = cmd.ExecuteScalar();
+
+                // Emaitza ez bada null, labelSuma etiketan erakutsi
+                if (emaitza != null)
+                {
+                    // Etiketan zenbakia erakutsi
+                    label_Produktuak.Text = "Nº: " + emaitza.ToString();
+                }
+                else
+                {
+                    // Emaitza null bada, mezua erakutsi edo behar bada kudeatu
+                    label_Produktuak.Text = "null";
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ezin izan dugu konexioa ondo ireki.");
+                throw;
+            }
+
+        }
+
+
         // Datuak gordetzeko
-        public class Datos
+        public class Datuak
         {
             public DateTime Fecha { get; set; }
             public decimal GananciaTotal { get; set; }
         }
 
+        private List<Datuak> DatuakLortu(MySqlCommand cmd)
+        {
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                List<Datuak> datos = new List<Datuak>();
 
+                while (reader.Read())
+                {
+                    DateTime fecha = reader.GetDateTime("eskaera_data");
+                    decimal gananciaTotal = reader.GetDecimal("prezio_totala");
+
+                    datos.Add(new Datuak { Fecha = fecha, GananciaTotal = gananciaTotal });
+                }
+
+                datos.Sort((a, b) => DateTime.Compare(a.Fecha, b.Fecha));
+
+                return datos;
+            }
+        }
     }
 }

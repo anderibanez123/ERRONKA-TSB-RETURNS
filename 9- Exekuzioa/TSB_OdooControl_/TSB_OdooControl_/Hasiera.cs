@@ -38,7 +38,7 @@ namespace TSB_OdooControl_
                 konexioaMySQL.KonexioaIreki();
 
                 // PostgreSQL Konexioa ireki
-                konexioaPostgreSQL.konexioaIreki();
+                //konexioaPostgreSQL.konexioaIreki();
 
                 // Erabiltzailea konprobatu
                 bool ondo = erabiltzaileaKonprobatu();
@@ -47,7 +47,7 @@ namespace TSB_OdooControl_
                 konexioaMySQL.KonexioaItxi();
 
                 // Behin konprobatuta konexioa dugula, konexioa itxi
-                konexioaPostgreSQL.konexioaItxi();
+                //konexioaPostgreSQL.konexioaItxi();
 
                 if (ondo == true)
                 {
@@ -104,11 +104,24 @@ namespace TSB_OdooControl_
                 carga.Visible = false;
 
                 MessageBox.Show("Sartutako erabiltzaile/pasahitza ez da zuzena.", "ERABILTZAILEA EDO PASAHITZ EZ ZUZENAK");
+
+                using (Programa programaLeihoa = new Programa())
+                {
+                    // Hasiera leihoa eskutatu
+                    this.Hide();
+
+                    // Programa leihoa irakutsi
+                    programaLeihoa.ShowDialog();
+
+                    // Hasiera leihoa itxi, programa leihoa
+                    this.Close();
+
+
+                }
             }
 
             return false;
         }
-
 
         // Datu baseko datuak aktualizatu
         private void DatuBaseDatuakKARGATU()

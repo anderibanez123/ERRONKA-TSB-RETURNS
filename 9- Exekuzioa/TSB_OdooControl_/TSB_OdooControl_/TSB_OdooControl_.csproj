@@ -262,5 +262,14 @@
   <ItemGroup>
     <None Include="Resources\itxi_icon3.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HornitzaileaKantitatea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProduktuKantitatea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SalmentakGuztira.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

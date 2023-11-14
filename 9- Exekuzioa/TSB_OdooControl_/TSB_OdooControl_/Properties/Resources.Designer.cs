@@ -153,6 +153,16 @@ namespace TSB_OdooControl_.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HornitzaileaKantitatea {
+            get {
+                object obj = ResourceManager.GetObject("HornitzaileaKantitatea", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap huellaIcon {
             get {
                 object obj = ResourceManager.GetObject("huellaIcon", resourceCulture);
@@ -223,6 +233,16 @@ namespace TSB_OdooControl_.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ProduktuKantitatea {
+            get {
+                object obj = ResourceManager.GetObject("ProduktuKantitatea", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pwIcon {
             get {
                 object obj = ResourceManager.GetObject("pwIcon", resourceCulture);
@@ -236,6 +256,16 @@ namespace TSB_OdooControl_.Properties {
         internal static System.Drawing.Bitmap Raya {
             get {
                 object obj = ResourceManager.GetObject("Raya", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SalmentakGuztira {
+            get {
+                object obj = ResourceManager.GetObject("SalmentakGuztira", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
