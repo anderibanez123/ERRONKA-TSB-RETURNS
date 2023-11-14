@@ -103,6 +103,8 @@ public class SQLite extends SQLiteOpenHelper {
                 "deskribapena TEXT" +
                 ")");
 
+
+        // izena, faktura, estatua, faktura, klientea, enpresa,  prezio_base,bez, prezio_totala, eskaera_data, baimentze_data
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_COMPRAS + "(" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "izena TEXT," +
@@ -125,8 +127,11 @@ public class SQLite extends SQLiteOpenHelper {
 
     }
 
+    // PieChart-eko datuak lortzeko query-a
     public Cursor getValuesPieChart(){
         SQLiteDatabase bd = this.getReadableDatabase();
+
+        // Query-a
         String query = "SELECT klientea, COUNT(*) AS TotalCompras " +
                 "FROM tbl_compras " +
                 "GROUP BY klientea " +
@@ -137,9 +142,11 @@ public class SQLite extends SQLiteOpenHelper {
         return cursor;
     }
 
+    // BarChart-eko datuak lortzeko query-a
     public Cursor getValuesBarChart(){
 
         SQLiteDatabase bd = this.getReadableDatabase();
+        // Query-a
         String query = "SELECT izena, COUNT(izena) as kopurua FROM tbl_compras GROUP BY izena ORDER BY kopurua DESC LIMIT 5";
         Cursor cursor = bd.rawQuery(query,null);
         return cursor;

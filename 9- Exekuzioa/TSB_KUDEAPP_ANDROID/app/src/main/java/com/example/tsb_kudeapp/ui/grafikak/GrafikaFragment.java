@@ -137,7 +137,7 @@ public class GrafikaFragment extends Fragment {
                 String izena = cursor.getString(izenaIndex);
                 int kopurua = cursor.getInt(kopuruaIndex);
 
-                // Agregar entrada de barra y nombre del producto
+                // Sarrera eta izena barChart-ean sartu
                 dataValues.add(new BarEntry(index, kopurua));
                 productNames.add(izena);
 
@@ -151,11 +151,11 @@ public class GrafikaFragment extends Fragment {
         BarDataSet dataSet = new BarDataSet(dataValues, "Gehien saldutako produktuak");
         dataSet.setColors(ColorTemplate.MATERIAL_COLORS);
 
-        // Asociar nombres de productos a las barras
+        // Izenak produktuekin azoziatu
         BarData barData = new BarData(dataSet);
-        barData.setBarWidth(0.9f);  // Ajustar el ancho de las barras según tus necesidades
+        barData.setBarWidth(0.9f);  // Barren width-a akomodatu
 
-        // Configurar etiquetas en el eje X
+        // X ejian konfigurazioa, width-a eta posizioa
         XAxis xAxis = barChart.getXAxis();
         xAxis.setValueFormatter(new IndexAxisValueFormatter(productNames));
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
