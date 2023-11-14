@@ -1,7 +1,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+
+     >
 
     <!-- CRM lista -->
     <ListView
@@ -9,130 +11,174 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginTop="55dp"/>
+        android:layout_marginTop="55dp"
+
+        />
 
     <FrameLayout
         android:id="@+id/frameCRM"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+         >
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+             >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginTop="30dp"
+                 >
 
                 <TextView
                     android:id="@+id/textViewMota"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Mota: " />
+                    android:text="Mota: "
+                    android:fontFamily="@font/poppins_bold"
+                     />
 
                 <TextView
                     android:id="@+id/textViewKlientea"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Klientea: " />
+                    android:text="Klientea: "
+                    android:fontFamily="@font/poppins_bold"
+                     />
 
                 <TextView
                     android:id="@+id/textViewEnpresa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Enpresa: " />
+                    android:text="Enpresa: "
+                    android:fontFamily="@font/poppins_bold"
+                     />
 
                 <TextView
                     android:id="@+id/textViewEtapa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Etapa: " />
+                    android:text="Etapa: "
+                    android:fontFamily="@font/poppins_bold"
+                     />
 
                 <TextView
                     android:id="@+id/textViewKanpaina"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Kanpaina: " />
+                    android:text="Kanpaina: "
+                    android:fontFamily="@font/poppins_bold"
+
+                    />
 
                 <TextView
                     android:id="@+id/textViewIturri"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Iturria: "/>
+                    android:text="Iturria: "
+                    android:fontFamily="@font/poppins_bold"
+                    />
 
                 <TextView
                     android:id="@+id/textViewKomunikabidea"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Komunikabidea"/>
+                    android:text="Komunikabidea"
+                    android:fontFamily="@font/poppins_bold"
+                     />
 
                 <TextView
                     android:id="@+id/textViewEstatua"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Estatua: "/>
+                    android:text="Estatua: "
+                    android:fontFamily="@font/poppins_bold"
+                     />
 
                 <TextView
                     android:id="@+id/textViewHerriKodea"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Herri Kodea: "/>
+                    android:text="Herri Kodea: "
+                    android:fontFamily="@font/poppins_bold"
+
+                    />
 
                 <TextView
                     android:id="@+id/textViewTelfZenbakia"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Telf. Zenbakia: "/>
+                    android:text="Telf. Zenbakia: "
+                    android:fontFamily="@font/poppins_bold"
+                     />
 
                 <TextView
                     android:id="@+id/textViewEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Emaila: "/>
+                    android:text="Emaila: "
+                    android:fontFamily="@font/poppins_bold"
+                     />
 
                 <TextView
                     android:id="@+id/textViewKontaktuIzena"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Kontaktu Izena: "/>
+                    android:text="Kontaktu Izena: "
+                    android:fontFamily="@font/poppins_bold"
+                     />
 
                 <TextView
                     android:id="@+id/textViewEpemuga"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Epemuga: "/>
+                    android:text="Epemuga: "
+                    android:fontFamily="@font/poppins_bold"
+                    />
 
                 <TextView
                     android:id="@+id/textViewEsperoDirua"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Espero Dirua: "/>
+                    android:text="Espero Dirua: "
+                    android:fontFamily="@font/poppins_bold"
+                     />
 
                 <TextView
                     android:id="@+id/textViewSarreraProportzionala"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sarrera proportzionala: "/>
+                    android:text="Sarrera proportzionala: "
+                    android:fontFamily="@font/poppins_bold"
+                     />
 
                 <TextView
                     android:id="@+id/textViewProbabilitatea"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Probabilitatea: "/>
+                    android:text="Probabilitatea: "
+                    android:fontFamily="@font/poppins_bold"
+                     />
 
                 <TextView
                     android:id="@+id/textViewItxiData"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Itxi Data: "/>
+                    android:text="Itxi Data: "
+                    android:fontFamily="@font/poppins_bold"
+                    />
 
                 <TextView
                     android:id="@+id/textViewIrekiData"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ireki Data: "/>
+                    android:text="Ireki Data: "
+                    android:fontFamily="@font/poppins_bold"
+                    />
             </LinearLayout>
         </ScrollView>
     </FrameLayout>

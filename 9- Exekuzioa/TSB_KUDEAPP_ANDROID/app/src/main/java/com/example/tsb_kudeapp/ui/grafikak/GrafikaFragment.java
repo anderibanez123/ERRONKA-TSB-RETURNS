@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -29,10 +30,17 @@ import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
+import java.sql.Array;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.DateTimeException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class GrafikaFragment extends Fragment {
 
@@ -41,6 +49,8 @@ public class GrafikaFragment extends Fragment {
     private GrafikaViewModel GrafikaViewModel;
 
     private PieChart pieChart;
+
+    private TextView textView;
 
     private BarChart barChart;
 
@@ -68,6 +78,10 @@ public class GrafikaFragment extends Fragment {
 
         // SQLiteDatabase objektua lortu
         sqLiteDatabase = dbHelper.getWritableDatabase();
+
+        textView = view.findViewById(R.id.chartDescription);
+
+        textView.setTextColor(Color.BLACK);
 
         // Grafikoak sortu
         GrafikoBorobila();
@@ -104,10 +118,57 @@ public class GrafikaFragment extends Fragment {
         return dataValues;
     }
 
+    private BarData getBarData() {
+        ArrayList<BarEntry> dataValues = new ArrayList<>();
+        ArrayList<String> productNames = new ArrayList<>();
+
+        Cursor cursor = dbHelper.getValuesBarChart();
+
+        // Klientea eta TotalCompras zutabeen indezua lortu
+        int izenaIndex = cursor.getColumnIndex("izena");
+        int kopuruaIndex = cursor.getColumnIndex("kopurua");
+
+        int index = 0;
+
+        while (cursor.moveToNext()) {
+            // Egiaztatu zutabea emaitza-setan existitzen den
+            if (izenaIndex != -1 && kopuruaIndex != -1) {
+                // Klientea eta TotalCompras balioak hartu
+                String izena = cursor.getString(izenaIndex);
+                int kopurua = cursor.getInt(kopuruaIndex);
+
+                // Agregar entrada de barra y nombre del producto
+                dataValues.add(new BarEntry(index, kopurua));
+                productNames.add(izena);
+
+                index++;
+            }
+        }
+
+        cursor.close();
+
+        // Crear un conjunto de datos de barras
+        BarDataSet dataSet = new BarDataSet(dataValues, "Gehien saldutako produktuak");
+        dataSet.setColors(ColorTemplate.MATERIAL_COLORS);
+
+        // Asociar nombres de productos a las barras
+        BarData barData = new BarData(dataSet);
+        barData.setBarWidth(0.9f);  // Ajustar el ancho de las barras según tus necesidades
+
+        // Configurar etiquetas en el eje X
+        XAxis xAxis = barChart.getXAxis();
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(productNames));
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setGranularity(1f);
+        xAxis.setGranularityEnabled(true);
+
+        return barData;
+    }
+
     // BarChart-a konfiguratzeko metodoa
     public void BarraGrafika() {
         // Kolorea aldatzeko background-ekoa
-        int colorFondo = Color.rgb(220, 220, 220);
+        int colorFondo = Color.WHITE;
         barChart.setBackgroundColor(colorFondo);
 
         // Estetika
@@ -115,14 +176,21 @@ public class GrafikaFragment extends Fragment {
         yAxis.setAxisLineWidth(2f);
         yAxis.setAxisLineColor(colorFondo);
 
-        barChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
-        barChart.getXAxis().setGranularity(1f);
-        barChart.getXAxis().setGranularityEnabled(true);
+        // Obtener datos de la barra
+        BarData barData = getBarData();
+
+        // Aplicar datos a la gráfica de barras
+        barChart.setData(barData);
 
         // Deskribapena ezabatu
         barChart.getDescription().setEnabled(false);
+        barChart.animateX(1500);
+        barChart.animateY(1500);
+        barChart.animate();
         barChart.invalidate();
+
     }
+
 
     // PieChart-a konfiguratzeko metodoa
     public void GrafikoBorobila() {
@@ -130,14 +198,17 @@ public class GrafikaFragment extends Fragment {
         pieChart.setEntryLabelColor(Color.WHITE);
         pieChart.setDrawHoleEnabled(false);
 
+
         // Kolorea aldatzeko background-ekoa
-        int colorFondo = Color.rgb(220, 220, 220);
+        int colorFondo = Color.WHITE;
         pieChart.setBackgroundColor(colorFondo);
 
         // Cursor-etik datuak lortu eta PieChart-a eguneratu
         ArrayList<PieEntry> dataValues = getPieValues();
         pieDataSet.setValues(dataValues);
+        pieDataSet.setColors(ColorTemplate.PASTEL_COLORS);
         PieData pieData = new PieData(pieDataSet);
+
         pieChart.setData(pieData);
 
         // Deskribapena ezabatu

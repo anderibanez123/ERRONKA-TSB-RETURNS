@@ -2,6 +2,7 @@ package com.example.tsb_kudeapp.ui.CRM;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -170,7 +171,7 @@ public class CRMFragment extends Fragment {
 
     }
     private void InformazioaFrameLayout(RegistroCRM detallesCRM) {
-        /// TextView lortus
+        /// TextView lortu
         TextView textViewMota = getView().findViewById(R.id.textViewMota);
         TextView textViewKlientea = getView().findViewById(R.id.textViewKlientea);
         TextView textViewEnpresa = getView().findViewById(R.id.textViewEnpresa);
@@ -211,6 +212,8 @@ public class CRMFragment extends Fragment {
         textViewProbabilitatea.setText("Probabilitatea: "+"%"+ detallesCRM.getProbabilitatea());
         textViewItxiData.setText("Itxi Data: " + detallesCRM.getItxi_data());
         textViewIrekiData.setText("Ireki Data: " + detallesCRM.getIreki_data());
+
+
     }
 
     @Override

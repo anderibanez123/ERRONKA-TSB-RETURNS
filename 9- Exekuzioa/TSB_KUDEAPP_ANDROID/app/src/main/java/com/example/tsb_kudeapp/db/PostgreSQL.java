@@ -274,6 +274,56 @@ public class PostgreSQL {
 
         return registros;
     }
+        public List<RegistroCompras> ComprasDatuakLortu() {
+
+        List<RegistroCompras> registros = new ArrayList<>();
+
+        try {
+            Statement statement = connection.createStatement();
+
+
+            String sql = "SELECT\n" +
+                    "    po.name,\n" +
+                    "    po.state,\n" +
+                    "    po.invoice_status,\n" +
+                    "    partner.name,\n" +
+                    "    company.name,\n" +
+                    "    po.amount_untaxed,\n" +
+                    "    po.amount_tax,\n" +
+                    "    po.amount_total,\n" +
+                    "    po.date_order,\n" +
+                    "    po.date_approve\n" +
+                    "    FROM public.purchase_order po\n" +
+                    "    LEFT JOIN public.res_partner partner ON po.partner_id = partner.id\n" +
+                    "    LEFT JOIN public.res_company company ON po.company_id = company.id;";
+
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            while (resultSet.next()) {
+                String izena = resultSet.getString(1);
+                String estatua = resultSet.getString(2);
+                String faktura = resultSet.getString(3);
+                String klientea = resultSet.getString(4);
+                String enpresa = resultSet.getString(5);
+                String prezio_base = resultSet.getString(6);
+                String bez = resultSet.getString(7);
+                String prezio_totala = resultSet.getString(8);
+                String eskaera_data = resultSet.getString(9);
+                String baimentze_data = resultSet.getString(10);
+
+                RegistroCompras registro = new RegistroCompras(izena, estatua, faktura,klientea, enpresa, prezio_base, bez, prezio_totala, eskaera_data, baimentze_data);
+                registros.add(registro);
+            }
+
+            resultSet.close();
+            statement.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return registros;
+    }
 
 
 

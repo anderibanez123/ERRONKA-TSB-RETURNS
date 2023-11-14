@@ -1,7 +1,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <!-- Salmenta lista -->
     <ListView
@@ -24,67 +25,79 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginTop="30dp">
 
                 <TextView
                     android:id="@+id/textViewFaktura"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Faktura: " />
+                    android:text="Faktura: "
+                    android:fontFamily="@font/poppins_bold"/>
 
                 <TextView
                     android:id="@+id/textViewEstatua"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Estatua: " />
+                    android:text="Estatua: "
+                    android:fontFamily="@font/poppins_bold"/>
 
                 <TextView
                     android:id="@+id/textViewKlientea"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Klientea: " />
+                    android:text="Klientea: "
+                    android:fontFamily="@font/poppins_bold"
+                    />
 
                 <TextView
                     android:id="@+id/textViewEnpresa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Enpresa: " />
+                    android:text="Enpresa: "
+                    android:fontFamily="@font/poppins_bold"/>
 
                 <TextView
                     android:id="@+id/textViewIraungitzea"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Iraungitzea: " />
+                    android:text="Iraungitzea: "
+                    android:fontFamily="@font/poppins_bold"/>
 
                 <TextView
                     android:id="@+id/textViewPrezioBase"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Prezio base: " />
+                    android:text="Prezio base: "
+                    android:fontFamily="@font/poppins_bold"/>
 
                 <TextView
                     android:id="@+id/textViewBez"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bez:"/>
+                    android:text="Bez:"
+                    android:fontFamily="@font/poppins_bold"/>
 
                 <TextView
                     android:id="@+id/textViewPrezioFinala"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Prezio Finala: " />
+                    android:text="Prezio Finala: "
+                    android:fontFamily="@font/poppins_bold"/>
 
                 <TextView
                     android:id="@+id/textViewSortuData"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sortu data"/>
+                    android:text="Sortu data"
+                    android:fontFamily="@font/poppins_bold"/>
 
                 <TextView
                     android:id="@+id/textViewEskaeraData"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Eskaera data"/>
+                    android:text="Eskaera data"
+                    android:fontFamily="@font/poppins_bold"/>
 
             </LinearLayout>
         </ScrollView>

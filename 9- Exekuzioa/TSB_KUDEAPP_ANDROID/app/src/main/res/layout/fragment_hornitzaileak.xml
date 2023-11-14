@@ -1,7 +1,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
 
 
@@ -26,37 +27,43 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginTop="30dp">
 
                 <TextView
                     android:id="@+id/textViewHerria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Herria: " />
+                    android:text="Herria: "
+                    android:fontFamily="@font/poppins_bold"/>
 
                 <TextView
                     android:id="@+id/textViewMota"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Mota: " />
+                    android:text="Mota: "
+                    android:fontFamily="@font/poppins_bold"/>
 
                 <TextView
                     android:id="@+id/textViewKorreoa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Korreoa: " />
+                    android:text="Korreoa: "
+                    android:fontFamily="@font/poppins_bold"/>
 
                 <TextView
                     android:id="@+id/textViewMugikorra"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Mugikorra: " />
+                    android:text="Mugikorra: "
+                    android:fontFamily="@font/poppins_bold"/>
 
                 <TextView
                     android:id="@+id/textViewKomentarioak"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Komentarioak: " />
+                    android:text="Komentarioak: "
+                    android:fontFamily="@font/poppins_bold"/>
 
 
 

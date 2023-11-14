@@ -2,6 +2,7 @@ package com.example.tsb_kudeapp.ui.mezuak;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -157,6 +158,8 @@ public class HornitzaileakFragment extends Fragment {
         textViewKorreoa.setText("Korreoa: " + detallesHornitzaileak.getKorreoa());
         textViewMugikorra.setText("Mugikorra: " + detallesHornitzaileak.getMugikorra());
         textViewKomentarioak.setText("Komentarioak: " + detallesHornitzaileak.getKomentarioak());
+
+
 
 
     }

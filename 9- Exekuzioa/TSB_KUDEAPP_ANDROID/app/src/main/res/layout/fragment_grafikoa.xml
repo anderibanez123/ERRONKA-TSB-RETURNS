@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/white">
 
     <TextView
         android:layout_marginTop="55dp"
@@ -13,8 +14,10 @@
         android:id="@+id/chartDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TEXTUA HEMEN"
+        android:text="Hornitzaile nagusiak"
+        
         android:textSize="18sp"
+        android:fontFamily="@font/poppins_bold"
         android:gravity="center"
         android:textColor="@android:color/white"
         android:layout_marginBottom="16dp" />
@@ -30,6 +33,6 @@
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/barChart"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="309dp" />
 
 </LinearLayout>

@@ -20,6 +20,8 @@ public class SQLite extends SQLiteOpenHelper {
     public static final String TABLE_HORNITZAILEAK = "tbl_hornitzaileak";
     public static final String TABLE_PRODUKTUA = "tbl_produktuak";
 
+    public static final String TABLE_COMPRAS = "tbl_compras";
+
     public SQLite(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -101,6 +103,21 @@ public class SQLite extends SQLiteOpenHelper {
                 "deskribapena TEXT" +
                 ")");
 
+        sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_COMPRAS + "(" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "izena TEXT," +
+                "estatua TEXT," +
+                "faktura TEXT," +
+                "klientea TEXT," +
+                "enpresa TEXT," +
+                "prezio_base TEXT," +
+                "bez TEXT," +
+                "prezio_totala TEXT," +
+                "eskaera_data TEXT," +
+                "baimentze_data TEXT" +
+                ")");
+
+
     }
 
     @Override
@@ -111,13 +128,22 @@ public class SQLite extends SQLiteOpenHelper {
     public Cursor getValuesPieChart(){
         SQLiteDatabase bd = this.getReadableDatabase();
         String query = "SELECT klientea, COUNT(*) AS TotalCompras " +
-                "FROM compras " +
+                "FROM tbl_compras " +
                 "GROUP BY klientea " +
                 "ORDER BY TotalCompras DESC " +
                 "LIMIT 5";
 
         Cursor cursor = bd.rawQuery(query, null);
         return cursor;
+    }
+
+    public Cursor getValuesBarChart(){
+
+        SQLiteDatabase bd = this.getReadableDatabase();
+        String query = "SELECT izena, COUNT(izena) as kopurua FROM tbl_compras GROUP BY izena ORDER BY kopurua DESC LIMIT 5";
+        Cursor cursor = bd.rawQuery(query,null);
+        return cursor;
+
     }
 
 }
