@@ -16,7 +16,8 @@ namespace TSB_OdooControl
         private string database = "tsb";
         private string username = "tsb";
         private string password = "tsb";
-
+        
+       
         public PostgreSQLConnection()
         {
             // konexioa irekitzeko string-a
