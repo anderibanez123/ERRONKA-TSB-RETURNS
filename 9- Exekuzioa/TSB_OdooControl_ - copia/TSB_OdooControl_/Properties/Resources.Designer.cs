@@ -153,6 +153,26 @@ namespace TSB_OdooControl_.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gastuak_icon {
+            get {
+                object obj = ResourceManager.GetObject("gastuak_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HornitzaileaKantitatea {
+            get {
+                object obj = ResourceManager.GetObject("HornitzaileaKantitatea", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap huellaIcon {
             get {
                 object obj = ResourceManager.GetObject("huellaIcon", resourceCulture);
@@ -173,6 +193,26 @@ namespace TSB_OdooControl_.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap irabaziak_icon {
+            get {
+                object obj = ResourceManager.GetObject("irabaziak_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IrabaziakIcon {
+            get {
+                object obj = ResourceManager.GetObject("IrabaziakIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap itxi_icon {
             get {
                 object obj = ResourceManager.GetObject("itxi_icon", resourceCulture);
@@ -186,16 +226,6 @@ namespace TSB_OdooControl_.Properties {
         internal static System.Drawing.Bitmap itxi_icon1 {
             get {
                 object obj = ResourceManager.GetObject("itxi_icon1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap itxi_icon2 {
-            get {
-                object obj = ResourceManager.GetObject("itxi_icon2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,6 +263,16 @@ namespace TSB_OdooControl_.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ProduktuKantitatea {
+            get {
+                object obj = ResourceManager.GetObject("ProduktuKantitatea", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pwIcon {
             get {
                 object obj = ResourceManager.GetObject("pwIcon", resourceCulture);
@@ -253,6 +293,16 @@ namespace TSB_OdooControl_.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap SalmentakGuztira {
+            get {
+                object obj = ResourceManager.GetObject("SalmentakGuztira", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap TSBKarga {
             get {
                 object obj = ResourceManager.GetObject("TSBKarga", resourceCulture);
@@ -266,6 +316,26 @@ namespace TSB_OdooControl_.Properties {
         internal static System.Drawing.Bitmap userIcon {
             get {
                 object obj = ResourceManager.GetObject("userIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap userIcon_black {
+            get {
+                object obj = ResourceManager.GetObject("userIcon_black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap userIcon_grafikoak {
+            get {
+                object obj = ResourceManager.GetObject("userIcon_grafikoak", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

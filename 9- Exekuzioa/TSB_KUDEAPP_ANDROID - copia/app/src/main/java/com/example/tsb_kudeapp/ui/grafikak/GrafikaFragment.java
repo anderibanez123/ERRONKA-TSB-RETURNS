@@ -1,10 +1,13 @@
 package com.example.tsb_kudeapp.ui.grafikak;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -12,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.tsb_kudeapp.R;
 import com.example.tsb_kudeapp.databinding.FragmentGrafikoaBinding;
+import com.example.tsb_kudeapp.db.SQLite;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Description;
@@ -26,10 +30,17 @@ import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
+import java.sql.Array;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.DateTimeException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class GrafikaFragment extends Fragment {
 
@@ -39,99 +50,178 @@ public class GrafikaFragment extends Fragment {
 
     private PieChart pieChart;
 
+    private TextView textView;
+
     private BarChart barChart;
+
+    private SQLite dbHelper;
+    private SQLite SQLite;
+
+    private SQLiteDatabase sqLiteDatabase;
+
+    private PieDataSet pieDataSet = new PieDataSet(null, null);
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // Azpiko diseinu-a kargatu
         View view = inflater.inflate(R.layout.fragment_grafikoa, container, false);
 
-        // pieChart-a layout-etik lortu
+        // SQLite datu-basea inizializatu
+        dbHelper = new SQLite(getContext());
+
+        // PieChart elementua layout-etik eskuratzen da
         pieChart = view.findViewById(R.id.pieChart);
 
-        // barChart-a layout-etik lortu
+        // BarChart elementua layout-etik eskuratzen da
         barChart = view.findViewById(R.id.barChart);
 
+        // SQLiteDatabase objektua lortu
+        sqLiteDatabase = dbHelper.getWritableDatabase();
+
+        textView = view.findViewById(R.id.chartDescription);
+
+        textView.setTextColor(Color.BLACK);
+
+        // Grafikoak sortu
         GrafikoBorobila();
 
+        // BarraGrafika() metodoa deitu
         BarraGrafika();
 
         return view;
     }
 
-    public void BarraGrafika(){
+    // PieChart-a betetzeko datuak lortu
+    private ArrayList<PieEntry> getPieValues() {
+        ArrayList<PieEntry> dataValues = new ArrayList<>();
+        Cursor cursor = dbHelper.getValuesPieChart();
 
+        // Klientea eta TotalCompras zutabeen indezua lortu
+        int klienteaIndex = cursor.getColumnIndex("klientea");
+        int totalComprasIndex = cursor.getColumnIndex("TotalCompras");
+
+        while (cursor.moveToNext()) {
+            // Egiaztatu zutabea emaitza-setan existitzen den
+            if (klienteaIndex != -1 && totalComprasIndex != -1) {
+                // Klientea eta TotalCompras balioak hartu
+                String klientea = cursor.getString(klienteaIndex);
+                int totalCompras = cursor.getInt(totalComprasIndex);
+
+                // PieEntry objektua sortu eta dataValues ArrayList-era gehitu
+                dataValues.add(new PieEntry(totalCompras, klientea));
+            }
+        }
+
+        // Cursor itxi
+        cursor.close();
+        return dataValues;
+    }
+
+    private BarData getBarData() {
+        ArrayList<BarEntry> dataValues = new ArrayList<>();
+        ArrayList<String> productNames = new ArrayList<>();
+
+        Cursor cursor = dbHelper.getValuesBarChart();
+
+        // Klientea eta TotalCompras zutabeen indezua lortu
+        int izenaIndex = cursor.getColumnIndex("izena");
+        int kopuruaIndex = cursor.getColumnIndex("kopurua");
+
+        int index = 0;
+
+        while (cursor.moveToNext()) {
+            // Egiaztatu zutabea emaitza-setan existitzen den
+            if (izenaIndex != -1 && kopuruaIndex != -1) {
+                // Klientea eta TotalCompras balioak hartu
+                String izena = cursor.getString(izenaIndex);
+                int kopurua = cursor.getInt(kopuruaIndex);
+
+                // Sarrera eta izena barChart-ean sartu
+                dataValues.add(new BarEntry(index, kopurua));
+                productNames.add(izena);
+
+                index++;
+            }
+        }
+
+        cursor.close();
+
+        // Crear un conjunto de datos de barras
+        BarDataSet dataSet = new BarDataSet(dataValues, "Gehien saldutako produktuak");
+        dataSet.setColors(ColorTemplate.MATERIAL_COLORS);
+
+        // Izenak produktuekin azoziatu
+        BarData barData = new BarData(dataSet);
+        barData.setBarWidth(0.9f);  // Barren width-a akomodatu
+
+        // X ejian konfigurazioa, width-a eta posizioa
+        XAxis xAxis = barChart.getXAxis();
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(productNames));
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setGranularity(1f);
+        xAxis.setGranularityEnabled(true);
+
+        return barData;
+    }
+
+    // BarChart-a konfiguratzeko metodoa
+    public void BarraGrafika() {
         // Kolorea aldatzeko background-ekoa
-        int colorFondo = Color.rgb(220, 220, 220);
+        int colorFondo = Color.WHITE;
         barChart.setBackgroundColor(colorFondo);
-
-        // Datuak barChart-ean sartu
-        ArrayList<BarEntry> barEntries = new ArrayList<>();
-        barEntries.add(new BarEntry(2,2));
-        barEntries.add(new BarEntry(3,5));
-        barEntries.add(new BarEntry(7,9));
-        barEntries.add(new BarEntry(8,10));
-        barEntries.add(new BarEntry(4,4));
-
-
-
-        BarDataSet barDataSet = new BarDataSet(barEntries,"MAYORES VENTAS");
-        barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
-
-        BarData barData = new BarData(barDataSet);
-        barChart.setData(barData);
 
         // Estetika
         YAxis yAxis = barChart.getAxisLeft();
         yAxis.setAxisLineWidth(2f);
         yAxis.setAxisLineColor(colorFondo);
 
+        // Obtener datos de la barra
+        BarData barData = getBarData();
 
-        barChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
-        barChart.getXAxis().setGranularity(1f);
-        barChart.getXAxis().setGranularityEnabled(true);
+        // Aplicar datos a la gráfica de barras
+        barChart.setData(barData);
 
+        // Deskribapena ezabatu
         barChart.getDescription().setEnabled(false);
+        barChart.animateX(1500);
+        barChart.animateY(1500);
+        barChart.animate();
         barChart.invalidate();
 
-
-
-
-
     }
-    public void GrafikoBorobila(){
 
+
+    // PieChart-a konfiguratzeko metodoa
+    public void GrafikoBorobila() {
+        // PieChart-a konfiguratu
         pieChart.setEntryLabelColor(Color.WHITE);
         pieChart.setDrawHoleEnabled(false);
 
+
         // Kolorea aldatzeko background-ekoa
-        int colorFondo = Color.rgb(220, 220, 220);
+        int colorFondo = Color.WHITE;
         pieChart.setBackgroundColor(colorFondo);
 
-        // Datuak pieChart-ean sartu
-        ArrayList<PieEntry> pieEntries = new ArrayList<>();
-        pieEntries.add(new PieEntry(2, "Mario"));
-        pieEntries.add(new PieEntry(3, "Ander"));
-        pieEntries.add(new PieEntry(6, "Lander"));
-
-
-        // Datuak estetikoki konfiguratu
-        PieDataSet pieDataSet = new PieDataSet(pieEntries,"");
-        pieDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
-
-        pieDataSet.setValueTextSize(16f);
-
-        // Data insertatu
+        // Cursor-etik datuak lortu eta PieChart-a eguneratu
+        ArrayList<PieEntry> dataValues = getPieValues();
+        pieDataSet.setValues(dataValues);
+        pieDataSet.setColors(ColorTemplate.PASTEL_COLORS);
         PieData pieData = new PieData(pieDataSet);
+
         pieChart.setData(pieData);
 
+        // Deskribapena ezabatu
         pieChart.getDescription().setEnabled(false);
+
+        // Animazioa
         pieChart.animateY(1500);
         pieChart.animate();
 
-        // pieChart-a eguneratzeko
+        // PieChart-a eguneratzeko
         pieChart.invalidate();
     }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();

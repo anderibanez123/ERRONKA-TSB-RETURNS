@@ -1,6 +1,7 @@
 package com.example.tsb_kudeapp.db;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -18,6 +19,8 @@ public class SQLite extends SQLiteOpenHelper {
     public  static final String TABLE_CRM = "tbl_CRM";
     public static final String TABLE_HORNITZAILEAK = "tbl_hornitzaileak";
     public static final String TABLE_PRODUKTUA = "tbl_produktuak";
+
+    public static final String TABLE_COMPRAS = "tbl_compras";
 
     public SQLite(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -100,10 +103,54 @@ public class SQLite extends SQLiteOpenHelper {
                 "deskribapena TEXT" +
                 ")");
 
+
+        // izena, faktura, estatua, faktura, klientea, enpresa,  prezio_base,bez, prezio_totala, eskaera_data, baimentze_data
+        sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_COMPRAS + "(" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "izena TEXT," +
+                "estatua TEXT," +
+                "faktura TEXT," +
+                "klientea TEXT," +
+                "enpresa TEXT," +
+                "prezio_base TEXT," +
+                "bez TEXT," +
+                "prezio_totala TEXT," +
+                "eskaera_data TEXT," +
+                "baimentze_data TEXT" +
+                ")");
+
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
+
+    // PieChart-eko datuak lortzeko query-a
+    public Cursor getValuesPieChart(){
+        SQLiteDatabase bd = this.getReadableDatabase();
+
+        // Query-a
+        String query = "SELECT klientea, COUNT(*) AS TotalCompras " +
+                "FROM tbl_compras " +
+                "GROUP BY klientea " +
+                "ORDER BY TotalCompras DESC " +
+                "LIMIT 5";
+
+        Cursor cursor = bd.rawQuery(query, null);
+        return cursor;
+    }
+
+    // BarChart-eko datuak lortzeko query-a
+    public Cursor getValuesBarChart(){
+
+        SQLiteDatabase bd = this.getReadableDatabase();
+        // Query-a
+        String query = "SELECT izena, COUNT(izena) as kopurua FROM tbl_compras GROUP BY izena ORDER BY kopurua DESC LIMIT 5";
+        Cursor cursor = bd.rawQuery(query,null);
+        return cursor;
+
+    }
+
 }

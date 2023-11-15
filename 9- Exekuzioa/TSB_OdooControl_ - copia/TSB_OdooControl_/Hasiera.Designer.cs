@@ -59,6 +59,7 @@
             // sartu_BT
             // 
             this.sartu_BT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(119)))), ((int)(((byte)(139)))));
+            this.sartu_BT.Cursor = System.Windows.Forms.Cursors.Hand;
             this.sartu_BT.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(119)))), ((int)(((byte)(139)))));
             this.sartu_BT.FlatAppearance.BorderSize = 0;
             this.sartu_BT.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(119)))), ((int)(((byte)(139)))));
@@ -121,7 +122,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::TSB_OdooControl_.Properties.Resources.LOGO_DIFERENTE_BLANCO;
-            this.pictureBox3.Location = new System.Drawing.Point(421, 452);
+            this.pictureBox3.Location = new System.Drawing.Point(421, 465);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(168, 116);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -150,12 +151,13 @@
             // 
             // carga
             // 
+            this.carga.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.carga.Image = global::TSB_OdooControl_.Properties.Resources.TSBKarga;
-            this.carga.Location = new System.Drawing.Point(-19, -8);
+            this.carga.Location = new System.Drawing.Point(-16, -13);
             this.carga.Name = "carga";
             this.carga.Size = new System.Drawing.Size(1039, 592);
             this.carga.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.carga.TabIndex = 10;
+            this.carga.TabIndex = 11;
             this.carga.TabStop = false;
             this.carga.Visible = false;
             // 

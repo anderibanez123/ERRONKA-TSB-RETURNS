@@ -10,6 +10,7 @@ import java.util.List;
 
 public class PostgreSQL {
     private static final String JDBC_URL = "jdbc:postgresql://10.23.28.188:8068/tsb";
+
     private static final String JDBC_USER = "tsb";
     private static final String JDBC_PASSWORD = "tsb";
 

@@ -1,25 +1,96 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+   >
 
-    <!-- Inventario -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Inventario" />
 
-    <!-- Lista de Productos en Stock -->
+
+    <!-- Produktu lista -->
     <ListView
         android:id="@+id/listViewProducts"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:layout_marginTop="55dp"/>
 
-    <!-- Gestión de Pedidos de Stock -->
     <FrameLayout
         android:id="@+id/frameStockOrders"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="292dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewKategoria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Kategoria: " />
+
+                <TextView
+                    android:id="@+id/textViewMota"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Mota: " />
+
+                <TextView
+                    android:id="@+id/textViewPrezioa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Prezioa: " />
+
+                <TextView
+                    android:id="@+id/textViewPisua"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Pisua: " />
+
+                <TextView
+                    android:id="@+id/textViewSalduOk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Saldu Ok: " />
+
+                <TextView
+                    android:id="@+id/textViewErosiOk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Erosi Ok: " />
+
+                <TextView
+                    android:id="@+id/textViewFP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Faktura Politika:" />
+
+                <TextView
+                    android:id="@+id/textViewDeskribapena"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Deskribapena: " />
+
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+
 </LinearLayout>

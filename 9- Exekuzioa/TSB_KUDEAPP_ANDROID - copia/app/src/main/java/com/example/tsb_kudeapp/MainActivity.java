@@ -9,12 +9,14 @@ import android.widget.Toast;
 
 import com.example.tsb_kudeapp.db.PostgreSQL;
 import com.example.tsb_kudeapp.db.RegistroCRM;
+import com.example.tsb_kudeapp.db.RegistroCompras;
 import com.example.tsb_kudeapp.db.RegistroHornitzaileak;
 import com.example.tsb_kudeapp.db.RegistroProduktua;
 import com.example.tsb_kudeapp.db.RegistroSalmenta;
 import com.example.tsb_kudeapp.db.RegistroUser;
 import com.example.tsb_kudeapp.db.SQLite;
 import com.example.tsb_kudeapp.db.dbCRM;
+import com.example.tsb_kudeapp.db.dbCompras;
 import com.example.tsb_kudeapp.db.dbHornitzaileak;
 import com.example.tsb_kudeapp.db.dbProduktua;
 import com.example.tsb_kudeapp.db.dbSalmenta;
@@ -147,6 +149,19 @@ public class MainActivity extends AppCompatActivity {
 
                             // <-- PRODUKTUA BUKAERA
 
+                            // COMPRAS HASIERA -->
+
+                            List<RegistroCompras> compras = konexioa.ComprasDatuakLortu();
+
+                            dbCompras comprasDB = new dbCompras(MainActivity.this);
+
+                            for(RegistroCompras registro : compras){
+
+                                comprasDB.ComprasSartu(registro.getIzena(),registro.getEstatua(),registro.getFaktura(),registro.getKlientea(),
+                                        registro.getEnpresa(),registro.getPrezio_base(),registro.getBez(),registro.getPrezio_totala(),registro.getEskera_data(),registro.getBaimentze_data());
+
+                            }
+                             // <-- COMPRAS BUKAERA
 
                             // Konexioa itxi
                             konexioa.konexioaItxi();

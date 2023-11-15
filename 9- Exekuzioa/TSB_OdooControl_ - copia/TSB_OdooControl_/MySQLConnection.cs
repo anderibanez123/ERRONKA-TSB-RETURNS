@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System.Data;
+using System.Data.Odbc;
 using System.Windows.Forms;
 
 public class MySQLConnection
@@ -11,6 +12,7 @@ public class MySQLConnection
     {
         // MySQL konexiorako behar ditugun datuak
         connectionString = "Server=10.23.28.188;Database=tsb_db;User ID=tsb;Password=tsb";
+        //connectionString = "Server=localhost;Database=tsb_db;User ID=root;Password=Ander123";
         connection = new MySqlConnection(connectionString);
     }
 

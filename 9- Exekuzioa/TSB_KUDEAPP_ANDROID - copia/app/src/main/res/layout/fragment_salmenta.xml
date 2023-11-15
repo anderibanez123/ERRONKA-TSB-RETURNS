@@ -1,25 +1,108 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
-    <!-- Página de Resumen de Ventas -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Resumen de Ventas" />
-
-    <!-- Lista de Pedidos -->
+    <!-- Salmenta lista -->
     <ListView
-        android:id="@+id/listViewOrders"
+        android:id="@+id/listViewSalmentak"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:layout_marginTop="55dp"/>
 
-    <!-- Detalles del Pedido -->
     <FrameLayout
-        android:id="@+id/frameOrderDetails"
+        android:id="@+id/frameSalmentak"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewFaktura"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Faktura: " />
+
+                <TextView
+                    android:id="@+id/textViewEstatua"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Estatua: " />
+
+                <TextView
+                    android:id="@+id/textViewKlientea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Klientea: " />
+
+                <TextView
+                    android:id="@+id/textViewEnpresa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Enpresa: " />
+
+                <TextView
+                    android:id="@+id/textViewIraungitzea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Iraungitzea: " />
+
+                <TextView
+                    android:id="@+id/textViewPrezioBase"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Prezio base: " />
+
+                <TextView
+                    android:id="@+id/textViewBez"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Bez:" />
+
+                <TextView
+                    android:id="@+id/textViewPrezioFinala"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Prezio Finala: " />
+
+                <TextView
+                    android:id="@+id/textViewSortuData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Sortu data" />
+
+                <TextView
+                    android:id="@+id/textViewEskaeraData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Eskaera data" />
+
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+
 </LinearLayout>
+

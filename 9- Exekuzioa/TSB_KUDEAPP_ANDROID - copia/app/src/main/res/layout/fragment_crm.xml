@@ -1,25 +1,167 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
 
-    <!-- Base de Datos de Clientes -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Base de Datos de Clientes" />
+     >
 
-    <!-- Lista de Clientes -->
+    <!-- CRM lista -->
     <ListView
-        android:id="@+id/listViewCustomers"
+        android:id="@+id/listViewCRM"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_height="3dp"
+        android:layout_marginTop="55dp"
+        android:layout_weight="1"
 
-    <!-- Detalles del Cliente -->
+        />
+
     <FrameLayout
-        android:id="@+id/frameCustomerDetails"
+        android:id="@+id/frameCRM"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+         >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewMota"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Mota: " />
+
+                <TextView
+                    android:id="@+id/textViewKlientea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Klientea: " />
+
+                <TextView
+                    android:id="@+id/textViewEnpresa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Enpresa: " />
+
+                <TextView
+                    android:id="@+id/textViewEtapa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Etapa: " />
+
+                <TextView
+                    android:id="@+id/textViewKanpaina"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Kanpaina: "
+
+                    />
+
+                <TextView
+                    android:id="@+id/textViewIturri"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Iturria: " />
+
+                <TextView
+                    android:id="@+id/textViewKomunikabidea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Komunikabidea" />
+
+                <TextView
+                    android:id="@+id/textViewEstatua"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Estatua: " />
+
+                <TextView
+                    android:id="@+id/textViewHerriKodea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Herri Kodea: "
+
+                    />
+
+                <TextView
+                    android:id="@+id/textViewTelfZenbakia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Telf. Zenbakia: " />
+
+                <TextView
+                    android:id="@+id/textViewEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Emaila: " />
+
+                <TextView
+                    android:id="@+id/textViewKontaktuIzena"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Kontaktu Izena: " />
+
+                <TextView
+                    android:id="@+id/textViewEpemuga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Epemuga: " />
+
+                <TextView
+                    android:id="@+id/textViewEsperoDirua"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Espero Dirua: " />
+
+                <TextView
+                    android:id="@+id/textViewSarreraProportzionala"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Sarrera proportzionala: " />
+
+                <TextView
+                    android:id="@+id/textViewProbabilitatea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Probabilitatea: " />
+
+                <TextView
+                    android:id="@+id/textViewItxiData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Itxi Data: " />
+
+                <TextView
+                    android:id="@+id/textViewIrekiData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Ireki Data: " />
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
 </LinearLayout>

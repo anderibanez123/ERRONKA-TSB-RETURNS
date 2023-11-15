@@ -43,6 +43,12 @@ namespace TSB_OdooControl_
                 // Erabiltzailea konprobatu
                 bool ondo = erabiltzaileaKonprobatu();
 
+                // Behin konprobatuta konexioa dugula, konexioa itxi
+                konexioaMySQL.KonexioaItxi();
+
+                // Behin konprobatuta konexioa dugula, konexioa itxi
+                konexioaPostgreSQL.konexioaItxi();
+
                 if (ondo == true)
                 {
                     // Karga bideua bukatu
@@ -98,11 +104,12 @@ namespace TSB_OdooControl_
                 carga.Visible = false;
 
                 MessageBox.Show("Sartutako erabiltzaile/pasahitza ez da zuzena.", "ERABILTZAILEA EDO PASAHITZ EZ ZUZENAK");
+
+
             }
 
             return false;
         }
-
 
         // Datu baseko datuak aktualizatu
         private void DatuBaseDatuakKARGATU()
