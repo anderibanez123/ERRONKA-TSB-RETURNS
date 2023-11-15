@@ -158,7 +158,7 @@
             this.panelPrintzipala.Controls.Add(this.panelBilaketa);
             this.panelPrintzipala.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPrintzipala.Location = new System.Drawing.Point(197, 0);
-            this.panelPrintzipala.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelPrintzipala.Margin = new System.Windows.Forms.Padding(2);
             this.panelPrintzipala.Name = "panelPrintzipala";
             this.panelPrintzipala.Size = new System.Drawing.Size(851, 618);
             this.panelPrintzipala.TabIndex = 2;
@@ -170,7 +170,7 @@
             this.panel4.Controls.Add(this.DGVtaulak);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 100);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(851, 518);
             this.panel4.TabIndex = 1;
@@ -185,7 +185,7 @@
             this.panelGrafiko.Controls.Add(this.tableLayoutPanel2, 1, 0);
             this.panelGrafiko.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGrafiko.Location = new System.Drawing.Point(0, 0);
-            this.panelGrafiko.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelGrafiko.Margin = new System.Windows.Forms.Padding(2);
             this.panelGrafiko.Name = "panelGrafiko";
             this.panelGrafiko.RowCount = 1;
             this.panelGrafiko.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -380,7 +380,7 @@
             this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel20.Location = new System.Drawing.Point(2, 2);
-            this.tableLayoutPanel20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel20.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel20.Name = "tableLayoutPanel20";
             this.tableLayoutPanel20.RowCount = 2;
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.39506F));
@@ -625,7 +625,7 @@
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel16, 2, 0);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel13.Location = new System.Drawing.Point(2, 69);
-            this.tableLayoutPanel13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel13.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -642,7 +642,7 @@
             this.tableLayoutPanel14.Controls.Add(this.pictureBox6, 0, 0);
             this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel14.Location = new System.Drawing.Point(2, 2);
-            this.tableLayoutPanel14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel14.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 1;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -657,7 +657,7 @@
             this.tableLayoutPanel17.Controls.Add(this.label_Langileak, 0, 1);
             this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel17.Location = new System.Drawing.Point(43, 2);
-            this.tableLayoutPanel17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel17.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
             this.tableLayoutPanel17.RowCount = 2;
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -693,7 +693,7 @@
             this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox6.Image = global::TSB_OdooControl_.Properties.Resources.userIcon_grafikoak;
             this.pictureBox6.Location = new System.Drawing.Point(2, 2);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(37, 33);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -710,7 +710,7 @@
             this.tableLayoutPanel15.Controls.Add(this.pictureBox7, 0, 0);
             this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel15.Location = new System.Drawing.Point(144, 2);
-            this.tableLayoutPanel15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel15.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 1;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -725,7 +725,7 @@
             this.tableLayoutPanel18.Controls.Add(this.label_Salmentak, 0, 1);
             this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel18.Location = new System.Drawing.Point(41, 2);
-            this.tableLayoutPanel18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel18.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
             this.tableLayoutPanel18.RowCount = 2;
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -761,7 +761,7 @@
             this.pictureBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox7.Image = global::TSB_OdooControl_.Properties.Resources.SalmentakGuztira;
             this.pictureBox7.Location = new System.Drawing.Point(2, 2);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(35, 33);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -778,7 +778,7 @@
             this.tableLayoutPanel16.Controls.Add(this.pictureBox8, 0, 0);
             this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel16.Location = new System.Drawing.Point(286, 2);
-            this.tableLayoutPanel16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel16.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
             this.tableLayoutPanel16.RowCount = 1;
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -793,7 +793,7 @@
             this.tableLayoutPanel19.Controls.Add(this.label_Gastuak, 0, 1);
             this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel19.Location = new System.Drawing.Point(42, 2);
-            this.tableLayoutPanel19.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel19.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
             this.tableLayoutPanel19.RowCount = 2;
             this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -829,7 +829,7 @@
             this.pictureBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox8.Image = global::TSB_OdooControl_.Properties.Resources.gastuak_icon;
             this.pictureBox8.Location = new System.Drawing.Point(2, 2);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(36, 33);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -841,7 +841,7 @@
             this.DGVtaulak.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVtaulak.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGVtaulak.Location = new System.Drawing.Point(0, 0);
-            this.DGVtaulak.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DGVtaulak.Margin = new System.Windows.Forms.Padding(2);
             this.DGVtaulak.Name = "DGVtaulak";
             this.DGVtaulak.ReadOnly = true;
             this.DGVtaulak.RowHeadersWidth = 51;
@@ -857,7 +857,7 @@
             this.panelBilaketa.Controls.Add(this.Label_Titulua);
             this.panelBilaketa.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBilaketa.Location = new System.Drawing.Point(0, 0);
-            this.panelBilaketa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelBilaketa.Margin = new System.Windows.Forms.Padding(2);
             this.panelBilaketa.Name = "panelBilaketa";
             this.panelBilaketa.Size = new System.Drawing.Size(851, 100);
             this.panelBilaketa.TabIndex = 0;
@@ -870,7 +870,7 @@
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(41, 42);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(772, 58);
             this.panel7.TabIndex = 4;
@@ -880,7 +880,7 @@
             this.bilatzailea_TB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bilatzailea_TB.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bilatzailea_TB.Location = new System.Drawing.Point(0, 27);
-            this.bilatzailea_TB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bilatzailea_TB.Margin = new System.Windows.Forms.Padding(2);
             this.bilatzailea_TB.Name = "bilatzailea_TB";
             this.bilatzailea_TB.Size = new System.Drawing.Size(772, 23);
             this.bilatzailea_TB.TabIndex = 2;
@@ -890,7 +890,7 @@
             // 
             this.panel9.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel9.Location = new System.Drawing.Point(0, 47);
-            this.panel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(772, 11);
             this.panel9.TabIndex = 1;
@@ -900,7 +900,7 @@
             this.panel8.Controls.Add(this.label_bilatu);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(772, 27);
             this.panel8.TabIndex = 0;
@@ -922,7 +922,7 @@
             // 
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel6.Location = new System.Drawing.Point(813, 42);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(38, 58);
             this.panel6.TabIndex = 3;
@@ -932,7 +932,7 @@
             this.panel5.Controls.Add(this.panel10);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(0, 42);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(41, 58);
             this.panel5.TabIndex = 2;
@@ -943,7 +943,7 @@
             this.panel10.Controls.Add(this.panel11);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel10.Location = new System.Drawing.Point(18, 0);
-            this.panel10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel10.Margin = new System.Windows.Forms.Padding(2);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(23, 58);
             this.panel10.TabIndex = 0;
@@ -953,7 +953,7 @@
             this.resetTaulak.Dock = System.Windows.Forms.DockStyle.Left;
             this.resetTaulak.Image = global::TSB_OdooControl_.Properties.Resources.AktuIcon;
             this.resetTaulak.Location = new System.Drawing.Point(0, 16);
-            this.resetTaulak.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.resetTaulak.Margin = new System.Windows.Forms.Padding(2);
             this.resetTaulak.Name = "resetTaulak";
             this.resetTaulak.Size = new System.Drawing.Size(19, 42);
             this.resetTaulak.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -965,7 +965,7 @@
             // 
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel11.Location = new System.Drawing.Point(0, 0);
-            this.panel11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel11.Margin = new System.Windows.Forms.Padding(2);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(23, 16);
             this.panel11.TabIndex = 0;
@@ -999,7 +999,7 @@
             this.panelMenua.Controls.Add(this.panelLogo);
             this.panelMenua.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenua.Location = new System.Drawing.Point(0, 0);
-            this.panelMenua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMenua.Margin = new System.Windows.Forms.Padding(2);
             this.panelMenua.Name = "panelMenua";
             this.panelMenua.Size = new System.Drawing.Size(197, 618);
             this.panelMenua.TabIndex = 1;
@@ -1016,7 +1016,7 @@
             this.BTNerabiltzaileak.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNerabiltzaileak.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(119)))), ((int)(((byte)(139)))));
             this.BTNerabiltzaileak.Location = new System.Drawing.Point(0, 337);
-            this.BTNerabiltzaileak.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTNerabiltzaileak.Margin = new System.Windows.Forms.Padding(2);
             this.BTNerabiltzaileak.Name = "BTNerabiltzaileak";
             this.BTNerabiltzaileak.Size = new System.Drawing.Size(197, 47);
             this.BTNerabiltzaileak.TabIndex = 7;
@@ -1029,7 +1029,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 571);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(197, 47);
             this.panel1.TabIndex = 6;
@@ -1039,7 +1039,7 @@
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(127, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(70, 47);
             this.panel2.TabIndex = 0;
@@ -1049,7 +1049,7 @@
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(70, 47);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1069,7 +1069,7 @@
             this.BTNhornitzaileak.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNhornitzaileak.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(119)))), ((int)(((byte)(139)))));
             this.BTNhornitzaileak.Location = new System.Drawing.Point(0, 290);
-            this.BTNhornitzaileak.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTNhornitzaileak.Margin = new System.Windows.Forms.Padding(2);
             this.BTNhornitzaileak.Name = "BTNhornitzaileak";
             this.BTNhornitzaileak.Size = new System.Drawing.Size(197, 47);
             this.BTNhornitzaileak.TabIndex = 5;
@@ -1089,7 +1089,7 @@
             this.BTNgastuak.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNgastuak.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(119)))), ((int)(((byte)(139)))));
             this.BTNgastuak.Location = new System.Drawing.Point(0, 243);
-            this.BTNgastuak.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTNgastuak.Margin = new System.Windows.Forms.Padding(2);
             this.BTNgastuak.Name = "BTNgastuak";
             this.BTNgastuak.Size = new System.Drawing.Size(197, 47);
             this.BTNgastuak.TabIndex = 4;
@@ -1109,7 +1109,7 @@
             this.BTNsalmentak.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNsalmentak.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(119)))), ((int)(((byte)(139)))));
             this.BTNsalmentak.Location = new System.Drawing.Point(0, 196);
-            this.BTNsalmentak.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTNsalmentak.Margin = new System.Windows.Forms.Padding(2);
             this.BTNsalmentak.Name = "BTNsalmentak";
             this.BTNsalmentak.Size = new System.Drawing.Size(197, 47);
             this.BTNsalmentak.TabIndex = 3;
@@ -1129,7 +1129,7 @@
             this.BTNproduktuak.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNproduktuak.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(119)))), ((int)(((byte)(139)))));
             this.BTNproduktuak.Location = new System.Drawing.Point(0, 149);
-            this.BTNproduktuak.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTNproduktuak.Margin = new System.Windows.Forms.Padding(2);
             this.BTNproduktuak.Name = "BTNproduktuak";
             this.BTNproduktuak.Size = new System.Drawing.Size(197, 47);
             this.BTNproduktuak.TabIndex = 2;
@@ -1149,7 +1149,7 @@
             this.BTNhasiera.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNhasiera.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(119)))), ((int)(((byte)(139)))));
             this.BTNhasiera.Location = new System.Drawing.Point(0, 102);
-            this.BTNhasiera.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTNhasiera.Margin = new System.Windows.Forms.Padding(2);
             this.BTNhasiera.Name = "BTNhasiera";
             this.BTNhasiera.Size = new System.Drawing.Size(197, 47);
             this.BTNhasiera.TabIndex = 1;
@@ -1162,7 +1162,7 @@
             this.panelLogo.Controls.Add(this.pictureBox1);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(2);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(197, 102);
             this.panelLogo.TabIndex = 0;
@@ -1173,7 +1173,7 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::TSB_OdooControl_.Properties.Resources.LOGO_DIFERENTE_SIN_FONDO;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(197, 102);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1192,7 +1192,7 @@
             this.Controls.Add(this.panelMenua);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(782, 378);
             this.Name = "Programa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
