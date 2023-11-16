@@ -29,7 +29,7 @@ enpresa VARCHAR(255),
 prezio_base VARCHAR(255),
 bez VARCHAR(255),
 prezio_totala VARCHAR(255),
-eskera_data VARCHAR(255),
+eskaera_data VARCHAR(255),
 baimentze_data VARCHAR(255)
 );
 
