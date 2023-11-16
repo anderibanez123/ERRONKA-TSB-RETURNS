@@ -45,6 +45,7 @@ def kontenedoreGuztiakPiztu():
         else:
             print(f" {container.name} kontenedorea piztuta dago.")
 
+# MAIN
 if __name__ == "__main__":
     dockerIreki()
     kontenedoreGuztiakPiztu()
