@@ -63,6 +63,16 @@ namespace TSB_OdooControl_.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _35704 {
+            get {
+                object obj = ResourceManager.GetObject("35704", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _8979038 {
             get {
                 object obj = ResourceManager.GetObject("_8979038", resourceCulture);

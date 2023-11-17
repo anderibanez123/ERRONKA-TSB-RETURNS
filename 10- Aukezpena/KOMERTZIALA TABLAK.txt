@@ -1,0 +1,139 @@
+Ventas: Busca tablas que almacenan información sobre pedidos, facturas, productos, clientes, etc. Ejemplos de tablas relevantes podrían ser sale_order, sale_order_line, product_template, res_partner, etc.
+
+CRM: Para gestionar el CRM, busca tablas relacionadas con leads, oportunidades y actividades. Ejemplos de tablas podrían ser crm_lead, crm_opportunity, mail_activity, entre otras.
+
+Conversaciones: Las conversaciones suelen estar relacionadas con la mensajería interna o los mensajes de clientes. Busca tablas como mail_message, mail_message_subtype, mail_channel, etc.
+
+---------------------------------------------------------------------------
+
+VENTAS: sale_order, sale_order_line, product_template, res_partner ETC...
+CRM: crm_lead, crm_opportunity, mail_activity ETC...
+CONVERSACIONES: mail_message, mail_message_subtype, mail_channel ETC...
+
+-------------------------------------------------------------------------
+KOMERTZIALA - USUARIOS:
+
+SELECT DISTINCT nombre.name AS Erabiltzailea, usuario.login AS Email, com.name AS Enpresa
+FROM public.res_company AS com
+LEFT JOIN public.res_users AS usuario ON com.id = usuario.company_id
+LEFT JOIN public.res_partner AS nombre ON usuario.partner_id = nombre.id
+WHERE nombre.name NOT IN ('OdooBot', 'Default User Template', 'Portal User Template', 'Public user');
+KOMERTZIALA - VENTAS:
+
+SELECT
+    so.name AS izena,
+    so.invoice_status AS faktura,
+    so.state AS Estatua,
+    partner.name AS Cliente,
+    company.name AS Enpresa,
+    so.validity_date AS Caducidad,
+    so.amount_untaxed AS prezio_base,
+    so.amount_tax AS iva,
+    so.amount_total AS Prezio_Finala,
+    so.create_date AS Sortu_data,
+    so.date_order AS FechaPedido
+FROM public.sale_order so
+LEFT JOIN public.res_partner partner ON so.partner_id = partner.id
+LEFT JOIN public.res_company company ON so.company_id = company.id;
+
+--
+KOMERTZIALA - CRM:
+
+SELECT lead.name AS crm_izena, lead.type AS mota, lead.partner_name AS klientea, com.name AS enpresa, stage.name AS etapa, camp.name AS kanpaina,
+		sou.name AS sourcee, med.name AS ertaina, sta.name AS Estatua, country.code AS herri_kodea, lead.phone AS telf_zenbakia,
+		lead.email_normalized AS email, lead.contact_name AS kontaktu_izena, lead.date_deadline AS epemuga, lead.expected_revenue AS espero_dirua,
+		lead.prorated_revenue AS sarrera_proportzionala,lead.probability AS probabilitatea, lead.date_closed AS itxi_data, lead.date_open AS ireki_data
+FROM public.crm_lead lead
+LEFT JOIN public.res_company com ON lead.company_id = com.id
+LEFT JOIN public.crm_stage stage ON lead.stage_id = stage.id
+LEFT JOIN public.utm_campaign camp ON lead.campaign_id = camp.id
+LEFT JOIN public.utm_source sou ON lead.source_id = sou.id
+LEFT JOIN public.utm_medium med ON lead.medium_id = med.id
+LEFT JOIN public.res_country_state sta ON lead.state_id = sta.id
+LEFT JOIN public.res_country country ON lead.country_id = country.id
+WHERE lead.active = true
+
+
+------------------------------------------------------------------------------------
+
+KONTABILITATEA - PROVEEDORES:
+
+SELECT r.name AS Izena, c.code AS Herria, r.type AS Mota, r.email AS Korreoa, r.phone AS Mugikorra, r.comment AS Komentarioak
+FROM public.res_partner AS r
+LEFT JOIN public.res_country AS c ON r.country_id = c.id
+WHERE r.commercial_company_name IS NOT NULL AND r.commercial_company_name = 'TSB Enpresa';
+
+--
+KONTABILITATEA - COMPRAS:
+
+SELECT
+    po.name AS izena,
+    po.state AS estatua,
+    po.invoice_status AS faktura,
+    partner.name AS klientea,
+    company.name AS enpresa,
+    po.amount_untaxed AS prezio_base,
+    po.amount_tax AS bez,
+    po.amount_total AS prezio_totala,
+    po.date_order AS eskaera_data,
+    po.date_approve AS baimentze_data
+FROM public.purchase_order po
+LEFT JOIN public.res_partner partner ON po.partner_id = partner.id
+LEFT JOIN public.res_company company ON po.company_id = company.id;
+
+--
+KONTABILITATEA - GASTOS:
+
+SELECT ex.name AS izena, com.name AS enpresa, em.name as eroslea, pro.default_code AS produktua, ex.payment_mode AS ordaindu_modua, ex.state AS estatua,
+	ex.date AS sortze_data, ex.accounting_date AS ordaindu_data, ex.description AS deskribapena, ex.total_amount AS ordaindu_prezioa
+FROM public.hr_expense ex
+LEFT JOIN public.res_company com ON ex.company_id = com.id
+LEFT JOIN public.product_product pro ON ex.product_id = pro.id
+LEFT JOIN public.hr_employee em ON ex.employee_id = em.id
+
+--
+KONTABILITATEA - PRODUCTOS:
+
+SELECT default_code AS izena, pc.name AS Kategoria, detailed_type AS mota, list_price AS prezioa, weight AS pisua,
+		sale_ok AS saldu_ok, purchase_ok AS erosi_ok, invoice_policy AS faktura_politika, description AS deskribapena
+FROM public.product_template pt
+LEFT JOIN public.product_category pc ON pt.categ_id = pc.id
+WHERE active = true;
+		
+--
+KONTABILITATEA - PRODUCTOS TOTALES:
+
+POSTGRESQL -->
+SELECT count(default_code) AS produktu_totalak
+FROM public.product_template
+WHERE active = true;
+
+MYSQL -->
+SELECT COUNT(*) AS produktu_totalak
+FROM Productos
+
+--
+KONTABILITATEA - VENTAS TOTALES:
+
+POSTGRESQL -->
+SELECT
+    COUNT(name) AS salmenta_kop, SUM(amount_total) AS Irabaziak
+FROM public.sale_order
+
+MYSQL -->
+NO TENEMOS LA TABLA DE VENTAS EN MYSQL
+
+--
+KONTABILITATEA - COMPRA TOTALES:
+
+POSTGRESQL -->
+SELECT
+    COUNT(name) AS erosketa_kop, SUM(amount_total) AS erosketa_totala
+FROM public.purchase_order;
+
+MYSQL -->
+SELECT COUNT(*) AS erosketa_kop, SUM(prezio_totala) AS prezioa_totala
+FROM Compras
+
+
+

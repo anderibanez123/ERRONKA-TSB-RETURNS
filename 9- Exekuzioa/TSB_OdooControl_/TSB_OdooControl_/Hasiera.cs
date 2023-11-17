@@ -498,5 +498,11 @@ namespace TSB_OdooControl_
             return string.Empty;
         }
 
+        // Laguntza textua
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            // Exekutatu
+            MessageBox.Show("Erabiltzailea eta pasahitza idatzi behar dituzu segitzeko.", "Laguntza textua");
+        }
     }
 }

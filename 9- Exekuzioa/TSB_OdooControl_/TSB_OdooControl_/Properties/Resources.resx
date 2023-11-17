@@ -133,6 +133,9 @@
   <data name="Mesa de trabajo 10" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Mesa de trabajo 10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="userIcon_grafikoak" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\userIcon_grafikoak.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="SalmentakGuztira" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SalmentakGuztira.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -166,6 +169,9 @@
   <data name="LOGO_DIFERENTE_BLANCO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGO_DIFERENTE_BLANCO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="gastuak_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gastuak_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="HornitzaileaKantitatea" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HornitzaileaKantitatea.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -180,9 +186,6 @@
   </data>
   <data name="Raya" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Raya.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="userIcon_grafikoak" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\userIcon_grafikoak.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="itxi_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\itxi_icon3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,7 +202,7 @@
   <data name="_8979038" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8979038.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gastuak_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gastuak_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="35704" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\35704.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

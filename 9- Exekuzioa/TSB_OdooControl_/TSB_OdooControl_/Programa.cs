@@ -726,5 +726,16 @@ namespace TSB_OdooControl_
                 return datos;
             }
         }
+
+        private void panelMenua_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        // Laguntzeko textua
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Alboko menuan aukeratu bistaratu nahi dituzun datuak.", "Laguntzeko textua");
+        }
     }
 }
