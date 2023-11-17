@@ -104,7 +104,7 @@ namespace TSB_OdooControl_
                 carga.Visible = false;
 
                 MessageBox.Show("Sartutako erabiltzaile/pasahitza ez da zuzena.", "ERABILTZAILEA EDO PASAHITZ EZ ZUZENAK");
-
+                
 
             }
 

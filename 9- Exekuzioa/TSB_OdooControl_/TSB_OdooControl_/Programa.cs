@@ -623,7 +623,7 @@ namespace TSB_OdooControl_
                 catch (FormatException ex)
                 {
                     // Konbertsioan errorea
-                    MessageBox.Show($"Errorea konbertsioan: {ex.Message}", "Errorea");
+                    //MessageBox.Show($"Errorea konbertsioan: {ex.Message}", "Errorea");
                 }
 
             }

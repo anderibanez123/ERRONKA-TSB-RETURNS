@@ -211,3 +211,8 @@ C:\Users\ikaltamirapaag2\Desktop\ERRONKA TSB RETURNS\9- Exekuzioa\TSB_OdooContro
 C:\Users\ikaltamirapaag2\Desktop\ERRONKA TSB RETURNS\9- Exekuzioa\TSB_OdooControl_\TSB_OdooControl_\obj\Debug\TSB_OdooControl_.TrustInfo.xml
 C:\Users\ikaltamirapaag2\Desktop\ERRONKA TSB RETURNS\9- Exekuzioa\TSB_OdooControl_\TSB_OdooControl_\obj\Debug\TSB_OdooControl_.exe.manifest
 C:\Users\ikaltamirapaag2\Desktop\ERRONKA TSB RETURNS\9- Exekuzioa\TSB_OdooControl_\TSB_OdooControl_\obj\Debug\TSB_OdooControl_.application
+C:\Users\elect\OneDrive\Escritorio\ERRONKA-TSB-RETURNS\9- Exekuzioa\TSB_OdooControl_\TSB_OdooControl_\bin\Debug\TSB_OdooControl_.exe.manifest
+C:\Users\elect\OneDrive\Escritorio\ERRONKA-TSB-RETURNS\9- Exekuzioa\TSB_OdooControl_\TSB_OdooControl_\bin\Debug\TSB_OdooControl_.application
+C:\Users\elect\OneDrive\Escritorio\ERRONKA-TSB-RETURNS\9- Exekuzioa\TSB_OdooControl_\TSB_OdooControl_\obj\Debug\TSB_OdooControl_.TrustInfo.xml
+C:\Users\elect\OneDrive\Escritorio\ERRONKA-TSB-RETURNS\9- Exekuzioa\TSB_OdooControl_\TSB_OdooControl_\obj\Debug\TSB_OdooControl_.exe.manifest
+C:\Users\elect\OneDrive\Escritorio\ERRONKA-TSB-RETURNS\9- Exekuzioa\TSB_OdooControl_\TSB_OdooControl_\obj\Debug\TSB_OdooControl_.application
