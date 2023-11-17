@@ -18,6 +18,8 @@ FROM public.res_company AS com
 LEFT JOIN public.res_users AS usuario ON com.id = usuario.company_id
 LEFT JOIN public.res_partner AS nombre ON usuario.partner_id = nombre.id
 WHERE nombre.name NOT IN ('OdooBot', 'Default User Template', 'Portal User Template', 'Public user');
+
+--
 KOMERTZIALA - VENTAS:
 
 SELECT
