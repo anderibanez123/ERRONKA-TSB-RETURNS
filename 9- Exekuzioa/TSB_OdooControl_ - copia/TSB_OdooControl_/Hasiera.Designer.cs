@@ -1,5 +1,23 @@
-﻿namespace TSB_OdooControl_
+﻿// ***********************************************************************
+// Assembly         : TSB_OdooControl_
+// Author           : ikaltamirapaag2
+// Created          : 11-06-2023
+//
+// Last Modified By : ikaltamirapaag2
+// Last Modified On : 11-17-2023
+// ***********************************************************************
+// <copyright file="Hasiera.Designer.cs" company="">
+//     Copyright ©  2023
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+namespace TSB_OdooControl_
 {
+    /// <summary>
+    /// Class Hasiera.
+    /// Implements the <see cref="System.Windows.Forms.Form" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     partial class Hasiera
     {
         /// <summary>
@@ -39,12 +57,14 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.carga = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carga)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // user_TB
@@ -153,13 +173,25 @@
             // 
             this.carga.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.carga.Image = global::TSB_OdooControl_.Properties.Resources.TSBKarga;
-            this.carga.Location = new System.Drawing.Point(-16, -13);
+            this.carga.Location = new System.Drawing.Point(-10, -11);
             this.carga.Name = "carga";
             this.carga.Size = new System.Drawing.Size(1039, 592);
             this.carga.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.carga.TabIndex = 11;
             this.carga.TabStop = false;
             this.carga.Visible = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox6.Image = global::TSB_OdooControl_.Properties.Resources._35704;
+            this.pictureBox6.Location = new System.Drawing.Point(679, 119);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(54, 37);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 12;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // Hasiera
             // 
@@ -170,6 +202,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1006, 567);
             this.Controls.Add(this.carga);
+            this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
@@ -193,6 +226,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carga)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,16 +234,50 @@
 
         #endregion
 
+        /// <summary>
+        /// The user tb
+        /// </summary>
         private System.Windows.Forms.TextBox user_TB;
+        /// <summary>
+        /// The sartu bt
+        /// </summary>
         private System.Windows.Forms.Button sartu_BT;
+        /// <summary>
+        /// The pw tb
+        /// </summary>
         private System.Windows.Forms.TextBox pw_TB;
+        /// <summary>
+        /// The picture box1
+        /// </summary>
         private System.Windows.Forms.PictureBox pictureBox1;
+        /// <summary>
+        /// The picture box2
+        /// </summary>
         private System.Windows.Forms.PictureBox pictureBox2;
+        /// <summary>
+        /// The ongi etorri label
+        /// </summary>
         private System.Windows.Forms.Label ongiEtorri_Label;
+        /// <summary>
+        /// The picture box3
+        /// </summary>
         private System.Windows.Forms.PictureBox pictureBox3;
+        /// <summary>
+        /// The picture box4
+        /// </summary>
         private System.Windows.Forms.PictureBox pictureBox4;
+        /// <summary>
+        /// The picture box5
+        /// </summary>
         private System.Windows.Forms.PictureBox pictureBox5;
+        /// <summary>
+        /// The carga
+        /// </summary>
         private System.Windows.Forms.PictureBox carga;
+        /// <summary>
+        /// The picture box6
+        /// </summary>
+        private System.Windows.Forms.PictureBox pictureBox6;
     }
 }
 

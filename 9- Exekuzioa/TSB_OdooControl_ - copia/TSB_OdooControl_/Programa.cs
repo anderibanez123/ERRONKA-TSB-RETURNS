@@ -1,4 +1,17 @@
-﻿using MySql.Data.MySqlClient;
+﻿// ***********************************************************************
+// Assembly         : TSB_OdooControl_
+// Author           : ikaltamirapaag2
+// Created          : 11-07-2023
+//
+// Last Modified By : ikaltamirapaag2
+// Last Modified On : 11-17-2023
+// ***********************************************************************
+// <copyright file="Programa.cs" company="">
+//     Copyright ©  2023
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,15 +28,28 @@ using TSB_OdooControl;
 
 namespace TSB_OdooControl_
 {
+    /// <summary>
+    /// Class Programa.
+    /// Implements the <see cref="Form" />
+    /// </summary>
+    /// <seealso cref="Form" />
     public partial class Programa : Form
     {
 
-        // Konexioa erabiltzeko objetuak sortu
+        /// <summary>
+        /// Konexioa erabiltzeko objetuak sortu
+        /// </summary>
         private MySQLConnection konexioaMySQL = new MySQLConnection();
 
+        /// <summary>
+        /// The original data table
+        /// </summary>
         private DataTable originalDataTable;
 
-        // Programaren hasiera funtzioa
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Programa"/> class.
+        /// </summary>
+        /// Programaren hasiera funtzioa
         public Programa()
         {
             InitializeComponent();
@@ -32,14 +58,24 @@ namespace TSB_OdooControl_
 
             datuakKargatuCHART();
         }
-        
-        // Programa kargatzerakoan zer egin behar duen
+
+        /// <summary>
+        /// Handles the Load event of the Programa control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// Programa kargatzerakoan zer egin behar duen
         private void Programa_Load(object sender, EventArgs e)
         {
 
         }
 
-        // Logoaren irudiari klik egiterakoan web orria irekiko da.
+        /// <summary>
+        /// Handles the Click event of the pictureBox1 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// Logoaren irudiari klik egiterakoan web orria irekiko da.
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             var ps = new ProcessStartInfo("https://tsbenpresa.github.io/")
@@ -50,152 +86,191 @@ namespace TSB_OdooControl_
             Process.Start(ps);
         }
 
-        // Itxi irudiaru klik egiterakoan app-a itxi
+        /// <summary>
+        /// Handles the Click event of the pictureBox2 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// Itxi irudiaru klik egiterakoan app-a itxi
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             // Leihoa itxi
             this.Close();
         }
 
-        // Menuko hasiera botoia
+        /// <summary>
+        /// Handles the Click event of the BTNhasiera control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// Menuko hasiera botoia
         private void BTNhasiera_Click(object sender, EventArgs e)
         {
-            // Datu taula visible ba dago, kendu
+            /// Datu taula visible ba dago, kendu
             if (DGVtaulak.Visible == true)
             {
                 DGVtaulak.Visible = false;
             }
 
-            // Bilaketa panel ixkutatu hasiera orrian
+            /// Bilaketa panel ixkutatu hasiera orrian
             if (panelBilaketa.Visible == true)
             {
                 panelBilaketa.Visible = false;
             }
 
-            // Irekita al dagoen edo ez konprobatzkeo
+            /// Irekita al dagoen edo ez konprobatzkeo
             if (panelGrafiko.Visible != true)
             {
-                // Leihoaren titulua aldatu
+                /// Leihoaren titulua aldatu
                 Label_Titulua.Text = "HASIERA";
 
-                // Hasiera sartzerakoan kargatu behar duten elementuak
+                /// Hasiera sartzerakoan kargatu behar duten elementuak
                 panelGrafiko.Visible = true;
 
             }
             else
             {
-                // Hasiera irekita badago, ez dugu ezer egingo
+                /// Hasiera irekita badago, ez dugu ezer egingo
             }
 
 
         }
 
-        // Menuko produktuak botoia
+        /// <summary>
+        /// Handles the Click event of the BTNproduktuak control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// Menuko produktuak botoia
         private void BTNproduktuak_Click(object sender, EventArgs e)
         {
             
             String selectSQL = "SELECT * FROM Productos";
 
-            // Leihoaren titulua aldatu
+            /// Leihoaren titulua aldatu
             Label_Titulua.Text = "PRODUKTUAK";
 
-            // Datu baseko datuak erabilita, kargatu datagridview gainean
+            /// Datu baseko datuak erabilita, kargatu datagridview gainean
             datubasekoDatuakLortu(selectSQL);
 
         }
 
-        // Menuko salmentak botoia
+        /// <summary>
+        /// Handles the Click event of the BTNsalmentak control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// Menuko salmentak botoia
         private void BTNsalmentak_Click(object sender, EventArgs e)
         {
 
             String selectSQL = "SELECT * FROM Compras";
 
-            // Leihoaren titulua aldatu
+            /// Leihoaren titulua aldatu
             Label_Titulua.Text = "SALMENTAK";
 
-            // Datu baseko datuak erabilita, kargatu datagridview gainean
+            /// Datu baseko datuak erabilita, kargatu datagridview gainean
             datubasekoDatuakLortu(selectSQL);
 
         }
 
-        // Menuko gastuak botoia
+        /// <summary>
+        /// Handles the Click event of the BTNgastuak control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// Menuko gastuak botoia
         private void BTNgastuak_Click(object sender, EventArgs e)
         {
 
             String selectSQL = "SELECT * FROM Gastos";
-            
-            // Leihoaren titulua aldatu
+
+            /// Leihoaren titulua aldatu
             Label_Titulua.Text = "GASTUAK";
 
-            // Datu baseko datuak erabilita, kargatu datagridview gainean
+            /// Datu baseko datuak erabilita, kargatu datagridview gainean
             datubasekoDatuakLortu(selectSQL);
 
         }
 
-        // Menuko hornitzaileak botoia
+        /// <summary>
+        /// Handles the Click event of the BTNhornitzaileak control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// Menuko hornitzaileak botoia
         private void BTNhornitzaileak_Click(object sender, EventArgs e)
         {
             String selectSQL = "SELECT * FROM Proveedores";
 
-            // Leihoaren titulua aldatu
+            /// Leihoaren titulua aldatu
             Label_Titulua.Text = "HORNITZAILEAK";
 
-            // Datu baseko datuak erabilita, kargatu datagridview gainean
+            /// Datu baseko datuak erabilita, kargatu datagridview gainean
             datubasekoDatuakLortu(selectSQL);
 
         }
 
-        // Menuko erabiltzaileak botoia
+        /// <summary>
+        /// Handles the Click event of the BTNerabiltzaileak control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// Menuko erabiltzaileak botoia
         private void BTNerabiltzaileak_Click(object sender, EventArgs e)
         {
             String selectSQL = "SELECT * FROM Usuarios";
 
-            // Leihoaren titulua aldatu
+            /// Leihoaren titulua aldatu
             Label_Titulua.Text = "ERABILTZAILEAK";
 
-            // Datu baseko datuak erabilita, kargatu datagridview gainean
+            /// Datu baseko datuak erabilita, kargatu datagridview gainean
             datubasekoDatuakLortu(selectSQL);
 
         }
 
-        // MySQL datubaseko datuak lortu eta datagridview barruan irakusteko funtzioa (Select barruan etorriko da, zein taula kargatu behar duen)
+        /// <summary>
+        /// Datubasekoes the datuak lortu.
+        /// </summary>
+        /// <param name="selectSQL">The select SQL.</param>
+        /// MySQL datubaseko datuak lortu eta datagridview barruan irakusteko funtzioa (Select barruan etorriko da, zein taula kargatu behar duen)
         private void datubasekoDatuakLortu(String selectSQL)
         {
-            // Irekita al dagoen edo ez konprobatzkeo
+            /// Irekita al dagoen edo ez konprobatzkeo
             if (panelGrafiko.Visible == true)
             {
-                // Beste leihoekin manejatzeko orduan, hasiera ixkutatuko dugu
+                /// Beste leihoekin manejatzeko orduan, hasiera ixkutatuko dugu
                 panelGrafiko.Visible = false;
             }
 
-            // Taula ez badago bistan, bistaratu
+            /// Taula ez badago bistan, bistaratu
             if (DGVtaulak.Visible != true)
             {
                 DGVtaulak.Visible = true;
             }
 
-            // Bilaketa panela visible egin
+            /// Bilaketa panela visible egin
             if (panelBilaketa.Visible != true)
             {
                 panelBilaketa.Visible = true;
             }
 
-            // Datuak kargatu taularen barruan
+            /// Datuak kargatu taularen barruan
             try
             {
-                // Konexioa ireki
+                /// Konexioa ireki
                 konexioaMySQL.KonexioaIreki();
 
-                // Datuak eskuratzeko erabiliko den adaptera sortu
+                /// Datuak eskuratzeko erabiliko den adaptera sortu
                 using (MySqlDataAdapter adapter = new MySqlDataAdapter(selectSQL, konexioaMySQL.getKonexioa()))
                 {
-                    // DataTable bat sortu datuak gordetzeko
+                    /// DataTable bat sortu datuak gordetzeko
                     DataTable dataTable = new DataTable();
 
-                    // DataTable-a bete kontsulta emaitzekin
+                    /// DataTable-a bete kontsulta emaitzekin
                     adapter.Fill(dataTable);
 
-                    // DataTable-a asignatu DataGridView-en DataSource gisa
+                    /// DataTable-a asignatu DataGridView-en DataSource gisa
                     DGVtaulak.DataSource = dataTable;
                 }
             }
@@ -205,7 +280,7 @@ namespace TSB_OdooControl_
             }
             finally
             {
-                // Konexioa itxi zihoan
+                /// Konexioa itxi zihoan
                 konexioaMySQL.KonexioaItxi();
 
                 originalDataTable = ((DataTable)DGVtaulak.DataSource).Copy();
@@ -213,16 +288,21 @@ namespace TSB_OdooControl_
             }
         }
 
-        // Tauletan daturen bat bilatzeko aukera ematen digun funtzioa, horren kontrola eramateko
+        /// <summary>
+        /// Handles the KeyPress event of the bilatzailea_TB control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="KeyPressEventArgs"/> instance containing the event data.</param>
+        /// Tauletan daturen bat bilatzeko aukera ematen digun funtzioa, horren kontrola eramateko
         private void bilatzailea_TB_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                // DatagridView-ko taula hartu, hurren gainean filtroak egiteko
+                /// DatagridView-ko taula hartu, hurren gainean filtroak egiteko
                 DataTable dt = (DataTable)DGVtaulak.DataSource;
                 DataView dv = dt.DefaultView;
 
-                // Produktu taulako kolumnak kontutan izanda, filtroak egin
+                /// Produktu taulako kolumnak kontutan izanda, filtroak egin
                 if (Label_Titulua.Text.Equals("PRODUKTUAK"))
                 {
                     dv.RowFilter = $"izena LIKE '%{bilatzailea_TB.Text}%' OR kategoria LIKE '%{bilatzailea_TB.Text}%' OR mota LIKE '%{bilatzailea_TB.Text}%' OR prezioa LIKE '%{bilatzailea_TB.Text}%' OR pisua LIKE '%{bilatzailea_TB.Text}%' OR saldu_ok LIKE '%{bilatzailea_TB.Text}%' OR erosi_ok LIKE '%{bilatzailea_TB.Text}%' OR faktura_politika LIKE '%{bilatzailea_TB.Text}%' OR deskribapena LIKE '%{bilatzailea_TB.Text}%'";
@@ -248,42 +328,56 @@ namespace TSB_OdooControl_
                     dv.RowFilter = $"erabiltzailea LIKE '%{bilatzailea_TB.Text}%' OR email LIKE '%{bilatzailea_TB.Text}%' OR enpresa LIKE '%{bilatzailea_TB.Text}%'";
                 }
 
-                // Egindako bilaketaren filtroko datuak bistaratu
+                /// Egindako bilaketaren filtroko datuak bistaratu
                 DGVtaulak.DataSource = dv.ToTable();
 
-                // Bilaketa egiteko textbox-a utzik ba dago, filtroak reseteatu, hasiera datuak irakusteko
+                /// Bilaketa egiteko textbox-a utzik ba dago, filtroak reseteatu, hasiera datuak irakusteko
                 if (string.IsNullOrEmpty(bilatzailea_TB.Text))
                 {
-                    // Lehenengo taula kargatu
+                    /// Lehenengo taula kargatu
                     DGVtaulak.DataSource = originalDataTable.Copy();
                 }
             }
         }
 
-        // Taulako datuak reseteatzeko, bilatzailea erabili ondoren
+        /// <summary>
+        /// Handles the Click event of the resetTaulak control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// Taulako datuak reseteatzeko, bilatzailea erabili ondoren
         private void resetTaulak_Click(object sender, EventArgs e)
         {
-            // Lehenengo taula kargatu
+            /// Lehenengo taula kargatu
             DGVtaulak.DataSource = originalDataTable.Copy();
 
-            // Bilaketa garbitu
+            /// Bilaketa garbitu
             bilatzailea_TB.Clear();
         }
 
-        // Chart bakoizaren diseinuaren funtzioari hots egiteko funtzioa
+        /// <summary>
+        /// Konfiguratus the charts.
+        /// </summary>
+        /// Chart bakoizaren diseinuaren funtzioari hots egiteko funtzioa
         private void KonfiguratuCharts()
         {
-            // Grafikak konfiguratu
+            /// Grafikak konfiguratu
             KonfiguratuChart(Chart_Irabaziak, "Irabaziak", SeriesChartType.Column);
             KonfiguratuChart(Chart_hornitzaileak, "Hornitzaileak", SeriesChartType.Kagi);
         }
 
-        // Chart-en diseinu konfigurazioa
+        /// <summary>
+        /// Konfiguratus the chart.
+        /// </summary>
+        /// <param name="chart">The chart.</param>
+        /// <param name="serieIzena">The serie izena.</param>
+        /// <param name="mota">The mota.</param>
+        /// Chart-en diseinu konfigurazioa
         private void KonfiguratuChart(Chart chart, string serieIzena, SeriesChartType mota)
         {
             if (serieIzena.Equals("Irabaziak"))
             {
-                // Irabaziak grafikoko datuak mugitu
+                /// Irabaziak grafikoko datuak mugitu
                 chart.Series.Add(serieIzena);
                 Chart_Irabaziak.Series.Remove(Chart_Irabaziak.Series["Series1"]);
                 chart.Series[serieIzena].ChartType = SeriesChartType.Line;
@@ -291,7 +385,7 @@ namespace TSB_OdooControl_
                 chart.Series[serieIzena].XValueType = ChartValueType.Date;
                 chart.ChartAreas["ChartArea1"].AxisX.LabelStyle.Format = "MM-dd";
 
-                // Puntuak konfiguratu tokatzen den tokian
+                /// Puntuak konfiguratu tokatzen den tokian
                 Chart_Irabaziak.Series["Irabaziak"].MarkerStyle = MarkerStyle.Circle;
                 Chart_Irabaziak.Series["Irabaziak"].MarkerSize = 10;
                 Chart_Irabaziak.Series["Irabaziak"].MarkerColor = Color.Black;
@@ -299,7 +393,7 @@ namespace TSB_OdooControl_
             }
             else if (serieIzena.Equals("Hornitzaileak"))
             {
-                // Hornitzaileak grafikoko datuak mugitu
+                /// Hornitzaileak grafikoko datuak mugitu
                 Chart_hornitzaileak.Series.Clear();
                 Chart_hornitzaileak.ChartAreas.Clear();
 
@@ -317,31 +411,37 @@ namespace TSB_OdooControl_
 
         }
 
-        // Chart barruan datuak kargatzeko chart-a
+        /// <summary>
+        /// Datuaks the kargatu chart.
+        /// </summary>
+        /// Chart barruan datuak kargatzeko chart-a
         private void datuakKargatuCHART()
         {
-            // Salmenta datuak kargatu grafikoaren barruan
+            /// Salmenta datuak kargatu grafikoaren barruan
             salmentakGrafikoaKargatu();
 
-            // Gehien erosi duen hornitzailearen datuak kargatu
+            /// Gehien erosi duen hornitzailearen datuak kargatu
             hornitzaileGrafikoaKargatu();
 
-            // Gehien saldutako produktuak
+            /// Gehien saldutako produktuak
             produktuGrafikoa();
 
-            // Azpiko datu txikiak kargatu
+            /// Azpiko datu txikiak kargatu
             enpresaDatuakKargatu();
         }
 
-        // Chart barroko hornitzailea datuak kontrolatzeko
+        /// <summary>
+        /// Hornitzailes the grafikoa kargatu.
+        /// </summary>
+        /// Chart barroko hornitzailea datuak kontrolatzeko
         private void hornitzaileGrafikoaKargatu()
         {
             try
             {
-                // Konexioa ireki
+                /// Konexioa ireki
                 konexioaMySQL.KonexioaIreki();
 
-                // Datuak lortzeko kontsulta
+                /// Datuak lortzeko kontsulta
                 string consulta = "SELECT klientea, COUNT(*) as TotalCompras FROM compras GROUP BY klientea ORDER BY TotalCompras DESC LIMIT 5";
                 MySqlCommand cmd = new MySqlCommand(consulta, konexioaMySQL.getKonexioa());
 
@@ -352,7 +452,7 @@ namespace TSB_OdooControl_
                         string hornitzailea = reader.GetString("klientea");
                         int salmentak = reader.GetInt32("TotalCompras");
 
-                        // Agregar datos al gráfico
+                        /// Agregar datos al gráfico
                         Chart_hornitzaileak.Series["Hornitzaileak"].Points.AddXY(hornitzailea, salmentak);
                     }
                 }
@@ -364,35 +464,38 @@ namespace TSB_OdooControl_
             }
         }
 
-        // Chart barroko salmenta datuak kontrolatzeko
+        /// <summary>
+        /// Salmentaks the grafikoa kargatu.
+        /// </summary>
+        /// Chart barroko salmenta datuak kontrolatzeko
         private void salmentakGrafikoaKargatu()
         {
             try
             {
-                // Konexioa ireki
+                /// Konexioa ireki
                 konexioaMySQL.KonexioaIreki();
 
-                // Irabazien kontsulta
+                /// Irabazien kontsulta
                 string irabaziKontsulta = "SELECT eskaera_data, prezio_totala FROM compras WHERE prezio_totala > 0";
                 MySqlCommand cmdIrabazi = new MySqlCommand(irabaziKontsulta, konexioaMySQL.getKonexioa());
 
-                // Galderen kontsulta
+                /// Galderen kontsulta
                 string galderaKontsulta = "SELECT sortze_data AS eskaera_data, -ordaindu_prezioa AS prezio_totala FROM gastos";
                 MySqlCommand cmdGaldera = new MySqlCommand(galderaKontsulta, konexioaMySQL.getKonexioa());
 
-                // Irabazi datuak jaso
+                /// Irabazi datuak jaso
                 List<Datuak> irabaziak = DatuakLortu(cmdIrabazi);
 
-                // Galdera datuak jaso
+                /// Galdera datuak jaso
                 List<Datuak> galderak = DatuakLortu(cmdGaldera);
 
-                // Irabazi eta galderen datuak elkartu
+                /// Irabazi eta galderen datuak elkartu
                 List<Datuak> guztiak = irabaziak.Concat(galderak).ToList();
 
-                // Dena ordenatu dataren arabera
+                /// Dena ordenatu dataren arabera
                 guztiak.Sort((a, b) => DateTime.Compare(a.Fecha, b.Fecha));
 
-                // Irabaziak chartean sartu
+                /// Irabaziak chartean sartu
                 foreach (var datua in guztiak)
                 {
                     Chart_Irabaziak.Series["Irabaziak"].Points.AddXY(datua.Fecha, datua.GananciaTotal);
@@ -407,19 +510,22 @@ namespace TSB_OdooControl_
 
         }
 
-        // Chart barroko produktu datuak kontrolatzeko
+        /// <summary>
+        /// Produktus the grafikoa.
+        /// </summary>
+        /// Chart barroko produktu datuak kontrolatzeko
         private void produktuGrafikoa()
         {
             try
             {
-                // Konexioa ireki
+                /// Konexioa ireki
                 konexioaMySQL.KonexioaIreki();
 
-                // Datuak lortu ahal izateko kontsulta
+                /// Datuak lortu ahal izateko kontsulta
                 string consulta = "SELECT izena, COUNT(izena) as kopurua FROM compras GROUP BY izena ORDER BY kopurua DESC LIMIT 5";
                 MySqlCommand cmd = new MySqlCommand(consulta, konexioaMySQL.getKonexioa());
 
-                // Grafikoak gehitu aurretik garbitu
+                /// Grafikoak gehitu aurretik garbitu
                 panelGrafikoak.Controls.Clear();
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -431,7 +537,7 @@ namespace TSB_OdooControl_
                         string produktuIzena = reader.GetString("izena");
                         int kantitatea = reader.GetInt32("kopurua");
 
-                        // Grafikoak sortu
+                        /// Grafikoak sortu
                         Chart Chart_Produktuak = new Chart();
                         Chart_Produktuak.Size = new Size(200, 300);
                         Chart_Produktuak.ChartAreas.Add("ChartArea");
@@ -441,10 +547,10 @@ namespace TSB_OdooControl_
                         Chart_Produktuak.BackColor = Color.Transparent;
                         Chart_Produktuak.ForeColor = Color.Black;
 
-                        // Grafikoko datuak kargatu
+                        /// Grafikoko datuak kargatu
                         Chart_Produktuak.Series["Salmentak"].Points.AddXY(produktuIzena, kantitatea);
 
-                        // Grafiko bistaratu pantailan irakutsi
+                        /// Grafiko bistaratu pantailan irakutsi
                         panelGrafikoak.Controls.Add(Chart_Produktuak, 0, fila);
 
                         fila++;
@@ -458,28 +564,34 @@ namespace TSB_OdooControl_
             }
         }
 
-        // Beheko aldeak azaltzen diren laukien datuak kargatzeko
+        /// <summary>
+        /// Enpresas the datuak kargatu.
+        /// </summary>
+        /// Beheko aldeak azaltzen diren laukien datuak kargatzeko
         private void enpresaDatuakKargatu()
         {
-            // Salmenta totalak kargatzeko
+            /// Salmenta totalak kargatzeko
             salmentaTotalakKargatu();
 
-            // Hornitzaile kantitatea Kargatzeko
+            /// Hornitzaile kantitatea Kargatzeko
             hornitzaileaKantitateaKargatu();
 
-            // Produktuen kantitatea Kargatzeko
+            /// Produktuen kantitatea Kargatzeko
             produktuKantitateaKargatu();
 
-            // Irabazitako diruaren kalkulua egin eta kargatzeko
+            /// Irabazitako diruaren kalkulua egin eta kargatzeko
             irabaziaKantitateaKargatu();
 
-            // Langileak irakusteko
+            /// Langileak irakusteko
             langileakKantitatea();
 
-            // Gastuak kalkulatzeko
+            /// Gastuak kalkulatzeko
             gastuakKantitatea();
 
         }
+        /// <summary>
+        /// Salmentas the totalak kargatu.
+        /// </summary>
         private void salmentaTotalakKargatu()
         {
             try
@@ -513,6 +625,9 @@ namespace TSB_OdooControl_
             }
 
         }
+        /// <summary>
+        /// Hornitzaileas the kantitatea kargatu.
+        /// </summary>
         private void hornitzaileaKantitateaKargatu()
         {
             try
@@ -545,6 +660,9 @@ namespace TSB_OdooControl_
                 throw;
             }
         }
+        /// <summary>
+        /// Produktus the kantitatea kargatu.
+        /// </summary>
         private void produktuKantitateaKargatu()
         {
             try
@@ -578,6 +696,9 @@ namespace TSB_OdooControl_
             }
 
         }
+        /// <summary>
+        /// Irabazias the kantitatea kargatu.
+        /// </summary>
         private void irabaziaKantitateaKargatu()
         {
             // SQL kontsultak zehaztu
@@ -623,7 +744,7 @@ namespace TSB_OdooControl_
                 catch (FormatException ex)
                 {
                     // Konbertsioan errorea
-                    MessageBox.Show($"Errorea konbertsioan: {ex.Message}", "Errorea");
+                    //MessageBox.Show($"Errorea konbertsioan: {ex.Message}", "Errorea");
                 }
 
             }
@@ -634,6 +755,9 @@ namespace TSB_OdooControl_
             }
 
         }
+        /// <summary>
+        /// Langileaks the kantitatea.
+        /// </summary>
         private void langileakKantitatea()
         {
 
@@ -665,6 +789,9 @@ namespace TSB_OdooControl_
                 throw;
             }
         }
+        /// <summary>
+        /// Gastuaks the kantitatea.
+        /// </summary>
         private void gastuakKantitatea()
         {
             // Komprak
@@ -700,13 +827,29 @@ namespace TSB_OdooControl_
         }
 
 
-        // Datuak gordetzeko
+        /// <summary>
+        /// Class Datuak.
+        /// </summary>
+        /// Datuak gordetzeko
         public class Datuak
         {
+            /// <summary>
+            /// Gets or sets the fecha.
+            /// </summary>
+            /// <value>The fecha.</value>
             public DateTime Fecha { get; set; }
+            /// <summary>
+            /// Gets or sets the ganancia total.
+            /// </summary>
+            /// <value>The ganancia total.</value>
             public decimal GananciaTotal { get; set; }
         }
 
+        /// <summary>
+        /// Datuaks the lortu.
+        /// </summary>
+        /// <param name="cmd">The command.</param>
+        /// <returns>List&lt;Datuak&gt;.</returns>
         private List<Datuak> DatuakLortu(MySqlCommand cmd)
         {
             using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -725,6 +868,27 @@ namespace TSB_OdooControl_
 
                 return datos;
             }
+        }
+
+        /// <summary>
+        /// Handles the Paint event of the panelMenua control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="PaintEventArgs" /> instance containing the event data.</param>
+        private void panelMenua_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Handles the Click event of the pictureBox9 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// Laguntzeko textua
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Alboko menuan aukeratu bistaratu nahi dituzun datuak.", "Laguntzeko textua");
         }
     }
 }

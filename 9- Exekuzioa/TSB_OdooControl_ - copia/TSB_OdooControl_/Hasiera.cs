@@ -1,4 +1,17 @@
-﻿using MySql.Data.MySqlClient;
+﻿// ***********************************************************************
+// Assembly         : TSB_OdooControl_
+// Author           : ikaltamirapaag2
+// Created          : 11-06-2023
+//
+// Last Modified By : ikaltamirapaag2
+// Last Modified On : 11-17-2023
+// ***********************************************************************
+// <copyright file="Hasiera.cs" company="">
+//     Copyright ©  2023
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using MySql.Data.MySqlClient;
 using Npgsql;
 using Org.BouncyCastle.Tls;
 using System;
@@ -15,18 +28,37 @@ using TSB_OdooControl;
 
 namespace TSB_OdooControl_
 {
+    /// <summary>
+    /// Class Hasiera.
+    /// Implements the <see cref="Form" />
+    /// </summary>
+    /// <seealso cref="Form" />
     public partial class Hasiera : Form
     {
         // Datu baseko konstruktoreari hots egin
+        /// <summary>
+        /// The konexioa postgre SQL
+        /// </summary>
         private PostgreSQLConnection konexioaPostgreSQL = new PostgreSQLConnection();
+        /// <summary>
+        /// The konexioa my SQL
+        /// </summary>
         private MySQLConnection konexioaMySQL = new MySQLConnection();
 
         // Aplikazioaren hasiera funtzioa
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Hasiera"/> class.
+        /// </summary>
         public Hasiera()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Handles the Click event of the sartu_BT control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void sartu_BT_Click(object sender, EventArgs e)
         {
             // Karga bideua hasi
@@ -83,6 +115,10 @@ namespace TSB_OdooControl_
         }
 
         // Erabiltzailea konprobatzeko funtzioa
+        /// <summary>
+        /// Erabiltzaileas the konprobatu.
+        /// </summary>
+        /// <returns>Boolean.</returns>
         private Boolean erabiltzaileaKonprobatu()
         {
             // Erabiltzailea eta pasahitza lortu
@@ -104,7 +140,7 @@ namespace TSB_OdooControl_
                 carga.Visible = false;
 
                 MessageBox.Show("Sartutako erabiltzaile/pasahitza ez da zuzena.", "ERABILTZAILEA EDO PASAHITZ EZ ZUZENAK");
-
+                
 
             }
 
@@ -112,6 +148,9 @@ namespace TSB_OdooControl_
         }
 
         // Datu baseko datuak aktualizatu
+        /// <summary>
+        /// Datus the base datuak kargatu.
+        /// </summary>
         private void DatuBaseDatuakKARGATU()
         {
 
@@ -143,6 +182,10 @@ namespace TSB_OdooControl_
         }
 
         // Hornitzaileak taula aktualizatzeko funtzioa
+        /// <summary>
+        /// Hornitzaileaks the kargatu.
+        /// </summary>
+        /// <param name="selectSQL">The select SQL.</param>
         private void hornitzaileak_kargatu(String selectSQL)
         {
             // Datu berriak sartu aurretik, datu zaharrak ezabatuko ditugu.
@@ -203,6 +246,10 @@ namespace TSB_OdooControl_
         }
 
         // Erosketa taula aktualizatzeko funtzioa
+        /// <summary>
+        /// Erosketas the kargatu.
+        /// </summary>
+        /// <param name="selectSQL">The select SQL.</param>
         private void erosketa_kargatu(String selectSQL)
         {
             // Datu berriak sartu aurretik, datu zaharrak ezabatuko ditugu.
@@ -277,6 +324,10 @@ namespace TSB_OdooControl_
         }
 
         // Gastua taula aktualizatzeko funtzioa
+        /// <summary>
+        /// Gastuaks the kargatu.
+        /// </summary>
+        /// <param name="selectSQL">The select SQL.</param>
         private void gastuak_kargatu(String selectSQL)
         {
             // Datu berriak sartu aurretik, datu zaharrak ezabatuko ditugu.
@@ -346,6 +397,10 @@ namespace TSB_OdooControl_
         }
 
         // Produktuak taula aktualizatzzeko funtzioa
+        /// <summary>
+        /// Produktuaks the kargatu.
+        /// </summary>
+        /// <param name="selectSQL">The select SQL.</param>
         private void produktuak_kargatu(String selectSQL)
         {
 
@@ -412,6 +467,10 @@ namespace TSB_OdooControl_
         }
 
         // Erabiltzaileak taula aktualizatzeko funtzioa
+        /// <summary>
+        /// Usuarioses the kargatu.
+        /// </summary>
+        /// <param name="selectSQL">The select SQL.</param>
         private void usuarios_kargatu(String selectSQL)
         {
 
@@ -469,6 +528,12 @@ namespace TSB_OdooControl_
 
 
         // Datu baseko datuak lortzerakoan, konprobatu null al diren edo ez, eta beste mota batekoak direnak String moduan bihurtzeko
+        /// <summary>
+        /// Konprobatus the datua.
+        /// </summary>
+        /// <param name="reader">The reader.</param>
+        /// <param name="kolumnak">The kolumnak.</param>
+        /// <returns>System.String.</returns>
         public static string konprobatuDatua(NpgsqlDataReader reader, int kolumnak)
         {
             if (!reader.IsDBNull(kolumnak))
@@ -498,5 +563,16 @@ namespace TSB_OdooControl_
             return string.Empty;
         }
 
+        // Laguntza textua
+        /// <summary>
+        /// Handles the Click event of the pictureBox6 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            // Exekutatu
+            MessageBox.Show("Erabiltzailea eta pasahitza idatzi behar dituzu segitzeko.", "Laguntza textua");
+        }
     }
 }

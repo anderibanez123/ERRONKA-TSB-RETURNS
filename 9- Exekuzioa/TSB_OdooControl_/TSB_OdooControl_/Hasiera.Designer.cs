@@ -1,5 +1,23 @@
-﻿namespace TSB_OdooControl_
+﻿// ***********************************************************************
+// Assembly         : TSB_OdooControl_
+// Author           : ikaltamirapaag2
+// Created          : 11-06-2023
+//
+// Last Modified By : ikaltamirapaag2
+// Last Modified On : 11-17-2023
+// ***********************************************************************
+// <copyright file="Hasiera.Designer.cs" company="">
+//     Copyright ©  2023
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+namespace TSB_OdooControl_
 {
+    /// <summary>
+    /// Class Hasiera.
+    /// Implements the <see cref="System.Windows.Forms.Form" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     partial class Hasiera
     {
         /// <summary>
@@ -216,16 +234,49 @@
 
         #endregion
 
+        /// <summary>
+        /// The user tb
+        /// </summary>
         private System.Windows.Forms.TextBox user_TB;
+        /// <summary>
+        /// The sartu bt
+        /// </summary>
         private System.Windows.Forms.Button sartu_BT;
+        /// <summary>
+        /// The pw tb
+        /// </summary>
         private System.Windows.Forms.TextBox pw_TB;
+        /// <summary>
+        /// The picture box1
+        /// </summary>
         private System.Windows.Forms.PictureBox pictureBox1;
+        /// <summary>
+        /// The picture box2
+        /// </summary>
         private System.Windows.Forms.PictureBox pictureBox2;
+        /// <summary>
+        /// The ongi etorri label
+        /// </summary>
         private System.Windows.Forms.Label ongiEtorri_Label;
+        /// <summary>
+        /// The picture box3
+        /// </summary>
         private System.Windows.Forms.PictureBox pictureBox3;
+        /// <summary>
+        /// The picture box4
+        /// </summary>
         private System.Windows.Forms.PictureBox pictureBox4;
+        /// <summary>
+        /// The picture box5
+        /// </summary>
         private System.Windows.Forms.PictureBox pictureBox5;
+        /// <summary>
+        /// The carga
+        /// </summary>
         private System.Windows.Forms.PictureBox carga;
+        /// <summary>
+        /// The picture box6
+        /// </summary>
         private System.Windows.Forms.PictureBox pictureBox6;
     }
 }

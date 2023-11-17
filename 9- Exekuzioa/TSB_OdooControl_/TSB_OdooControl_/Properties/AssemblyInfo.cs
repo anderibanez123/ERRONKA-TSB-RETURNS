@@ -1,4 +1,17 @@
-﻿using System.Reflection;
+﻿// ***********************************************************************
+// Assembly         : TSB_OdooControl_
+// Author           : ikaltamirapaag2
+// Created          : 11-06-2023
+//
+// Last Modified By : ikaltamirapaag2
+// Last Modified On : 11-17-2023
+// ***********************************************************************
+// <copyright file="AssemblyInfo.cs" company="">
+//     Copyright ©  2023
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 

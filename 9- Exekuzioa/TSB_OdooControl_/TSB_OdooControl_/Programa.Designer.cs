@@ -1,5 +1,23 @@
-﻿namespace TSB_OdooControl_
+﻿// ***********************************************************************
+// Assembly         : TSB_OdooControl_
+// Author           : ikaltamirapaag2
+// Created          : 11-07-2023
+//
+// Last Modified By : ikaltamirapaag2
+// Last Modified On : 11-17-2023
+// ***********************************************************************
+// <copyright file="Programa.Designer.cs" company="">
+//     Copyright ©  2023
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+namespace TSB_OdooControl_
 {
+    /// <summary>
+    /// Class Programa.
+    /// Implements the <see cref="System.Windows.Forms.Form" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     partial class Programa
     {
         /// <summary>
@@ -1313,79 +1331,301 @@
         }
 
         #endregion
+        /// <summary>
+        /// The panel menua
+        /// </summary>
         private System.Windows.Forms.Panel panelMenua;
+        /// <summary>
+        /// The bt nhasiera
+        /// </summary>
         private System.Windows.Forms.Button BTNhasiera;
+        /// <summary>
+        /// The panel logo
+        /// </summary>
         private System.Windows.Forms.Panel panelLogo;
+        /// <summary>
+        /// The bt nhornitzaileak
+        /// </summary>
         private System.Windows.Forms.Button BTNhornitzaileak;
+        /// <summary>
+        /// The bt ngastuak
+        /// </summary>
         private System.Windows.Forms.Button BTNgastuak;
+        /// <summary>
+        /// The bt nsalmentak
+        /// </summary>
         private System.Windows.Forms.Button BTNsalmentak;
+        /// <summary>
+        /// The bt nproduktuak
+        /// </summary>
         private System.Windows.Forms.Button BTNproduktuak;
+        /// <summary>
+        /// The picture box1
+        /// </summary>
         private System.Windows.Forms.PictureBox pictureBox1;
+        /// <summary>
+        /// The panel1
+        /// </summary>
         private System.Windows.Forms.Panel panel1;
+        /// <summary>
+        /// The panel2
+        /// </summary>
         private System.Windows.Forms.Panel panel2;
+        /// <summary>
+        /// The picture box2
+        /// </summary>
         private System.Windows.Forms.PictureBox pictureBox2;
+        /// <summary>
+        /// The panel printzipala
+        /// </summary>
         private System.Windows.Forms.Panel panelPrintzipala;
+        /// <summary>
+        /// The bt nerabiltzaileak
+        /// </summary>
         private System.Windows.Forms.Button BTNerabiltzaileak;
+        /// <summary>
+        /// The panel bilaketa
+        /// </summary>
         private System.Windows.Forms.Panel panelBilaketa;
+        /// <summary>
+        /// The label titulua
+        /// </summary>
         private System.Windows.Forms.Label Label_Titulua;
+        /// <summary>
+        /// The panel7
+        /// </summary>
         private System.Windows.Forms.Panel panel7;
+        /// <summary>
+        /// The bilatzailea tb
+        /// </summary>
         private System.Windows.Forms.TextBox bilatzailea_TB;
+        /// <summary>
+        /// The panel9
+        /// </summary>
         private System.Windows.Forms.Panel panel9;
+        /// <summary>
+        /// The panel8
+        /// </summary>
         private System.Windows.Forms.Panel panel8;
+        /// <summary>
+        /// The panel6
+        /// </summary>
         private System.Windows.Forms.Panel panel6;
+        /// <summary>
+        /// The panel5
+        /// </summary>
         private System.Windows.Forms.Panel panel5;
+        /// <summary>
+        /// The label bilatu
+        /// </summary>
         private System.Windows.Forms.Label label_bilatu;
+        /// <summary>
+        /// The panel10
+        /// </summary>
         private System.Windows.Forms.Panel panel10;
+        /// <summary>
+        /// The reset taulak
+        /// </summary>
         private System.Windows.Forms.PictureBox resetTaulak;
+        /// <summary>
+        /// The panel11
+        /// </summary>
         private System.Windows.Forms.Panel panel11;
+        /// <summary>
+        /// The panel4
+        /// </summary>
         private System.Windows.Forms.Panel panel4;
+        /// <summary>
+        /// The dg vtaulak
+        /// </summary>
         private System.Windows.Forms.DataGridView DGVtaulak;
+        /// <summary>
+        /// The panel grafiko
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel panelGrafiko;
+        /// <summary>
+        /// The table layout panel1
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        /// <summary>
+        /// The chart irabaziak
+        /// </summary>
         private System.Windows.Forms.DataVisualization.Charting.Chart Chart_Irabaziak;
+        /// <summary>
+        /// The table layout panel2
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        /// <summary>
+        /// The chart hornitzaileak
+        /// </summary>
         private System.Windows.Forms.DataVisualization.Charting.Chart Chart_hornitzaileak;
+        /// <summary>
+        /// The panel grafikoak
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel panelGrafikoak;
+        /// <summary>
+        /// The table layout panel3
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        /// <summary>
+        /// The label1
+        /// </summary>
         private System.Windows.Forms.Label label1;
+        /// <summary>
+        /// The table layout panel4
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        /// <summary>
+        /// The label3
+        /// </summary>
         private System.Windows.Forms.Label label3;
+        /// <summary>
+        /// The label2
+        /// </summary>
         private System.Windows.Forms.Label label2;
+        /// <summary>
+        /// The table layout panel5
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        /// <summary>
+        /// The table layout panel6
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        /// <summary>
+        /// The table layout panel7
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        /// <summary>
+        /// The table layout panel8
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        /// <summary>
+        /// The label4
+        /// </summary>
         private System.Windows.Forms.Label label4;
+        /// <summary>
+        /// The label irabaziak
+        /// </summary>
         private System.Windows.Forms.Label label_Irabaziak;
+        /// <summary>
+        /// The picture box3
+        /// </summary>
         private System.Windows.Forms.PictureBox pictureBox3;
+        /// <summary>
+        /// The table layout panel9
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        /// <summary>
+        /// The table layout panel10
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
+        /// <summary>
+        /// The picture box4
+        /// </summary>
         private System.Windows.Forms.PictureBox pictureBox4;
+        /// <summary>
+        /// The table layout panel11
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
+        /// <summary>
+        /// The table layout panel12
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
+        /// <summary>
+        /// The picture box5
+        /// </summary>
         private System.Windows.Forms.PictureBox pictureBox5;
+        /// <summary>
+        /// The label6
+        /// </summary>
         private System.Windows.Forms.Label label6;
+        /// <summary>
+        /// The label hornitzaileak
+        /// </summary>
         private System.Windows.Forms.Label label_Hornitzaileak;
+        /// <summary>
+        /// The label8
+        /// </summary>
         private System.Windows.Forms.Label label8;
+        /// <summary>
+        /// The label produktuak
+        /// </summary>
         private System.Windows.Forms.Label label_Produktuak;
+        /// <summary>
+        /// The table layout panel13
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
+        /// <summary>
+        /// The table layout panel14
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
+        /// <summary>
+        /// The table layout panel17
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
+        /// <summary>
+        /// The label5
+        /// </summary>
         private System.Windows.Forms.Label label5;
+        /// <summary>
+        /// The label langileak
+        /// </summary>
         private System.Windows.Forms.Label label_Langileak;
+        /// <summary>
+        /// The picture box6
+        /// </summary>
         private System.Windows.Forms.PictureBox pictureBox6;
+        /// <summary>
+        /// The table layout panel15
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
+        /// <summary>
+        /// The table layout panel18
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
+        /// <summary>
+        /// The label9
+        /// </summary>
         private System.Windows.Forms.Label label9;
+        /// <summary>
+        /// The label salmentak
+        /// </summary>
         private System.Windows.Forms.Label label_Salmentak;
+        /// <summary>
+        /// The picture box7
+        /// </summary>
         private System.Windows.Forms.PictureBox pictureBox7;
+        /// <summary>
+        /// The table layout panel16
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
+        /// <summary>
+        /// The table layout panel19
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
+        /// <summary>
+        /// The label11
+        /// </summary>
         private System.Windows.Forms.Label label11;
+        /// <summary>
+        /// The label gastuak
+        /// </summary>
         private System.Windows.Forms.Label label_Gastuak;
+        /// <summary>
+        /// The picture box8
+        /// </summary>
         private System.Windows.Forms.PictureBox pictureBox8;
+        /// <summary>
+        /// The table layout panel20
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
+        /// <summary>
+        /// The table layout panel21
+        /// </summary>
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
+        /// <summary>
+        /// The picture box9
+        /// </summary>
         private System.Windows.Forms.PictureBox pictureBox9;
     }
 }
